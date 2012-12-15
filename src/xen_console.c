@@ -132,7 +132,7 @@ xen_console_get_record(xen_session *session, xen_console_record **result, xen_co
 
     if (session->ok)
     {
-       (*result)->handle = xen_strdup_((*result)->uuid);
+       (*result)->handle = xen_opaque_strdup_(console);
     }
 
     return session->ok;

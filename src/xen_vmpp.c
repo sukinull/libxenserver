@@ -185,7 +185,7 @@ xen_vmpp_get_record(xen_session *session, xen_vmpp_record **result, xen_vmpp vmp
 
     if (session->ok)
     {
-       (*result)->handle = xen_strdup_((*result)->uuid);
+       (*result)->handle = xen_opaque_strdup_(vmpp);
     }
 
     return session->ok;

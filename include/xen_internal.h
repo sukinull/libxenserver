@@ -138,6 +138,8 @@ xen_call_(xen_session *s, const char *method_name, abstract_value params[],
 extern char *
 xen_strdup_(const char *in);
 
+extern char *
+xen_opaque_strdup_(void *in);
 
 extern int
 xen_enum_lookup_(const char *str, const char **lookup_table, int n);

@@ -136,7 +136,7 @@ xen_pbd_get_record(xen_session *session, xen_pbd_record **result, xen_pbd pbd)
 
     if (session->ok)
     {
-       (*result)->handle = xen_strdup_((*result)->uuid);
+       (*result)->handle = xen_opaque_strdup_(pbd);
     }
 
     return session->ok;

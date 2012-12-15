@@ -198,7 +198,7 @@ xen_vif_get_record(xen_session *session, xen_vif_record **result, xen_vif vif)
 
     if (session->ok)
     {
-       (*result)->handle = xen_strdup_((*result)->uuid);
+       (*result)->handle = xen_opaque_strdup_(vif);
     }
 
     return session->ok;
@@ -1061,7 +1061,6 @@ xen_vif_get_all(xen_session *session, struct xen_vif_set **result)
     xen_call_(session, "VIF.get_all", NULL, 0, &result_type, result);
     return session->ok;
 }
-
 
 bool
 xen_vif_get_all_records(xen_session *session, xen_vif_xen_vif_record_map **result)

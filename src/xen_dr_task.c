@@ -120,7 +120,7 @@ xen_dr_task_get_record(xen_session *session, xen_dr_task_record **result, xen_dr
 
     if (session->ok)
     {
-       (*result)->handle = xen_strdup_((*result)->uuid);
+       (*result)->handle = xen_opaque_strdup_(dr_task);
     }
 
     return session->ok;

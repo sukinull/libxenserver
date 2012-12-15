@@ -222,7 +222,7 @@ xen_pool_get_record(xen_session *session, xen_pool_record **result, xen_pool poo
 
     if (session->ok)
     {
-       (*result)->handle = xen_strdup_((*result)->uuid);
+       (*result)->handle = xen_opaque_strdup_(pool);
     }
 
     return session->ok;

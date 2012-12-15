@@ -1907,6 +1907,14 @@ xen_strdup_(const char *in)
     return result;
 }
 
+char *
+xen_opaque_strdup_(void *in)
+{
+	static size_t opaque_length = sizeof("OpaqueRef:2634ce1b-beac-4bd8-aa55-abf0788eb90b") + 1;
+    char *result = malloc(opaque_length);
+    strcpy(result, in);
+    return result;
+}
 
 const abstract_type abstract_type_string = { .typename = STRING };
 const abstract_type abstract_type_int = { .typename = INT };

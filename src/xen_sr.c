@@ -192,7 +192,7 @@ xen_sr_get_record(xen_session *session, xen_sr_record **result, xen_sr sr)
 
     if (session->ok)
     {
-       (*result)->handle = xen_strdup_((*result)->uuid);
+       (*result)->handle = xen_opaque_strdup_(sr);
     }
 
     return session->ok;

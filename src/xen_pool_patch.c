@@ -149,7 +149,7 @@ xen_pool_patch_get_record(xen_session *session, xen_pool_patch_record **result, 
 
     if (session->ok)
     {
-       (*result)->handle = xen_strdup_((*result)->uuid);
+       (*result)->handle = xen_opaque_strdup_(pool_patch);
     }
 
     return session->ok;

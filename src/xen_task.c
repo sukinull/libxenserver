@@ -177,7 +177,7 @@ xen_task_get_record(xen_session *session, xen_task_record **result, xen_task tas
 
     if (session->ok)
     {
-       (*result)->handle = xen_strdup_((*result)->uuid);
+       (*result)->handle = xen_opaque_strdup_(task);
     }
 
     return session->ok;

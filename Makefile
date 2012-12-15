@@ -33,7 +33,7 @@ MINOR = 10
 CFLAGS = -g -Iinclude                     \
          $(shell xml2-config --cflags) \
          $(shell curl-config --cflags) \
-         -W -Wall -Wmissing-prototypes -Werror -std=c99 -fPIC
+         -W -Wall -Wmissing-prototypes -std=c99 -fPIC
 
 LDFLAGS = -g $(shell xml2-config --libs) \
           $(shell curl-config --libs) \
@@ -53,7 +53,8 @@ LIBXENAPI_HDRS = $(wildcard include/*.h)
 LIBXENAPI_OBJS = $(patsubst %.c, %.o, $(wildcard src/*.c))
 
 TEST_PROGRAMS = test/test_vm_ops test/test_event_handling \
-                test/test_failures
+                test/test_failures \
+		test/test_records test/test_all_records
 
 TARBALL_DEST = libxenserver-$(MAJOR).$(MINOR)
 

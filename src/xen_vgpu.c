@@ -136,7 +136,7 @@ xen_vgpu_get_record(xen_session *session, xen_vgpu_record **result, xen_vgpu vgp
 
     if (session->ok)
     {
-       (*result)->handle = xen_strdup_((*result)->uuid);
+       (*result)->handle = xen_opaque_strdup_(vgpu);
     }
 
     return session->ok;

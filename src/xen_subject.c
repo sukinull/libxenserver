@@ -128,7 +128,7 @@ xen_subject_get_record(xen_session *session, xen_subject_record **result, xen_su
 
     if (session->ok)
     {
-       (*result)->handle = xen_strdup_((*result)->uuid);
+       (*result)->handle = xen_opaque_strdup_(subject);
     }
 
     return session->ok;
