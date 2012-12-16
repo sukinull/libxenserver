@@ -80,7 +80,7 @@ typedef enum xen_api_version
 } xen_api_version;
 
 
-typedef struct
+typedef struct xen_session
 {
     xen_call_func call_func;
     void *handle;
