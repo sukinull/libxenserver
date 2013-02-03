@@ -30,6 +30,8 @@
 MAJOR = 1
 MINOR = 10
 
+OS:=$(shell uname)
+
 CFLAGS = -g -Iinclude                     \
          $(shell xml2-config --cflags) \
          $(shell curl-config --cflags) \
@@ -40,7 +42,12 @@ LDFLAGS = -g $(shell xml2-config --libs) \
 	  -Wl,-rpath,$(shell pwd)
 
 # -h for Solaris
-SONAME_LDFLAG ?= -soname
+ifeq ($(OS),Linux)
+	SONAME_LDFLAG ?= -soname
+else ifeq ($(OS),Darwin)
+	SONAME_LDFLAG ?= -install_name
+endif
+
 # -R /usr/sfw/$(LIBDIR) -shared for Solaris
 SHLIB_CFLAGS ?= -shared
 
@@ -54,7 +61,7 @@ LIBXENAPI_OBJS = $(patsubst %.c, %.o, $(wildcard src/*.c))
 
 TEST_PROGRAMS = test/test_vm_ops test/test_event_handling \
                 test/test_failures \
-		test/test_records test/test_all_records
+		test/test_records
 
 TARBALL_DEST = libxenserver-$(MAJOR).$(MINOR)
 
@@ -112,7 +119,7 @@ $(TARBALL_DEST).tar.bz2: all
 
 .PHONY: clean
 clean:
-	rm -f `find -name *.o`
+	rm -f `find . -name *.o`
 	rm -f libxenserver.so*
 	rm -f libxenserver.a
 	rm -f $(TEST_PROGRAMS)
