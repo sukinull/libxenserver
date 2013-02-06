@@ -208,7 +208,7 @@ xen_pif_get_record(xen_session *session, xen_pif_record **result, xen_pif pif);
  * Get a reference to the PIF instance with the specified UUID.
  */
 extern bool
-xen_pif_get_by_uuid(xen_session *session, xen_pif *result, char *uuid);
+xen_pif_get_by_uuid(xen_session *session, xen_pif *result, const char *uuid);
 
 
 /**
@@ -419,7 +419,7 @@ xen_pif_set_other_config(xen_session *session, xen_pif pif, xen_string_string_ma
  * PIF.
  */
 extern bool
-xen_pif_add_to_other_config(xen_session *session, xen_pif pif, char *key, char *value);
+xen_pif_add_to_other_config(xen_session *session, xen_pif pif, const char *key, const char *value);
 
 
 /**
@@ -428,7 +428,7 @@ xen_pif_add_to_other_config(xen_session *session, xen_pif pif, char *key, char *
  * do nothing.
  */
 extern bool
-xen_pif_remove_from_other_config(xen_session *session, xen_pif pif, char *key);
+xen_pif_remove_from_other_config(xen_session *session, xen_pif pif, const char *key);
 
 
 /**
@@ -443,14 +443,14 @@ xen_pif_set_disallow_unplug(xen_session *session, xen_pif pif, bool disallow_unp
  * call is deprecated: use VLAN.create instead.
  */
 extern bool
-xen_pif_create_vlan(xen_session *session, xen_pif *result, char *device, xen_network network, xen_host host, int64_t vlan);
+xen_pif_create_vlan(xen_session *session, xen_pif *result, const char *device, xen_network network, xen_host host, int64_t vlan);
 
 /**
  * Create a VLAN interface from an existing physical interface. This
  * call is deprecated: use VLAN.create instead.
  */
 extern bool
-xen_pif_create_vlan_async(xen_session *session, xen_task *result, char *device, xen_network network, xen_host host, int64_t vlan);
+xen_pif_create_vlan_async(xen_session *session, xen_task *result, const char *device, xen_network network, xen_host host, int64_t vlan);
 
 
 /**
@@ -472,26 +472,26 @@ xen_pif_destroy_async(xen_session *session, xen_task *result, xen_pif self);
  * Reconfigure the IP address settings for this interface.
  */
 extern bool
-xen_pif_reconfigure_ip(xen_session *session, xen_pif self, enum xen_ip_configuration_mode mode, char *ip, char *netmask, char *gateway, char *dns);
+xen_pif_reconfigure_ip(xen_session *session, xen_pif self, enum xen_ip_configuration_mode mode, const char *ip, const char *netmask, const char *gateway, const char *dns);
 
 /**
  * Reconfigure the IP address settings for this interface.
  */
 extern bool
-xen_pif_reconfigure_ip_async(xen_session *session, xen_task *result, xen_pif self, enum xen_ip_configuration_mode mode, char *ip, char *netmask, char *gateway, char *dns);
+xen_pif_reconfigure_ip_async(xen_session *session, xen_task *result, xen_pif self, enum xen_ip_configuration_mode mode, const char *ip, const char *netmask, const char *gateway, const char *dns);
 
 
 /**
  * Reconfigure the IPv6 address settings for this interface.
  */
 extern bool
-xen_pif_reconfigure_ipv6(xen_session *session, xen_pif self, enum xen_ipv6_configuration_mode mode, char *ipv6, char *gateway, char *dns);
+xen_pif_reconfigure_ipv6(xen_session *session, xen_pif self, enum xen_ipv6_configuration_mode mode, const char *ipv6, const char *gateway, const char *dns);
 
 /**
  * Reconfigure the IPv6 address settings for this interface.
  */
 extern bool
-xen_pif_reconfigure_ipv6_async(xen_session *session, xen_task *result, xen_pif self, enum xen_ipv6_configuration_mode mode, char *ipv6, char *gateway, char *dns);
+xen_pif_reconfigure_ipv6_async(xen_session *session, xen_task *result, xen_pif self, enum xen_ipv6_configuration_mode mode, const char *ipv6, const char *gateway, const char *dns);
 
 
 /**
@@ -526,13 +526,13 @@ xen_pif_scan_async(xen_session *session, xen_task *result, xen_host host);
  * Create a PIF object matching a particular network interface.
  */
 extern bool
-xen_pif_introduce(xen_session *session, xen_pif *result, xen_host host, char *mac, char *device);
+xen_pif_introduce(xen_session *session, xen_pif *result, xen_host host, const char *mac, const char *device);
 
 /**
  * Create a PIF object matching a particular network interface.
  */
 extern bool
-xen_pif_introduce_async(xen_session *session, xen_task *result, xen_host host, char *mac, char *device);
+xen_pif_introduce_async(xen_session *session, xen_task *result, xen_host host, const char *mac, const char *device);
 
 
 /**
@@ -578,13 +578,13 @@ xen_pif_plug_async(xen_session *session, xen_task *result, xen_pif self);
  * Create a new PIF record in the database only.
  */
 extern bool
-xen_pif_db_introduce(xen_session *session, xen_pif *result, char *device, xen_network network, xen_host host, char *mac, int64_t mtu, int64_t vlan, bool physical, enum xen_ip_configuration_mode ip_configuration_mode, char *ip, char *netmask, char *gateway, char *dns, xen_bond bond_slave_of, xen_vlan vlan_master_of, bool management, xen_string_string_map *other_config, bool disallow_unplug, enum xen_ipv6_configuration_mode ipv6_configuration_mode, struct xen_string_set *ipv6, char *ipv6_gateway, enum xen_primary_address_type primary_address_type);
+xen_pif_db_introduce(xen_session *session, xen_pif *result, const char *device, xen_network network, xen_host host, const char *mac, int64_t mtu, int64_t vlan, bool physical, enum xen_ip_configuration_mode ip_configuration_mode, const char *ip, const char *netmask, const char *gateway, const char *dns, xen_bond bond_slave_of, xen_vlan vlan_master_of, bool management, xen_string_string_map *other_config, bool disallow_unplug, enum xen_ipv6_configuration_mode ipv6_configuration_mode, struct xen_string_set *ipv6, const char *ipv6_gateway, enum xen_primary_address_type primary_address_type);
 
 /**
  * Create a new PIF record in the database only.
  */
 extern bool
-xen_pif_db_introduce_async(xen_session *session, xen_task *result, char *device, xen_network network, xen_host host, char *mac, int64_t mtu, int64_t vlan, bool physical, enum xen_ip_configuration_mode ip_configuration_mode, char *ip, char *netmask, char *gateway, char *dns, xen_bond bond_slave_of, xen_vlan vlan_master_of, bool management, xen_string_string_map *other_config, bool disallow_unplug, enum xen_ipv6_configuration_mode ipv6_configuration_mode, struct xen_string_set *ipv6, char *ipv6_gateway, enum xen_primary_address_type primary_address_type);
+xen_pif_db_introduce_async(xen_session *session, xen_task *result, const char *device, xen_network network, xen_host host, const char *mac, int64_t mtu, int64_t vlan, bool physical, enum xen_ip_configuration_mode ip_configuration_mode, const char *ip, const char *netmask, const char *gateway, const char *dns, xen_bond bond_slave_of, xen_vlan vlan_master_of, bool management, xen_string_string_map *other_config, bool disallow_unplug, enum xen_ipv6_configuration_mode ipv6_configuration_mode, struct xen_string_set *ipv6, const char *ipv6_gateway, enum xen_primary_address_type primary_address_type);
 
 
 /**

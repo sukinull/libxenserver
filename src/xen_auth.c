@@ -77,7 +77,7 @@ xen_auth_record_free(xen_auth_record *record)
 
 
 bool
-xen_auth_get_subject_identifier(xen_session *session, char **result, char *subject_name)
+xen_auth_get_subject_identifier(xen_session *session, char **result, const char *subject_name)
 {
     abstract_value param_values[] =
         {
@@ -94,7 +94,7 @@ xen_auth_get_subject_identifier(xen_session *session, char **result, char *subje
 
 
 bool
-xen_auth_get_subject_information_from_identifier(xen_session *session, xen_string_string_map **result, char *subject_identifier)
+xen_auth_get_subject_information_from_identifier(xen_session *session, xen_string_string_map **result, const char *subject_identifier)
 {
     abstract_value param_values[] =
         {
@@ -111,7 +111,7 @@ xen_auth_get_subject_information_from_identifier(xen_session *session, xen_strin
 
 
 bool
-xen_auth_get_group_membership(xen_session *session, struct xen_string_set **result, char *subject_identifier)
+xen_auth_get_group_membership(xen_session *session, struct xen_string_set **result, const char *subject_identifier)
 {
     abstract_value param_values[] =
         {

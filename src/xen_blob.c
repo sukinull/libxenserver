@@ -143,7 +143,7 @@ xen_blob_get_record(xen_session *session, xen_blob_record **result, xen_blob blo
 
 
 bool
-xen_blob_get_by_uuid(xen_session *session, xen_blob *result, char *uuid)
+xen_blob_get_by_uuid(xen_session *session, xen_blob *result, const char *uuid)
 {
     abstract_value param_values[] =
         {
@@ -160,7 +160,7 @@ xen_blob_get_by_uuid(xen_session *session, xen_blob *result, char *uuid)
 
 
 bool
-xen_blob_get_by_name_label(xen_session *session, struct xen_blob_set **result, char *label)
+xen_blob_get_by_name_label(xen_session *session, struct xen_blob_set **result, const char *label)
 {
     abstract_value param_values[] =
         {
@@ -276,7 +276,7 @@ xen_blob_get_mime_type(xen_session *session, char **result, xen_blob blob)
 
 
 bool
-xen_blob_set_name_label(xen_session *session, xen_blob blob, char *label)
+xen_blob_set_name_label(xen_session *session, xen_blob blob, const char *label)
 {
     abstract_value param_values[] =
         {
@@ -292,7 +292,7 @@ xen_blob_set_name_label(xen_session *session, xen_blob blob, char *label)
 
 
 bool
-xen_blob_set_name_description(xen_session *session, xen_blob blob, char *description)
+xen_blob_set_name_description(xen_session *session, xen_blob blob, const char *description)
 {
     abstract_value param_values[] =
         {
@@ -324,7 +324,7 @@ xen_blob_set_public(xen_session *session, xen_blob blob, bool pubblic)
 
 
 bool
-xen_blob_create(xen_session *session, xen_blob *result, char *mime_type, bool pubblic)
+xen_blob_create(xen_session *session, xen_blob *result, const char *mime_type, bool pubblic)
 {
     abstract_value param_values[] =
         {

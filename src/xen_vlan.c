@@ -140,7 +140,7 @@ xen_vlan_get_record(xen_session *session, xen_vlan_record **result, xen_vlan vla
 
 
 bool
-xen_vlan_get_by_uuid(xen_session *session, xen_vlan *result, char *uuid)
+xen_vlan_get_by_uuid(xen_session *session, xen_vlan *result, const char *uuid)
 {
     abstract_value param_values[] =
         {
@@ -240,7 +240,7 @@ xen_vlan_set_other_config(xen_session *session, xen_vlan vlan, xen_string_string
 
 
 bool
-xen_vlan_add_to_other_config(xen_session *session, xen_vlan vlan, char *key, char *value)
+xen_vlan_add_to_other_config(xen_session *session, xen_vlan vlan, const char *key, const char *value)
 {
     abstract_value param_values[] =
         {
@@ -258,7 +258,7 @@ xen_vlan_add_to_other_config(xen_session *session, xen_vlan vlan, char *key, cha
 
 
 bool
-xen_vlan_remove_from_other_config(xen_session *session, xen_vlan vlan, char *key)
+xen_vlan_remove_from_other_config(xen_session *session, xen_vlan vlan, const char *key)
 {
     abstract_value param_values[] =
         {

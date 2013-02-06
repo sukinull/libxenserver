@@ -158,7 +158,7 @@ xen_host_patch_get_record(xen_session *session, xen_host_patch_record **result, 
 
 
 bool
-xen_host_patch_get_by_uuid(xen_session *session, xen_host_patch *result, char *uuid)
+xen_host_patch_get_by_uuid(xen_session *session, xen_host_patch *result, const char *uuid)
 {
     abstract_value param_values[] =
         {
@@ -175,7 +175,7 @@ xen_host_patch_get_by_uuid(xen_session *session, xen_host_patch *result, char *u
 
 
 bool
-xen_host_patch_get_by_name_label(xen_session *session, struct xen_host_patch_set **result, char *label)
+xen_host_patch_get_by_name_label(xen_session *session, struct xen_host_patch_set **result, const char *label)
 {
     abstract_value param_values[] =
         {
@@ -358,7 +358,7 @@ xen_host_patch_set_other_config(xen_session *session, xen_host_patch host_patch,
 
 
 bool
-xen_host_patch_add_to_other_config(xen_session *session, xen_host_patch host_patch, char *key, char *value)
+xen_host_patch_add_to_other_config(xen_session *session, xen_host_patch host_patch, const char *key, const char *value)
 {
     abstract_value param_values[] =
         {
@@ -376,7 +376,7 @@ xen_host_patch_add_to_other_config(xen_session *session, xen_host_patch host_pat
 
 
 bool
-xen_host_patch_remove_from_other_config(xen_session *session, xen_host_patch host_patch, char *key)
+xen_host_patch_remove_from_other_config(xen_session *session, xen_host_patch host_patch, const char *key)
 {
     abstract_value param_values[] =
         {

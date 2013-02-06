@@ -164,7 +164,7 @@ xen_event_next(xen_session *session, struct xen_event_record_set **result)
 
 
 bool
-xen_event_from(xen_session *session, struct xen_event_record_set **result, struct xen_string_set *classes, char *token, double timeout)
+xen_event_from(xen_session *session, struct xen_event_record_set **result, struct xen_string_set *classes, const char *token, double timeout)
 {
     abstract_value param_values[] =
         {
@@ -196,7 +196,7 @@ xen_event_get_current_id(xen_session *session, int64_t *result)
 
 
 bool
-xen_event_inject(xen_session *session, char **result, char *XEN_CLAZZ, char *ref)
+xen_event_inject(xen_session *session, char **result, const char *XEN_CLAZZ, const char *ref)
 {
     abstract_value param_values[] =
         {

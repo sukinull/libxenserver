@@ -167,7 +167,7 @@ xen_sm_get_record(xen_session *session, xen_sm_record **result, xen_sm sm)
 
 
 bool
-xen_sm_get_by_uuid(xen_session *session, xen_sm *result, char *uuid)
+xen_sm_get_by_uuid(xen_session *session, xen_sm *result, const char *uuid)
 {
     abstract_value param_values[] =
         {
@@ -184,7 +184,7 @@ xen_sm_get_by_uuid(xen_session *session, xen_sm *result, char *uuid)
 
 
 bool
-xen_sm_get_by_name_label(xen_session *session, struct xen_sm_set **result, char *label)
+xen_sm_get_by_name_label(xen_session *session, struct xen_sm_set **result, const char *label)
 {
     abstract_value param_values[] =
         {
@@ -404,7 +404,7 @@ xen_sm_set_other_config(xen_session *session, xen_sm sm, xen_string_string_map *
 
 
 bool
-xen_sm_add_to_other_config(xen_session *session, xen_sm sm, char *key, char *value)
+xen_sm_add_to_other_config(xen_session *session, xen_sm sm, const char *key, const char *value)
 {
     abstract_value param_values[] =
         {
@@ -422,7 +422,7 @@ xen_sm_add_to_other_config(xen_session *session, xen_sm sm, char *key, char *val
 
 
 bool
-xen_sm_remove_from_other_config(xen_session *session, xen_sm sm, char *key)
+xen_sm_remove_from_other_config(xen_session *session, xen_sm sm, const char *key)
 {
     abstract_value param_values[] =
         {

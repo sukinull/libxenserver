@@ -172,14 +172,14 @@ xen_role_get_record(xen_session *session, xen_role_record **result, xen_role rol
  * Get a reference to the role instance with the specified UUID.
  */
 extern bool
-xen_role_get_by_uuid(xen_session *session, xen_role *result, char *uuid);
+xen_role_get_by_uuid(xen_session *session, xen_role *result, const char *uuid);
 
 
 /**
  * Get all the role instances with the given label.
  */
 extern bool
-xen_role_get_by_name_label(xen_session *session, struct xen_role_set **result, char *label);
+xen_role_get_by_name_label(xen_session *session, struct xen_role_set **result, const char *label);
 
 
 /**
@@ -235,7 +235,7 @@ xen_role_get_by_permission(xen_session *session, struct xen_role_set **result, x
  * This call returns a list of roles given a permission name.
  */
 extern bool
-xen_role_get_by_permission_name_label(xen_session *session, struct xen_role_set **result, char *label);
+xen_role_get_by_permission_name_label(xen_session *session, struct xen_role_set **result, const char *label);
 
 
 /**

@@ -178,7 +178,7 @@ xen_vm_appliance_get_record(xen_session *session, xen_vm_appliance_record **resu
  * UUID.
  */
 extern bool
-xen_vm_appliance_get_by_uuid(xen_session *session, xen_vm_appliance *result, char *uuid);
+xen_vm_appliance_get_by_uuid(xen_session *session, xen_vm_appliance *result, const char *uuid);
 
 
 /**
@@ -211,7 +211,7 @@ xen_vm_appliance_destroy_async(xen_session *session, xen_task *result, xen_vm_ap
  * Get all the VM_appliance instances with the given label.
  */
 extern bool
-xen_vm_appliance_get_by_name_label(xen_session *session, struct xen_vm_appliance_set **result, char *label);
+xen_vm_appliance_get_by_name_label(xen_session *session, struct xen_vm_appliance_set **result, const char *label);
 
 
 /**
@@ -260,14 +260,14 @@ xen_vm_appliance_get_vms(xen_session *session, struct xen_vm_set **result, xen_v
  * Set the name/label field of the given VM_appliance.
  */
 extern bool
-xen_vm_appliance_set_name_label(xen_session *session, xen_vm_appliance vm_appliance, char *label);
+xen_vm_appliance_set_name_label(xen_session *session, xen_vm_appliance vm_appliance, const char *label);
 
 
 /**
  * Set the name/description field of the given VM_appliance.
  */
 extern bool
-xen_vm_appliance_set_name_description(xen_session *session, xen_vm_appliance vm_appliance, char *description);
+xen_vm_appliance_set_name_description(xen_session *session, xen_vm_appliance vm_appliance, const char *description);
 
 
 /**

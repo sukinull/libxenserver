@@ -141,7 +141,7 @@ xen_tunnel_get_record(xen_session *session, xen_tunnel_record **result, xen_tunn
 
 
 bool
-xen_tunnel_get_by_uuid(xen_session *session, xen_tunnel *result, char *uuid)
+xen_tunnel_get_by_uuid(xen_session *session, xen_tunnel *result, const char *uuid)
 {
     abstract_value param_values[] =
         {
@@ -242,7 +242,7 @@ xen_tunnel_set_status(xen_session *session, xen_tunnel tunnel, xen_string_string
 
 
 bool
-xen_tunnel_add_to_status(xen_session *session, xen_tunnel tunnel, char *key, char *value)
+xen_tunnel_add_to_status(xen_session *session, xen_tunnel tunnel, const char *key, const char *value)
 {
     abstract_value param_values[] =
         {
@@ -260,7 +260,7 @@ xen_tunnel_add_to_status(xen_session *session, xen_tunnel tunnel, char *key, cha
 
 
 bool
-xen_tunnel_remove_from_status(xen_session *session, xen_tunnel tunnel, char *key)
+xen_tunnel_remove_from_status(xen_session *session, xen_tunnel tunnel, const char *key)
 {
     abstract_value param_values[] =
         {
@@ -292,7 +292,7 @@ xen_tunnel_set_other_config(xen_session *session, xen_tunnel tunnel, xen_string_
 
 
 bool
-xen_tunnel_add_to_other_config(xen_session *session, xen_tunnel tunnel, char *key, char *value)
+xen_tunnel_add_to_other_config(xen_session *session, xen_tunnel tunnel, const char *key, const char *value)
 {
     abstract_value param_values[] =
         {
@@ -310,7 +310,7 @@ xen_tunnel_add_to_other_config(xen_session *session, xen_tunnel tunnel, char *ke
 
 
 bool
-xen_tunnel_remove_from_other_config(xen_session *session, xen_tunnel tunnel, char *key)
+xen_tunnel_remove_from_other_config(xen_session *session, xen_tunnel tunnel, const char *key)
 {
     abstract_value param_values[] =
         {

@@ -197,14 +197,14 @@ xen_sr_get_record(xen_session *session, xen_sr_record **result, xen_sr sr);
  * Get a reference to the SR instance with the specified UUID.
  */
 extern bool
-xen_sr_get_by_uuid(xen_session *session, xen_sr *result, char *uuid);
+xen_sr_get_by_uuid(xen_session *session, xen_sr *result, const char *uuid);
 
 
 /**
  * Get all the SR instances with the given label.
  */
 extern bool
-xen_sr_get_by_name_label(xen_session *session, struct xen_sr_set **result, char *label);
+xen_sr_get_by_name_label(xen_session *session, struct xen_sr_set **result, const char *label);
 
 
 /**
@@ -352,7 +352,7 @@ xen_sr_set_other_config(xen_session *session, xen_sr sr, xen_string_string_map *
  * SR.
  */
 extern bool
-xen_sr_add_to_other_config(xen_session *session, xen_sr sr, char *key, char *value);
+xen_sr_add_to_other_config(xen_session *session, xen_sr sr, const char *key, const char *value);
 
 
 /**
@@ -361,7 +361,7 @@ xen_sr_add_to_other_config(xen_session *session, xen_sr sr, char *key, char *val
  * nothing.
  */
 extern bool
-xen_sr_remove_from_other_config(xen_session *session, xen_sr sr, char *key);
+xen_sr_remove_from_other_config(xen_session *session, xen_sr sr, const char *key);
 
 
 /**
@@ -376,7 +376,7 @@ xen_sr_set_tags(xen_session *session, xen_sr sr, struct xen_string_set *tags);
  * is already in that Set, then do nothing.
  */
 extern bool
-xen_sr_add_tags(xen_session *session, xen_sr sr, char *value);
+xen_sr_add_tags(xen_session *session, xen_sr sr, const char *value);
 
 
 /**
@@ -384,7 +384,7 @@ xen_sr_add_tags(xen_session *session, xen_sr sr, char *value);
  * value is not in that Set, then do nothing.
  */
 extern bool
-xen_sr_remove_tags(xen_session *session, xen_sr sr, char *value);
+xen_sr_remove_tags(xen_session *session, xen_sr sr, const char *value);
 
 
 /**
@@ -398,7 +398,7 @@ xen_sr_set_sm_config(xen_session *session, xen_sr sr, xen_string_string_map *sm_
  * Add the given key-value pair to the sm_config field of the given SR.
  */
 extern bool
-xen_sr_add_to_sm_config(xen_session *session, xen_sr sr, char *key, char *value);
+xen_sr_add_to_sm_config(xen_session *session, xen_sr sr, const char *key, const char *value);
 
 
 /**
@@ -406,7 +406,7 @@ xen_sr_add_to_sm_config(xen_session *session, xen_sr sr, char *key, char *value)
  * field of the given SR.  If the key is not in that Map, then do nothing.
  */
 extern bool
-xen_sr_remove_from_sm_config(xen_session *session, xen_sr sr, char *key);
+xen_sr_remove_from_sm_config(xen_session *session, xen_sr sr, const char *key);
 
 
 /**
@@ -415,7 +415,7 @@ xen_sr_remove_from_sm_config(xen_session *session, xen_sr sr, char *key);
  * (with specified device_config parameters).
  */
 extern bool
-xen_sr_create(xen_session *session, xen_sr *result, xen_host host, xen_string_string_map *device_config, int64_t physical_size, char *name_label, char *name_description, char *type, char *content_type, bool shared, xen_string_string_map *sm_config);
+xen_sr_create(xen_session *session, xen_sr *result, xen_host host, xen_string_string_map *device_config, int64_t physical_size, const char *name_label, const char *name_description, const char *type, const char *content_type, bool shared, xen_string_string_map *sm_config);
 
 /**
  * Create a new Storage Repository and introduce it into the managed
@@ -423,48 +423,48 @@ xen_sr_create(xen_session *session, xen_sr *result, xen_host host, xen_string_st
  * (with specified device_config parameters).
  */
 extern bool
-xen_sr_create_async(xen_session *session, xen_task *result, xen_host host, xen_string_string_map *device_config, int64_t physical_size, char *name_label, char *name_description, char *type, char *content_type, bool shared, xen_string_string_map *sm_config);
+xen_sr_create_async(xen_session *session, xen_task *result, xen_host host, xen_string_string_map *device_config, int64_t physical_size, const char *name_label, const char *name_description, const char *type, const char *content_type, bool shared, xen_string_string_map *sm_config);
 
 
 /**
  * SR.create for API version 1.1.
  */
 extern bool
-xen_sr_create_1_1(xen_session *session, xen_sr *result, xen_host host, xen_string_string_map *device_config, int64_t physical_size, char *name_label, char *name_description, char *type, char *content_type, bool shared);
+xen_sr_create_1_1(xen_session *session, xen_sr *result, xen_host host, xen_string_string_map *device_config, int64_t physical_size, const char *name_label, const char *name_description, const char *type, const char *content_type, bool shared);
 
 
 /**
  * SR.create for API version 1.1.
  */
 extern bool
-xen_sr_create_1_1_async(xen_session *session, xen_task *result, xen_host host, xen_string_string_map *device_config, int64_t physical_size, char *name_label, char *name_description, char *type, char *content_type, bool shared);
+xen_sr_create_1_1_async(xen_session *session, xen_task *result, xen_host host, xen_string_string_map *device_config, int64_t physical_size, const char *name_label, const char *name_description, const char *type, const char *content_type, bool shared);
 
 
 /**
  * Introduce a new Storage Repository into the managed system.
  */
 extern bool
-xen_sr_introduce(xen_session *session, xen_sr *result, char *uuid, char *name_label, char *name_description, char *type, char *content_type, bool shared, xen_string_string_map *sm_config);
+xen_sr_introduce(xen_session *session, xen_sr *result, const char *uuid, const char *name_label, const char *name_description, const char *type, const char *content_type, bool shared, xen_string_string_map *sm_config);
 
 /**
  * Introduce a new Storage Repository into the managed system.
  */
 extern bool
-xen_sr_introduce_async(xen_session *session, xen_task *result, char *uuid, char *name_label, char *name_description, char *type, char *content_type, bool shared, xen_string_string_map *sm_config);
+xen_sr_introduce_async(xen_session *session, xen_task *result, const char *uuid, const char *name_label, const char *name_description, const char *type, const char *content_type, bool shared, xen_string_string_map *sm_config);
 
 
 /**
  * SR.introduce for API version 1.1.
  */
 extern bool
-xen_sr_introduce_1_1(xen_session *session, xen_sr *result, char *uuid, char *name_label, char *name_description, char *type, char *content_type, bool shared);
+xen_sr_introduce_1_1(xen_session *session, xen_sr *result, const char *uuid, const char *name_label, const char *name_description, const char *type, const char *content_type, bool shared);
 
 
 /**
  * SR.introduce for API version 1.1.
  */
 extern bool
-xen_sr_introduce_1_1_async(xen_session *session, xen_task *result, char *uuid, char *name_label, char *name_description, char *type, char *content_type, bool shared);
+xen_sr_introduce_1_1_async(xen_session *session, xen_task *result, const char *uuid, const char *name_label, const char *name_description, const char *type, const char *content_type, bool shared);
 
 
 /**
@@ -472,28 +472,28 @@ xen_sr_introduce_1_1_async(xen_session *session, xen_task *result, char *uuid, c
  * use SR.create instead.
  */
 extern bool
-xen_sr_make(xen_session *session, char **result, xen_host host, xen_string_string_map *device_config, int64_t physical_size, char *name_label, char *name_description, char *type, char *content_type, xen_string_string_map *sm_config);
+xen_sr_make(xen_session *session, char **result, xen_host host, xen_string_string_map *device_config, int64_t physical_size, const char *name_label, const char *name_description, const char *type, const char *content_type, xen_string_string_map *sm_config);
 
 /**
  * Create a new Storage Repository on disk. This call is deprecated:
  * use SR.create instead.
  */
 extern bool
-xen_sr_make_async(xen_session *session, xen_task *result, xen_host host, xen_string_string_map *device_config, int64_t physical_size, char *name_label, char *name_description, char *type, char *content_type, xen_string_string_map *sm_config);
+xen_sr_make_async(xen_session *session, xen_task *result, xen_host host, xen_string_string_map *device_config, int64_t physical_size, const char *name_label, const char *name_description, const char *type, const char *content_type, xen_string_string_map *sm_config);
 
 
 /**
  * SR.make for API version 1.1.
  */
 extern bool
-xen_sr_make_1_1(xen_session *session, char **result, xen_host host, xen_string_string_map *device_config, int64_t physical_size, char *name_label, char *name_description, char *type, char *content_type);
+xen_sr_make_1_1(xen_session *session, char **result, xen_host host, xen_string_string_map *device_config, int64_t physical_size, const char *name_label, const char *name_description, const char *type, const char *content_type);
 
 
 /**
  * SR.make for API version 1.1.
  */
 extern bool
-xen_sr_make_1_1_async(xen_session *session, xen_task *result, xen_host host, xen_string_string_map *device_config, int64_t physical_size, char *name_label, char *name_description, char *type, char *content_type);
+xen_sr_make_1_1_async(xen_session *session, xen_task *result, xen_host host, xen_string_string_map *device_config, int64_t physical_size, const char *name_label, const char *name_description, const char *type, const char *content_type);
 
 
 /**
@@ -569,7 +569,7 @@ xen_sr_scan_async(xen_session *session, xen_task *result, xen_sr sr);
  * that will guide the user in improving the device_config.
  */
 extern bool
-xen_sr_probe(xen_session *session, char **result, xen_host host, xen_string_string_map *device_config, char *type, xen_string_string_map *sm_config);
+xen_sr_probe(xen_session *session, char **result, xen_host host, xen_string_string_map *device_config, const char *type, xen_string_string_map *sm_config);
 
 /**
  * Perform a backend-specific scan, using the given device_config.  If
@@ -579,7 +579,7 @@ xen_sr_probe(xen_session *session, char **result, xen_host host, xen_string_stri
  * that will guide the user in improving the device_config.
  */
 extern bool
-xen_sr_probe_async(xen_session *session, xen_task *result, xen_host host, xen_string_string_map *device_config, char *type, xen_string_string_map *sm_config);
+xen_sr_probe_async(xen_session *session, xen_task *result, xen_host host, xen_string_string_map *device_config, const char *type, xen_string_string_map *sm_config);
 
 
 /**
@@ -599,26 +599,26 @@ xen_sr_set_shared_async(xen_session *session, xen_task *result, xen_sr sr, bool 
  * Set the name label of the SR.
  */
 extern bool
-xen_sr_set_name_label(xen_session *session, xen_sr sr, char *value);
+xen_sr_set_name_label(xen_session *session, xen_sr sr, const char *value);
 
 /**
  * Set the name label of the SR.
  */
 extern bool
-xen_sr_set_name_label_async(xen_session *session, xen_task *result, xen_sr sr, char *value);
+xen_sr_set_name_label_async(xen_session *session, xen_task *result, xen_sr sr, const char *value);
 
 
 /**
  * Set the name description of the SR.
  */
 extern bool
-xen_sr_set_name_description(xen_session *session, xen_sr sr, char *value);
+xen_sr_set_name_description(xen_session *session, xen_sr sr, const char *value);
 
 /**
  * Set the name description of the SR.
  */
 extern bool
-xen_sr_set_name_description_async(xen_session *session, xen_task *result, xen_sr sr, char *value);
+xen_sr_set_name_description_async(xen_session *session, xen_task *result, xen_sr sr, const char *value);
 
 
 /**
@@ -626,14 +626,14 @@ xen_sr_set_name_description_async(xen_session *session, xen_task *result, xen_sr
  * associated with this SR.
  */
 extern bool
-xen_sr_create_new_blob(xen_session *session, xen_blob *result, xen_sr sr, char *name, char *mime_type, bool pubblic);
+xen_sr_create_new_blob(xen_session *session, xen_blob *result, xen_sr sr, const char *name, const char *mime_type, bool pubblic);
 
 /**
  * Create a placeholder for a named binary blob of data that is
  * associated with this SR.
  */
 extern bool
-xen_sr_create_new_blob_async(xen_session *session, xen_task *result, xen_sr sr, char *name, char *mime_type, bool pubblic);
+xen_sr_create_new_blob_async(xen_session *session, xen_task *result, xen_sr sr, const char *name, const char *mime_type, bool pubblic);
 
 
 /**

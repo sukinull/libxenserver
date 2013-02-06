@@ -189,14 +189,14 @@ xen_task_get_record(xen_session *session, xen_task_record **result, xen_task tas
  * Get a reference to the task instance with the specified UUID.
  */
 extern bool
-xen_task_get_by_uuid(xen_session *session, xen_task *result, char *uuid);
+xen_task_get_by_uuid(xen_session *session, xen_task *result, const char *uuid);
 
 
 /**
  * Get all the task instances with the given label.
  */
 extern bool
-xen_task_get_by_name_label(xen_session *session, struct xen_task_set **result, char *label);
+xen_task_get_by_name_label(xen_session *session, struct xen_task_set **result, const char *label);
 
 
 /**
@@ -323,7 +323,7 @@ xen_task_set_other_config(xen_session *session, xen_task task, xen_string_string
  * task.
  */
 extern bool
-xen_task_add_to_other_config(xen_session *session, xen_task task, char *key, char *value);
+xen_task_add_to_other_config(xen_session *session, xen_task task, const char *key, const char *value);
 
 
 /**
@@ -332,14 +332,14 @@ xen_task_add_to_other_config(xen_session *session, xen_task task, char *key, cha
  * do nothing.
  */
 extern bool
-xen_task_remove_from_other_config(xen_session *session, xen_task task, char *key);
+xen_task_remove_from_other_config(xen_session *session, xen_task task, const char *key);
 
 
 /**
  * Create a new task object which must be manually destroyed.
  */
 extern bool
-xen_task_create(xen_session *session, xen_task *result, char *label, char *description);
+xen_task_create(xen_session *session, xen_task *result, const char *label, const char *description);
 
 
 /**

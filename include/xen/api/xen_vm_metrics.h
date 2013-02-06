@@ -184,7 +184,7 @@ xen_vm_metrics_get_record(xen_session *session, xen_vm_metrics_record **result, 
  * Get a reference to the VM_metrics instance with the specified UUID.
  */
 extern bool
-xen_vm_metrics_get_by_uuid(xen_session *session, xen_vm_metrics *result, char *uuid);
+xen_vm_metrics_get_by_uuid(xen_session *session, xen_vm_metrics *result, const char *uuid);
 
 
 /**
@@ -283,7 +283,7 @@ xen_vm_metrics_set_other_config(xen_session *session, xen_vm_metrics vm_metrics,
  * VM_metrics.
  */
 extern bool
-xen_vm_metrics_add_to_other_config(xen_session *session, xen_vm_metrics vm_metrics, char *key, char *value);
+xen_vm_metrics_add_to_other_config(xen_session *session, xen_vm_metrics vm_metrics, const char *key, const char *value);
 
 
 /**
@@ -292,7 +292,7 @@ xen_vm_metrics_add_to_other_config(xen_session *session, xen_vm_metrics vm_metri
  * then do nothing.
  */
 extern bool
-xen_vm_metrics_remove_from_other_config(xen_session *session, xen_vm_metrics vm_metrics, char *key);
+xen_vm_metrics_remove_from_other_config(xen_session *session, xen_vm_metrics vm_metrics, const char *key);
 
 
 /**

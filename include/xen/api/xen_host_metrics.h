@@ -175,7 +175,7 @@ xen_host_metrics_get_record(xen_session *session, xen_host_metrics_record **resu
  * UUID.
  */
 extern bool
-xen_host_metrics_get_by_uuid(xen_session *session, xen_host_metrics *result, char *uuid);
+xen_host_metrics_get_by_uuid(xen_session *session, xen_host_metrics *result, const char *uuid);
 
 
 /**
@@ -232,7 +232,7 @@ xen_host_metrics_set_other_config(xen_session *session, xen_host_metrics host_me
  * host_metrics.
  */
 extern bool
-xen_host_metrics_add_to_other_config(xen_session *session, xen_host_metrics host_metrics, char *key, char *value);
+xen_host_metrics_add_to_other_config(xen_session *session, xen_host_metrics host_metrics, const char *key, const char *value);
 
 
 /**
@@ -241,7 +241,7 @@ xen_host_metrics_add_to_other_config(xen_session *session, xen_host_metrics host
  * Map, then do nothing.
  */
 extern bool
-xen_host_metrics_remove_from_other_config(xen_session *session, xen_host_metrics host_metrics, char *key);
+xen_host_metrics_remove_from_other_config(xen_session *session, xen_host_metrics host_metrics, const char *key);
 
 
 /**

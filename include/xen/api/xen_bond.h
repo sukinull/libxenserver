@@ -180,7 +180,7 @@ xen_bond_get_record(xen_session *session, xen_bond_record **result, xen_bond bon
  * Get a reference to the Bond instance with the specified UUID.
  */
 extern bool
-xen_bond_get_by_uuid(xen_session *session, xen_bond *result, char *uuid);
+xen_bond_get_by_uuid(xen_session *session, xen_bond *result, const char *uuid);
 
 
 /**
@@ -251,7 +251,7 @@ xen_bond_set_other_config(xen_session *session, xen_bond bond, xen_string_string
  * Bond.
  */
 extern bool
-xen_bond_add_to_other_config(xen_session *session, xen_bond bond, char *key, char *value);
+xen_bond_add_to_other_config(xen_session *session, xen_bond bond, const char *key, const char *value);
 
 
 /**
@@ -260,20 +260,20 @@ xen_bond_add_to_other_config(xen_session *session, xen_bond bond, char *key, cha
  * do nothing.
  */
 extern bool
-xen_bond_remove_from_other_config(xen_session *session, xen_bond bond, char *key);
+xen_bond_remove_from_other_config(xen_session *session, xen_bond bond, const char *key);
 
 
 /**
  * Create an interface bond.
  */
 extern bool
-xen_bond_create(xen_session *session, xen_bond *result, xen_network network, struct xen_pif_set *members, char *mac, enum xen_bond_mode mode, xen_string_string_map *properties);
+xen_bond_create(xen_session *session, xen_bond *result, xen_network network, struct xen_pif_set *members, const char *mac, enum xen_bond_mode mode, xen_string_string_map *properties);
 
 /**
  * Create an interface bond.
  */
 extern bool
-xen_bond_create_async(xen_session *session, xen_task *result, xen_network network, struct xen_pif_set *members, char *mac, enum xen_bond_mode mode, xen_string_string_map *properties);
+xen_bond_create_async(xen_session *session, xen_task *result, xen_network network, struct xen_pif_set *members, const char *mac, enum xen_bond_mode mode, xen_string_string_map *properties);
 
 
 /**
@@ -306,13 +306,13 @@ xen_bond_set_mode_async(xen_session *session, xen_task *result, xen_bond self, e
  * Set the value of a property of the bond.
  */
 extern bool
-xen_bond_set_property(xen_session *session, xen_bond self, char *name, char *value);
+xen_bond_set_property(xen_session *session, xen_bond self, const char *name, const char *value);
 
 /**
  * Set the value of a property of the bond.
  */
 extern bool
-xen_bond_set_property_async(xen_session *session, xen_task *result, xen_bond self, char *name, char *value);
+xen_bond_set_property_async(xen_session *session, xen_task *result, xen_bond self, const char *name, const char *value);
 
 
 /**

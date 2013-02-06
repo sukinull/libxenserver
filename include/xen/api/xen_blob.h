@@ -174,14 +174,14 @@ xen_blob_get_record(xen_session *session, xen_blob_record **result, xen_blob blo
  * Get a reference to the blob instance with the specified UUID.
  */
 extern bool
-xen_blob_get_by_uuid(xen_session *session, xen_blob *result, char *uuid);
+xen_blob_get_by_uuid(xen_session *session, xen_blob *result, const char *uuid);
 
 
 /**
  * Get all the blob instances with the given label.
  */
 extern bool
-xen_blob_get_by_name_label(xen_session *session, struct xen_blob_set **result, char *label);
+xen_blob_get_by_name_label(xen_session *session, struct xen_blob_set **result, const char *label);
 
 
 /**
@@ -237,14 +237,14 @@ xen_blob_get_mime_type(xen_session *session, char **result, xen_blob blob);
  * Set the name/label field of the given blob.
  */
 extern bool
-xen_blob_set_name_label(xen_session *session, xen_blob blob, char *label);
+xen_blob_set_name_label(xen_session *session, xen_blob blob, const char *label);
 
 
 /**
  * Set the name/description field of the given blob.
  */
 extern bool
-xen_blob_set_name_description(xen_session *session, xen_blob blob, char *description);
+xen_blob_set_name_description(xen_session *session, xen_blob blob, const char *description);
 
 
 /**
@@ -258,7 +258,7 @@ xen_blob_set_public(xen_session *session, xen_blob blob, bool pubblic);
  * Create a placeholder for a binary blob.
  */
 extern bool
-xen_blob_create(xen_session *session, xen_blob *result, char *mime_type, bool pubblic);
+xen_blob_create(xen_session *session, xen_blob *result, const char *mime_type, bool pubblic);
 
 
 /**

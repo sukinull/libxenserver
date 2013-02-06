@@ -200,7 +200,7 @@ xen_sr_get_record(xen_session *session, xen_sr_record **result, xen_sr sr)
 
 
 bool
-xen_sr_get_by_uuid(xen_session *session, xen_sr *result, char *uuid)
+xen_sr_get_by_uuid(xen_session *session, xen_sr *result, const char *uuid)
 {
     abstract_value param_values[] =
         {
@@ -217,7 +217,7 @@ xen_sr_get_by_uuid(xen_session *session, xen_sr *result, char *uuid)
 
 
 bool
-xen_sr_get_by_name_label(xen_session *session, struct xen_sr_set **result, char *label)
+xen_sr_get_by_name_label(xen_session *session, struct xen_sr_set **result, const char *label)
 {
     abstract_value param_values[] =
         {
@@ -551,7 +551,7 @@ xen_sr_set_other_config(xen_session *session, xen_sr sr, xen_string_string_map *
 
 
 bool
-xen_sr_add_to_other_config(xen_session *session, xen_sr sr, char *key, char *value)
+xen_sr_add_to_other_config(xen_session *session, xen_sr sr, const char *key, const char *value)
 {
     abstract_value param_values[] =
         {
@@ -569,7 +569,7 @@ xen_sr_add_to_other_config(xen_session *session, xen_sr sr, char *key, char *val
 
 
 bool
-xen_sr_remove_from_other_config(xen_session *session, xen_sr sr, char *key)
+xen_sr_remove_from_other_config(xen_session *session, xen_sr sr, const char *key)
 {
     abstract_value param_values[] =
         {
@@ -601,7 +601,7 @@ xen_sr_set_tags(xen_session *session, xen_sr sr, struct xen_string_set *tags)
 
 
 bool
-xen_sr_add_tags(xen_session *session, xen_sr sr, char *value)
+xen_sr_add_tags(xen_session *session, xen_sr sr, const char *value)
 {
     abstract_value param_values[] =
         {
@@ -617,7 +617,7 @@ xen_sr_add_tags(xen_session *session, xen_sr sr, char *value)
 
 
 bool
-xen_sr_remove_tags(xen_session *session, xen_sr sr, char *value)
+xen_sr_remove_tags(xen_session *session, xen_sr sr, const char *value)
 {
     abstract_value param_values[] =
         {
@@ -649,7 +649,7 @@ xen_sr_set_sm_config(xen_session *session, xen_sr sr, xen_string_string_map *sm_
 
 
 bool
-xen_sr_add_to_sm_config(xen_session *session, xen_sr sr, char *key, char *value)
+xen_sr_add_to_sm_config(xen_session *session, xen_sr sr, const char *key, const char *value)
 {
     abstract_value param_values[] =
         {
@@ -667,7 +667,7 @@ xen_sr_add_to_sm_config(xen_session *session, xen_sr sr, char *key, char *value)
 
 
 bool
-xen_sr_remove_from_sm_config(xen_session *session, xen_sr sr, char *key)
+xen_sr_remove_from_sm_config(xen_session *session, xen_sr sr, const char *key)
 {
     abstract_value param_values[] =
         {
@@ -683,7 +683,7 @@ xen_sr_remove_from_sm_config(xen_session *session, xen_sr sr, char *key)
 
 
 bool
-xen_sr_create(xen_session *session, xen_sr *result, xen_host host, xen_string_string_map *device_config, int64_t physical_size, char *name_label, char *name_description, char *type, char *content_type, bool shared, xen_string_string_map *sm_config)
+xen_sr_create(xen_session *session, xen_sr *result, xen_host host, xen_string_string_map *device_config, int64_t physical_size, const char *name_label, const char *name_description, const char *type, const char *content_type, bool shared, xen_string_string_map *sm_config)
 {
     if (session->api_version == xen_api_version_1_2)
     {
@@ -722,7 +722,7 @@ xen_sr_create(xen_session *session, xen_sr *result, xen_host host, xen_string_st
 }
 
 bool
-xen_sr_create_async(xen_session *session, xen_task *result, xen_host host, xen_string_string_map *device_config, int64_t physical_size, char *name_label, char *name_description, char *type, char *content_type, bool shared, xen_string_string_map *sm_config)
+xen_sr_create_async(xen_session *session, xen_task *result, xen_host host, xen_string_string_map *device_config, int64_t physical_size, const char *name_label, const char *name_description, const char *type, const char *content_type, bool shared, xen_string_string_map *sm_config)
 {
     if (session->api_version == xen_api_version_1_2)
     {
@@ -765,7 +765,7 @@ xen_sr_create_async(xen_session *session, xen_task *result, xen_host host, xen_s
  * SR.create for API version 1.1.
  */
 bool
-xen_sr_create_1_1(xen_session *session, xen_sr *result, xen_host host, xen_string_string_map *device_config, int64_t physical_size, char *name_label, char *name_description, char *type, char *content_type, bool shared)
+xen_sr_create_1_1(xen_session *session, xen_sr *result, xen_host host, xen_string_string_map *device_config, int64_t physical_size, const char *name_label, const char *name_description, const char *type, const char *content_type, bool shared)
 {
     abstract_value param_values[] =
         {
@@ -799,7 +799,7 @@ xen_sr_create_1_1(xen_session *session, xen_sr *result, xen_host host, xen_strin
  * SR.create for API version 1.1.
  */
 bool
-xen_sr_create_1_1_async(xen_session *session, xen_task *result, xen_host host, xen_string_string_map *device_config, int64_t physical_size, char *name_label, char *name_description, char *type, char *content_type, bool shared)
+xen_sr_create_1_1_async(xen_session *session, xen_task *result, xen_host host, xen_string_string_map *device_config, int64_t physical_size, const char *name_label, const char *name_description, const char *type, const char *content_type, bool shared)
 {
     abstract_value param_values[] =
         {
@@ -830,7 +830,7 @@ xen_sr_create_1_1_async(xen_session *session, xen_task *result, xen_host host, x
 
 
 bool
-xen_sr_introduce(xen_session *session, xen_sr *result, char *uuid, char *name_label, char *name_description, char *type, char *content_type, bool shared, xen_string_string_map *sm_config)
+xen_sr_introduce(xen_session *session, xen_sr *result, const char *uuid, const char *name_label, const char *name_description, const char *type, const char *content_type, bool shared, xen_string_string_map *sm_config)
 {
     if (session->api_version == xen_api_version_1_2)
     {
@@ -865,7 +865,7 @@ xen_sr_introduce(xen_session *session, xen_sr *result, char *uuid, char *name_la
 }
 
 bool
-xen_sr_introduce_async(xen_session *session, xen_task *result, char *uuid, char *name_label, char *name_description, char *type, char *content_type, bool shared, xen_string_string_map *sm_config)
+xen_sr_introduce_async(xen_session *session, xen_task *result, const char *uuid, const char *name_label, const char *name_description, const char *type, const char *content_type, bool shared, xen_string_string_map *sm_config)
 {
     if (session->api_version == xen_api_version_1_2)
     {
@@ -904,7 +904,7 @@ xen_sr_introduce_async(xen_session *session, xen_task *result, char *uuid, char 
  * SR.introduce for API version 1.1.
  */
 bool
-xen_sr_introduce_1_1(xen_session *session, xen_sr *result, char *uuid, char *name_label, char *name_description, char *type, char *content_type, bool shared)
+xen_sr_introduce_1_1(xen_session *session, xen_sr *result, const char *uuid, const char *name_label, const char *name_description, const char *type, const char *content_type, bool shared)
 {
     abstract_value param_values[] =
         {
@@ -934,7 +934,7 @@ xen_sr_introduce_1_1(xen_session *session, xen_sr *result, char *uuid, char *nam
  * SR.introduce for API version 1.1.
  */
 bool
-xen_sr_introduce_1_1_async(xen_session *session, xen_task *result, char *uuid, char *name_label, char *name_description, char *type, char *content_type, bool shared)
+xen_sr_introduce_1_1_async(xen_session *session, xen_task *result, const char *uuid, const char *name_label, const char *name_description, const char *type, const char *content_type, bool shared)
 {
     abstract_value param_values[] =
         {
@@ -961,7 +961,7 @@ xen_sr_introduce_1_1_async(xen_session *session, xen_task *result, char *uuid, c
 
 
 bool
-xen_sr_make(xen_session *session, char **result, xen_host host, xen_string_string_map *device_config, int64_t physical_size, char *name_label, char *name_description, char *type, char *content_type, xen_string_string_map *sm_config)
+xen_sr_make(xen_session *session, char **result, xen_host host, xen_string_string_map *device_config, int64_t physical_size, const char *name_label, const char *name_description, const char *type, const char *content_type, xen_string_string_map *sm_config)
 {
     if (session->api_version == xen_api_version_1_2)
     {
@@ -998,7 +998,7 @@ xen_sr_make(xen_session *session, char **result, xen_host host, xen_string_strin
 }
 
 bool
-xen_sr_make_async(xen_session *session, xen_task *result, xen_host host, xen_string_string_map *device_config, int64_t physical_size, char *name_label, char *name_description, char *type, char *content_type, xen_string_string_map *sm_config)
+xen_sr_make_async(xen_session *session, xen_task *result, xen_host host, xen_string_string_map *device_config, int64_t physical_size, const char *name_label, const char *name_description, const char *type, const char *content_type, xen_string_string_map *sm_config)
 {
     if (session->api_version == xen_api_version_1_2)
     {
@@ -1039,7 +1039,7 @@ xen_sr_make_async(xen_session *session, xen_task *result, xen_host host, xen_str
  * SR.make for API version 1.1.
  */
 bool
-xen_sr_make_1_1(xen_session *session, char **result, xen_host host, xen_string_string_map *device_config, int64_t physical_size, char *name_label, char *name_description, char *type, char *content_type)
+xen_sr_make_1_1(xen_session *session, char **result, xen_host host, xen_string_string_map *device_config, int64_t physical_size, const char *name_label, const char *name_description, const char *type, const char *content_type)
 {
     abstract_value param_values[] =
         {
@@ -1071,7 +1071,7 @@ xen_sr_make_1_1(xen_session *session, char **result, xen_host host, xen_string_s
  * SR.make for API version 1.1.
  */
 bool
-xen_sr_make_1_1_async(xen_session *session, xen_task *result, xen_host host, xen_string_string_map *device_config, int64_t physical_size, char *name_label, char *name_description, char *type, char *content_type)
+xen_sr_make_1_1_async(xen_session *session, xen_task *result, xen_host host, xen_string_string_map *device_config, int64_t physical_size, const char *name_label, const char *name_description, const char *type, const char *content_type)
 {
     abstract_value param_values[] =
         {
@@ -1227,7 +1227,7 @@ xen_sr_scan_async(xen_session *session, xen_task *result, xen_sr sr)
 }
 
 bool
-xen_sr_probe(xen_session *session, char **result, xen_host host, xen_string_string_map *device_config, char *type, xen_string_string_map *sm_config)
+xen_sr_probe(xen_session *session, char **result, xen_host host, xen_string_string_map *device_config, const char *type, xen_string_string_map *sm_config)
 {
     abstract_value param_values[] =
         {
@@ -1249,7 +1249,7 @@ xen_sr_probe(xen_session *session, char **result, xen_host host, xen_string_stri
 }
 
 bool
-xen_sr_probe_async(xen_session *session, xen_task *result, xen_host host, xen_string_string_map *device_config, char *type, xen_string_string_map *sm_config)
+xen_sr_probe_async(xen_session *session, xen_task *result, xen_host host, xen_string_string_map *device_config, const char *type, xen_string_string_map *sm_config)
 {
     abstract_value param_values[] =
         {
@@ -1304,7 +1304,7 @@ xen_sr_set_shared_async(xen_session *session, xen_task *result, xen_sr sr, bool 
 }
 
 bool
-xen_sr_set_name_label(xen_session *session, xen_sr sr, char *value)
+xen_sr_set_name_label(xen_session *session, xen_sr sr, const char *value)
 {
     abstract_value param_values[] =
         {
@@ -1319,7 +1319,7 @@ xen_sr_set_name_label(xen_session *session, xen_sr sr, char *value)
 }
 
 bool
-xen_sr_set_name_label_async(xen_session *session, xen_task *result, xen_sr sr, char *value)
+xen_sr_set_name_label_async(xen_session *session, xen_task *result, xen_sr sr, const char *value)
 {
     abstract_value param_values[] =
         {
@@ -1337,7 +1337,7 @@ xen_sr_set_name_label_async(xen_session *session, xen_task *result, xen_sr sr, c
 }
 
 bool
-xen_sr_set_name_description(xen_session *session, xen_sr sr, char *value)
+xen_sr_set_name_description(xen_session *session, xen_sr sr, const char *value)
 {
     abstract_value param_values[] =
         {
@@ -1352,7 +1352,7 @@ xen_sr_set_name_description(xen_session *session, xen_sr sr, char *value)
 }
 
 bool
-xen_sr_set_name_description_async(xen_session *session, xen_task *result, xen_sr sr, char *value)
+xen_sr_set_name_description_async(xen_session *session, xen_task *result, xen_sr sr, const char *value)
 {
     abstract_value param_values[] =
         {
@@ -1370,7 +1370,7 @@ xen_sr_set_name_description_async(xen_session *session, xen_task *result, xen_sr
 }
 
 bool
-xen_sr_create_new_blob(xen_session *session, xen_blob *result, xen_sr sr, char *name, char *mime_type, bool pubblic)
+xen_sr_create_new_blob(xen_session *session, xen_blob *result, xen_sr sr, const char *name, const char *mime_type, bool pubblic)
 {
     abstract_value param_values[] =
         {
@@ -1392,7 +1392,7 @@ xen_sr_create_new_blob(xen_session *session, xen_blob *result, xen_sr sr, char *
 }
 
 bool
-xen_sr_create_new_blob_async(xen_session *session, xen_task *result, xen_sr sr, char *name, char *mime_type, bool pubblic)
+xen_sr_create_new_blob_async(xen_session *session, xen_task *result, xen_sr sr, const char *name, const char *mime_type, bool pubblic)
 {
     abstract_value param_values[] =
         {

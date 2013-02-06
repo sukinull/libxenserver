@@ -136,7 +136,7 @@ xen_subject_get_record(xen_session *session, xen_subject_record **result, xen_su
 
 
 bool
-xen_subject_get_by_uuid(xen_session *session, xen_subject *result, char *uuid)
+xen_subject_get_by_uuid(xen_session *session, xen_subject *result, const char *uuid)
 {
     abstract_value param_values[] =
         {

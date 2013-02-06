@@ -136,7 +136,7 @@ xen_vbd_metrics_get_record(xen_session *session, xen_vbd_metrics_record **result
 
 
 bool
-xen_vbd_metrics_get_by_uuid(xen_session *session, xen_vbd_metrics *result, char *uuid)
+xen_vbd_metrics_get_by_uuid(xen_session *session, xen_vbd_metrics *result, const char *uuid)
 {
     abstract_value param_values[] =
         {
@@ -234,7 +234,7 @@ xen_vbd_metrics_set_other_config(xen_session *session, xen_vbd_metrics vbd_metri
 
 
 bool
-xen_vbd_metrics_add_to_other_config(xen_session *session, xen_vbd_metrics vbd_metrics, char *key, char *value)
+xen_vbd_metrics_add_to_other_config(xen_session *session, xen_vbd_metrics vbd_metrics, const char *key, const char *value)
 {
     abstract_value param_values[] =
         {
@@ -252,7 +252,7 @@ xen_vbd_metrics_add_to_other_config(xen_session *session, xen_vbd_metrics vbd_me
 
 
 bool
-xen_vbd_metrics_remove_from_other_config(xen_session *session, xen_vbd_metrics vbd_metrics, char *key)
+xen_vbd_metrics_remove_from_other_config(xen_session *session, xen_vbd_metrics vbd_metrics, const char *key)
 {
     abstract_value param_values[] =
         {

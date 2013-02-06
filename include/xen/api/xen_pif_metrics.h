@@ -181,7 +181,7 @@ xen_pif_metrics_get_record(xen_session *session, xen_pif_metrics_record **result
  * Get a reference to the PIF_metrics instance with the specified UUID.
  */
 extern bool
-xen_pif_metrics_get_by_uuid(xen_session *session, xen_pif_metrics *result, char *uuid);
+xen_pif_metrics_get_by_uuid(xen_session *session, xen_pif_metrics *result, const char *uuid);
 
 
 /**
@@ -287,7 +287,7 @@ xen_pif_metrics_set_other_config(xen_session *session, xen_pif_metrics pif_metri
  * PIF_metrics.
  */
 extern bool
-xen_pif_metrics_add_to_other_config(xen_session *session, xen_pif_metrics pif_metrics, char *key, char *value);
+xen_pif_metrics_add_to_other_config(xen_session *session, xen_pif_metrics pif_metrics, const char *key, const char *value);
 
 
 /**
@@ -296,7 +296,7 @@ xen_pif_metrics_add_to_other_config(xen_session *session, xen_pif_metrics pif_me
  * Map, then do nothing.
  */
 extern bool
-xen_pif_metrics_remove_from_other_config(xen_session *session, xen_pif_metrics pif_metrics, char *key);
+xen_pif_metrics_remove_from_other_config(xen_session *session, xen_pif_metrics pif_metrics, const char *key);
 
 
 /**

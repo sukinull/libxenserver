@@ -182,7 +182,7 @@ xen_host_cpu_get_record(xen_session *session, xen_host_cpu_record **result, xen_
  * Get a reference to the host_cpu instance with the specified UUID.
  */
 extern bool
-xen_host_cpu_get_by_uuid(xen_session *session, xen_host_cpu *result, char *uuid);
+xen_host_cpu_get_by_uuid(xen_session *session, xen_host_cpu *result, const char *uuid);
 
 
 /**
@@ -288,7 +288,7 @@ xen_host_cpu_set_other_config(xen_session *session, xen_host_cpu host_cpu, xen_s
  * host_cpu.
  */
 extern bool
-xen_host_cpu_add_to_other_config(xen_session *session, xen_host_cpu host_cpu, char *key, char *value);
+xen_host_cpu_add_to_other_config(xen_session *session, xen_host_cpu host_cpu, const char *key, const char *value);
 
 
 /**
@@ -297,7 +297,7 @@ xen_host_cpu_add_to_other_config(xen_session *session, xen_host_cpu host_cpu, ch
  * then do nothing.
  */
 extern bool
-xen_host_cpu_remove_from_other_config(xen_session *session, xen_host_cpu host_cpu, char *key);
+xen_host_cpu_remove_from_other_config(xen_session *session, xen_host_cpu host_cpu, const char *key);
 
 
 /**

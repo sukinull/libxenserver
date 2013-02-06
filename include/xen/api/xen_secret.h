@@ -172,7 +172,7 @@ xen_secret_get_record(xen_session *session, xen_secret_record **result, xen_secr
  * Get a reference to the secret instance with the specified UUID.
  */
 extern bool
-xen_secret_get_by_uuid(xen_session *session, xen_secret *result, char *uuid);
+xen_secret_get_by_uuid(xen_session *session, xen_secret *result, const char *uuid);
 
 
 /**
@@ -226,7 +226,7 @@ xen_secret_get_other_config(xen_session *session, xen_string_string_map **result
  * Set the value field of the given secret.
  */
 extern bool
-xen_secret_set_value(xen_session *session, xen_secret secret, char *value);
+xen_secret_set_value(xen_session *session, xen_secret secret, const char *value);
 
 
 /**
@@ -241,7 +241,7 @@ xen_secret_set_other_config(xen_session *session, xen_secret secret, xen_string_
  * secret.
  */
 extern bool
-xen_secret_add_to_other_config(xen_session *session, xen_secret secret, char *key, char *value);
+xen_secret_add_to_other_config(xen_session *session, xen_secret secret, const char *key, const char *value);
 
 
 /**
@@ -250,7 +250,7 @@ xen_secret_add_to_other_config(xen_session *session, xen_secret secret, char *ke
  * then do nothing.
  */
 extern bool
-xen_secret_remove_from_other_config(xen_session *session, xen_secret secret, char *key);
+xen_secret_remove_from_other_config(xen_session *session, xen_secret secret, const char *key);
 
 
 /**

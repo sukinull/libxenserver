@@ -178,7 +178,7 @@ xen_network_get_record(xen_session *session, xen_network_record **result, xen_ne
 
 
 bool
-xen_network_get_by_uuid(xen_session *session, xen_network *result, char *uuid)
+xen_network_get_by_uuid(xen_session *session, xen_network *result, const char *uuid)
 {
     abstract_value param_values[] =
         {
@@ -256,7 +256,7 @@ xen_network_destroy_async(xen_session *session, xen_task *result, xen_network ne
 }
 
 bool
-xen_network_get_by_name_label(xen_session *session, struct xen_network_set **result, char *label)
+xen_network_get_by_name_label(xen_session *session, struct xen_network_set **result, const char *label)
 {
     abstract_value param_values[] =
         {
@@ -474,7 +474,7 @@ xen_network_get_default_locking_mode(xen_session *session, enum xen_network_defa
 
 
 bool
-xen_network_set_name_label(xen_session *session, xen_network network, char *label)
+xen_network_set_name_label(xen_session *session, xen_network network, const char *label)
 {
     abstract_value param_values[] =
         {
@@ -490,7 +490,7 @@ xen_network_set_name_label(xen_session *session, xen_network network, char *labe
 
 
 bool
-xen_network_set_name_description(xen_session *session, xen_network network, char *description)
+xen_network_set_name_description(xen_session *session, xen_network network, const char *description)
 {
     abstract_value param_values[] =
         {
@@ -538,7 +538,7 @@ xen_network_set_other_config(xen_session *session, xen_network network, xen_stri
 
 
 bool
-xen_network_add_to_other_config(xen_session *session, xen_network network, char *key, char *value)
+xen_network_add_to_other_config(xen_session *session, xen_network network, const char *key, const char *value)
 {
     abstract_value param_values[] =
         {
@@ -556,7 +556,7 @@ xen_network_add_to_other_config(xen_session *session, xen_network network, char 
 
 
 bool
-xen_network_remove_from_other_config(xen_session *session, xen_network network, char *key)
+xen_network_remove_from_other_config(xen_session *session, xen_network network, const char *key)
 {
     abstract_value param_values[] =
         {
@@ -588,7 +588,7 @@ xen_network_set_tags(xen_session *session, xen_network network, struct xen_strin
 
 
 bool
-xen_network_add_tags(xen_session *session, xen_network network, char *value)
+xen_network_add_tags(xen_session *session, xen_network network, const char *value)
 {
     abstract_value param_values[] =
         {
@@ -604,7 +604,7 @@ xen_network_add_tags(xen_session *session, xen_network network, char *value)
 
 
 bool
-xen_network_remove_tags(xen_session *session, xen_network network, char *value)
+xen_network_remove_tags(xen_session *session, xen_network network, const char *value)
 {
     abstract_value param_values[] =
         {
@@ -620,7 +620,7 @@ xen_network_remove_tags(xen_session *session, xen_network network, char *value)
 
 
 bool
-xen_network_create_new_blob(xen_session *session, xen_blob *result, xen_network network, char *name, char *mime_type, bool pubblic)
+xen_network_create_new_blob(xen_session *session, xen_blob *result, xen_network network, const char *name, const char *mime_type, bool pubblic)
 {
     abstract_value param_values[] =
         {
@@ -642,7 +642,7 @@ xen_network_create_new_blob(xen_session *session, xen_blob *result, xen_network 
 }
 
 bool
-xen_network_create_new_blob_async(xen_session *session, xen_task *result, xen_network network, char *name, char *mime_type, bool pubblic)
+xen_network_create_new_blob_async(xen_session *session, xen_task *result, xen_network network, const char *name, const char *mime_type, bool pubblic)
 {
     abstract_value param_values[] =
         {

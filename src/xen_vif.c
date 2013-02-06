@@ -206,7 +206,7 @@ xen_vif_get_record(xen_session *session, xen_vif_record **result, xen_vif vif)
 
 
 bool
-xen_vif_get_by_uuid(xen_session *session, xen_vif *result, char *uuid)
+xen_vif_get_by_uuid(xen_session *session, xen_vif *result, const char *uuid)
 {
     abstract_value param_values[] =
         {
@@ -634,7 +634,7 @@ xen_vif_set_other_config(xen_session *session, xen_vif vif, xen_string_string_ma
 
 
 bool
-xen_vif_add_to_other_config(xen_session *session, xen_vif vif, char *key, char *value)
+xen_vif_add_to_other_config(xen_session *session, xen_vif vif, const char *key, const char *value)
 {
     abstract_value param_values[] =
         {
@@ -652,7 +652,7 @@ xen_vif_add_to_other_config(xen_session *session, xen_vif vif, char *key, char *
 
 
 bool
-xen_vif_remove_from_other_config(xen_session *session, xen_vif vif, char *key)
+xen_vif_remove_from_other_config(xen_session *session, xen_vif vif, const char *key)
 {
     abstract_value param_values[] =
         {
@@ -668,7 +668,7 @@ xen_vif_remove_from_other_config(xen_session *session, xen_vif vif, char *key)
 
 
 bool
-xen_vif_set_qos_algorithm_type(xen_session *session, xen_vif vif, char *algorithm_type)
+xen_vif_set_qos_algorithm_type(xen_session *session, xen_vif vif, const char *algorithm_type)
 {
     abstract_value param_values[] =
         {
@@ -700,7 +700,7 @@ xen_vif_set_qos_algorithm_params(xen_session *session, xen_vif vif, xen_string_s
 
 
 bool
-xen_vif_add_to_qos_algorithm_params(xen_session *session, xen_vif vif, char *key, char *value)
+xen_vif_add_to_qos_algorithm_params(xen_session *session, xen_vif vif, const char *key, const char *value)
 {
     abstract_value param_values[] =
         {
@@ -718,7 +718,7 @@ xen_vif_add_to_qos_algorithm_params(xen_session *session, xen_vif vif, char *key
 
 
 bool
-xen_vif_remove_from_qos_algorithm_params(xen_session *session, xen_vif vif, char *key)
+xen_vif_remove_from_qos_algorithm_params(xen_session *session, xen_vif vif, const char *key)
 {
     abstract_value param_values[] =
         {
@@ -887,7 +887,7 @@ xen_vif_set_ipv4_allowed_async(xen_session *session, xen_task *result, xen_vif s
 }
 
 bool
-xen_vif_add_ipv4_allowed(xen_session *session, xen_vif self, char *value)
+xen_vif_add_ipv4_allowed(xen_session *session, xen_vif self, const char *value)
 {
     abstract_value param_values[] =
         {
@@ -902,7 +902,7 @@ xen_vif_add_ipv4_allowed(xen_session *session, xen_vif self, char *value)
 }
 
 bool
-xen_vif_add_ipv4_allowed_async(xen_session *session, xen_task *result, xen_vif self, char *value)
+xen_vif_add_ipv4_allowed_async(xen_session *session, xen_task *result, xen_vif self, const char *value)
 {
     abstract_value param_values[] =
         {
@@ -920,7 +920,7 @@ xen_vif_add_ipv4_allowed_async(xen_session *session, xen_task *result, xen_vif s
 }
 
 bool
-xen_vif_remove_ipv4_allowed(xen_session *session, xen_vif self, char *value)
+xen_vif_remove_ipv4_allowed(xen_session *session, xen_vif self, const char *value)
 {
     abstract_value param_values[] =
         {
@@ -935,7 +935,7 @@ xen_vif_remove_ipv4_allowed(xen_session *session, xen_vif self, char *value)
 }
 
 bool
-xen_vif_remove_ipv4_allowed_async(xen_session *session, xen_task *result, xen_vif self, char *value)
+xen_vif_remove_ipv4_allowed_async(xen_session *session, xen_task *result, xen_vif self, const char *value)
 {
     abstract_value param_values[] =
         {
@@ -986,7 +986,7 @@ xen_vif_set_ipv6_allowed_async(xen_session *session, xen_task *result, xen_vif s
 }
 
 bool
-xen_vif_add_ipv6_allowed(xen_session *session, xen_vif self, char *value)
+xen_vif_add_ipv6_allowed(xen_session *session, xen_vif self, const char *value)
 {
     abstract_value param_values[] =
         {
@@ -1001,7 +1001,7 @@ xen_vif_add_ipv6_allowed(xen_session *session, xen_vif self, char *value)
 }
 
 bool
-xen_vif_add_ipv6_allowed_async(xen_session *session, xen_task *result, xen_vif self, char *value)
+xen_vif_add_ipv6_allowed_async(xen_session *session, xen_task *result, xen_vif self, const char *value)
 {
     abstract_value param_values[] =
         {
@@ -1019,7 +1019,7 @@ xen_vif_add_ipv6_allowed_async(xen_session *session, xen_task *result, xen_vif s
 }
 
 bool
-xen_vif_remove_ipv6_allowed(xen_session *session, xen_vif self, char *value)
+xen_vif_remove_ipv6_allowed(xen_session *session, xen_vif self, const char *value)
 {
     abstract_value param_values[] =
         {
@@ -1034,7 +1034,7 @@ xen_vif_remove_ipv6_allowed(xen_session *session, xen_vif self, char *value)
 }
 
 bool
-xen_vif_remove_ipv6_allowed_async(xen_session *session, xen_task *result, xen_vif self, char *value)
+xen_vif_remove_ipv6_allowed_async(xen_session *session, xen_task *result, xen_vif self, const char *value)
 {
     abstract_value param_values[] =
         {

@@ -321,7 +321,7 @@ xen_host_get_record(xen_session *session, xen_host_record **result, xen_host hos
 
 
 bool
-xen_host_get_by_uuid(xen_session *session, xen_host *result, char *uuid)
+xen_host_get_by_uuid(xen_session *session, xen_host *result, const char *uuid)
 {
     abstract_value param_values[] =
         {
@@ -338,7 +338,7 @@ xen_host_get_by_uuid(xen_session *session, xen_host *result, char *uuid)
 
 
 bool
-xen_host_get_by_name_label(xen_session *session, struct xen_host_set **result, char *label)
+xen_host_get_by_name_label(xen_session *session, struct xen_host_set **result, const char *label)
 {
     abstract_value param_values[] =
         {
@@ -1133,7 +1133,7 @@ xen_host_get_pgpus(xen_session *session, struct xen_pgpu_set **result, xen_host 
 
 
 bool
-xen_host_set_name_label(xen_session *session, xen_host host, char *label)
+xen_host_set_name_label(xen_session *session, xen_host host, const char *label)
 {
     abstract_value param_values[] =
         {
@@ -1149,7 +1149,7 @@ xen_host_set_name_label(xen_session *session, xen_host host, char *label)
 
 
 bool
-xen_host_set_name_description(xen_session *session, xen_host host, char *description)
+xen_host_set_name_description(xen_session *session, xen_host host, const char *description)
 {
     abstract_value param_values[] =
         {
@@ -1181,7 +1181,7 @@ xen_host_set_other_config(xen_session *session, xen_host host, xen_string_string
 
 
 bool
-xen_host_add_to_other_config(xen_session *session, xen_host host, char *key, char *value)
+xen_host_add_to_other_config(xen_session *session, xen_host host, const char *key, const char *value)
 {
     abstract_value param_values[] =
         {
@@ -1199,7 +1199,7 @@ xen_host_add_to_other_config(xen_session *session, xen_host host, char *key, cha
 
 
 bool
-xen_host_remove_from_other_config(xen_session *session, xen_host host, char *key)
+xen_host_remove_from_other_config(xen_session *session, xen_host host, const char *key)
 {
     abstract_value param_values[] =
         {
@@ -1231,7 +1231,7 @@ xen_host_set_logging(xen_session *session, xen_host host, xen_string_string_map 
 
 
 bool
-xen_host_add_to_logging(xen_session *session, xen_host host, char *key, char *value)
+xen_host_add_to_logging(xen_session *session, xen_host host, const char *key, const char *value)
 {
     abstract_value param_values[] =
         {
@@ -1249,7 +1249,7 @@ xen_host_add_to_logging(xen_session *session, xen_host host, char *key, char *va
 
 
 bool
-xen_host_remove_from_logging(xen_session *session, xen_host host, char *key)
+xen_host_remove_from_logging(xen_session *session, xen_host host, const char *key)
 {
     abstract_value param_values[] =
         {
@@ -1297,7 +1297,7 @@ xen_host_set_crash_dump_sr(xen_session *session, xen_host host, xen_sr crash_dum
 
 
 bool
-xen_host_set_hostname(xen_session *session, xen_host host, char *hostname)
+xen_host_set_hostname(xen_session *session, xen_host host, const char *hostname)
 {
     abstract_value param_values[] =
         {
@@ -1313,7 +1313,7 @@ xen_host_set_hostname(xen_session *session, xen_host host, char *hostname)
 
 
 bool
-xen_host_set_address(xen_session *session, xen_host host, char *address)
+xen_host_set_address(xen_session *session, xen_host host, const char *address)
 {
     abstract_value param_values[] =
         {
@@ -1345,7 +1345,7 @@ xen_host_set_tags(xen_session *session, xen_host host, struct xen_string_set *ta
 
 
 bool
-xen_host_add_tags(xen_session *session, xen_host host, char *value)
+xen_host_add_tags(xen_session *session, xen_host host, const char *value)
 {
     abstract_value param_values[] =
         {
@@ -1361,7 +1361,7 @@ xen_host_add_tags(xen_session *session, xen_host host, char *value)
 
 
 bool
-xen_host_remove_tags(xen_session *session, xen_host host, char *value)
+xen_host_remove_tags(xen_session *session, xen_host host, const char *value)
 {
     abstract_value param_values[] =
         {
@@ -1393,7 +1393,7 @@ xen_host_set_license_server(xen_session *session, xen_host host, xen_string_stri
 
 
 bool
-xen_host_add_to_license_server(xen_session *session, xen_host host, char *key, char *value)
+xen_host_add_to_license_server(xen_session *session, xen_host host, const char *key, const char *value)
 {
     abstract_value param_values[] =
         {
@@ -1411,7 +1411,7 @@ xen_host_add_to_license_server(xen_session *session, xen_host host, char *key, c
 
 
 bool
-xen_host_remove_from_license_server(xen_session *session, xen_host host, char *key)
+xen_host_remove_from_license_server(xen_session *session, xen_host host, const char *key)
 {
     abstract_value param_values[] =
         {
@@ -1639,7 +1639,7 @@ xen_host_get_log_async(xen_session *session, xen_task *result, xen_host host)
 }
 
 bool
-xen_host_send_debug_keys(xen_session *session, xen_host host, char *keys)
+xen_host_send_debug_keys(xen_session *session, xen_host host, const char *keys)
 {
     abstract_value param_values[] =
         {
@@ -1654,7 +1654,7 @@ xen_host_send_debug_keys(xen_session *session, xen_host host, char *keys)
 }
 
 bool
-xen_host_send_debug_keys_async(xen_session *session, xen_task *result, xen_host host, char *keys)
+xen_host_send_debug_keys_async(xen_session *session, xen_task *result, xen_host host, const char *keys)
 {
     abstract_value param_values[] =
         {
@@ -1672,7 +1672,7 @@ xen_host_send_debug_keys_async(xen_session *session, xen_task *result, xen_host 
 }
 
 bool
-xen_host_bugreport_upload(xen_session *session, xen_host host, char *url, xen_string_string_map *options)
+xen_host_bugreport_upload(xen_session *session, xen_host host, const char *url, xen_string_string_map *options)
 {
     abstract_value param_values[] =
         {
@@ -1689,7 +1689,7 @@ xen_host_bugreport_upload(xen_session *session, xen_host host, char *url, xen_st
 }
 
 bool
-xen_host_bugreport_upload_async(xen_session *session, xen_task *result, xen_host host, char *url, xen_string_string_map *options)
+xen_host_bugreport_upload_async(xen_session *session, xen_task *result, xen_host host, const char *url, xen_string_string_map *options)
 {
     abstract_value param_values[] =
         {
@@ -1721,7 +1721,7 @@ xen_host_list_methods(xen_session *session, struct xen_string_set **result)
 
 
 bool
-xen_host_license_apply(xen_session *session, xen_host host, char *contents)
+xen_host_license_apply(xen_session *session, xen_host host, const char *contents)
 {
     abstract_value param_values[] =
         {
@@ -1736,7 +1736,7 @@ xen_host_license_apply(xen_session *session, xen_host host, char *contents)
 }
 
 bool
-xen_host_license_apply_async(xen_session *session, xen_task *result, xen_host host, char *contents)
+xen_host_license_apply_async(xen_session *session, xen_task *result, xen_host host, const char *contents)
 {
     abstract_value param_values[] =
         {
@@ -1821,7 +1821,7 @@ xen_host_emergency_ha_disable(xen_session *session)
 
 
 bool
-xen_host_record_data_source(xen_session *session, xen_host host, char *data_source)
+xen_host_record_data_source(xen_session *session, xen_host host, const char *data_source)
 {
     abstract_value param_values[] =
         {
@@ -1837,7 +1837,7 @@ xen_host_record_data_source(xen_session *session, xen_host host, char *data_sour
 
 
 bool
-xen_host_query_data_source(xen_session *session, double *result, xen_host host, char *data_source)
+xen_host_query_data_source(xen_session *session, double *result, xen_host host, const char *data_source)
 {
     abstract_value param_values[] =
         {
@@ -1855,7 +1855,7 @@ xen_host_query_data_source(xen_session *session, double *result, xen_host host, 
 
 
 bool
-xen_host_forget_data_source_archives(xen_session *session, xen_host host, char *data_source)
+xen_host_forget_data_source_archives(xen_session *session, xen_host host, const char *data_source)
 {
     abstract_value param_values[] =
         {
@@ -2051,7 +2051,7 @@ xen_host_management_reconfigure_async(xen_session *session, xen_task *result, xe
 }
 
 bool
-xen_host_local_management_reconfigure(xen_session *session, char *interface)
+xen_host_local_management_reconfigure(xen_session *session, const char *interface)
 {
     abstract_value param_values[] =
         {
@@ -2161,7 +2161,7 @@ xen_host_shutdown_agent(xen_session *session)
 
 
 bool
-xen_host_set_hostname_live(xen_session *session, xen_host host, char *hostname)
+xen_host_set_hostname_live(xen_session *session, xen_host host, const char *hostname)
 {
     abstract_value param_values[] =
         {
@@ -2269,7 +2269,7 @@ xen_host_backup_rrds(xen_session *session, xen_host host, double delay)
 
 
 bool
-xen_host_create_new_blob(xen_session *session, xen_blob *result, xen_host host, char *name, char *mime_type, bool pubblic)
+xen_host_create_new_blob(xen_session *session, xen_blob *result, xen_host host, const char *name, const char *mime_type, bool pubblic)
 {
     abstract_value param_values[] =
         {
@@ -2291,7 +2291,7 @@ xen_host_create_new_blob(xen_session *session, xen_blob *result, xen_host host, 
 }
 
 bool
-xen_host_create_new_blob_async(xen_session *session, xen_task *result, xen_host host, char *name, char *mime_type, bool pubblic)
+xen_host_create_new_blob_async(xen_session *session, xen_task *result, xen_host host, const char *name, const char *mime_type, bool pubblic)
 {
     abstract_value param_values[] =
         {
@@ -2313,7 +2313,7 @@ xen_host_create_new_blob_async(xen_session *session, xen_task *result, xen_host 
 }
 
 bool
-xen_host_call_plugin(xen_session *session, char **result, xen_host host, char *plugin, char *fn, xen_string_string_map *args)
+xen_host_call_plugin(xen_session *session, char **result, xen_host host, const char *plugin, const char *fn, xen_string_string_map *args)
 {
     abstract_value param_values[] =
         {
@@ -2335,7 +2335,7 @@ xen_host_call_plugin(xen_session *session, char **result, xen_host host, char *p
 }
 
 bool
-xen_host_call_plugin_async(xen_session *session, xen_task *result, xen_host host, char *plugin, char *fn, xen_string_string_map *args)
+xen_host_call_plugin_async(xen_session *session, xen_task *result, xen_host host, const char *plugin, const char *fn, xen_string_string_map *args)
 {
     abstract_value param_values[] =
         {
@@ -2389,7 +2389,7 @@ xen_host_get_server_localtime(xen_session *session, time_t *result, xen_host hos
 
 
 bool
-xen_host_enable_external_auth(xen_session *session, xen_host host, xen_string_string_map *config, char *service_name, char *auth_type)
+xen_host_enable_external_auth(xen_session *session, xen_host host, xen_string_string_map *config, const char *service_name, const char *auth_type)
 {
     abstract_value param_values[] =
         {
@@ -2489,7 +2489,7 @@ xen_host_get_server_certificate_async(xen_session *session, xen_task *result, xe
 }
 
 bool
-xen_host_apply_edition(xen_session *session, xen_host host, char *edition)
+xen_host_apply_edition(xen_session *session, xen_host host, const char *edition)
 {
     abstract_value param_values[] =
         {
@@ -2534,7 +2534,7 @@ xen_host_refresh_pack_info_async(xen_session *session, xen_task *result, xen_hos
 }
 
 bool
-xen_host_set_power_on_mode(xen_session *session, xen_host self, char *power_on_mode, xen_string_string_map *power_on_config)
+xen_host_set_power_on_mode(xen_session *session, xen_host self, const char *power_on_mode, xen_string_string_map *power_on_config)
 {
     abstract_value param_values[] =
         {
@@ -2551,7 +2551,7 @@ xen_host_set_power_on_mode(xen_session *session, xen_host self, char *power_on_m
 }
 
 bool
-xen_host_set_power_on_mode_async(xen_session *session, xen_task *result, xen_host self, char *power_on_mode, xen_string_string_map *power_on_config)
+xen_host_set_power_on_mode_async(xen_session *session, xen_task *result, xen_host self, const char *power_on_mode, xen_string_string_map *power_on_config)
 {
     abstract_value param_values[] =
         {
@@ -2571,7 +2571,7 @@ xen_host_set_power_on_mode_async(xen_session *session, xen_task *result, xen_hos
 }
 
 bool
-xen_host_set_cpu_features(xen_session *session, xen_host host, char *features)
+xen_host_set_cpu_features(xen_session *session, xen_host host, const char *features)
 {
     abstract_value param_values[] =
         {

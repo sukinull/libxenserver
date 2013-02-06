@@ -149,7 +149,7 @@ xen_gpu_group_get_record(xen_session *session, xen_gpu_group_record **result, xe
 
 
 bool
-xen_gpu_group_get_by_uuid(xen_session *session, xen_gpu_group *result, char *uuid)
+xen_gpu_group_get_by_uuid(xen_session *session, xen_gpu_group *result, const char *uuid)
 {
     abstract_value param_values[] =
         {
@@ -166,7 +166,7 @@ xen_gpu_group_get_by_uuid(xen_session *session, xen_gpu_group *result, char *uui
 
 
 bool
-xen_gpu_group_get_by_name_label(xen_session *session, struct xen_gpu_group_set **result, char *label)
+xen_gpu_group_get_by_name_label(xen_session *session, struct xen_gpu_group_set **result, const char *label)
 {
     abstract_value param_values[] =
         {
@@ -285,7 +285,7 @@ xen_gpu_group_get_other_config(xen_session *session, xen_string_string_map **res
 
 
 bool
-xen_gpu_group_set_name_label(xen_session *session, xen_gpu_group gpu_group, char *label)
+xen_gpu_group_set_name_label(xen_session *session, xen_gpu_group gpu_group, const char *label)
 {
     abstract_value param_values[] =
         {
@@ -301,7 +301,7 @@ xen_gpu_group_set_name_label(xen_session *session, xen_gpu_group gpu_group, char
 
 
 bool
-xen_gpu_group_set_name_description(xen_session *session, xen_gpu_group gpu_group, char *description)
+xen_gpu_group_set_name_description(xen_session *session, xen_gpu_group gpu_group, const char *description)
 {
     abstract_value param_values[] =
         {
@@ -333,7 +333,7 @@ xen_gpu_group_set_other_config(xen_session *session, xen_gpu_group gpu_group, xe
 
 
 bool
-xen_gpu_group_add_to_other_config(xen_session *session, xen_gpu_group gpu_group, char *key, char *value)
+xen_gpu_group_add_to_other_config(xen_session *session, xen_gpu_group gpu_group, const char *key, const char *value)
 {
     abstract_value param_values[] =
         {
@@ -351,7 +351,7 @@ xen_gpu_group_add_to_other_config(xen_session *session, xen_gpu_group gpu_group,
 
 
 bool
-xen_gpu_group_remove_from_other_config(xen_session *session, xen_gpu_group gpu_group, char *key)
+xen_gpu_group_remove_from_other_config(xen_session *session, xen_gpu_group gpu_group, const char *key)
 {
     abstract_value param_values[] =
         {

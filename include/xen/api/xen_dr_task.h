@@ -173,7 +173,7 @@ xen_dr_task_get_record(xen_session *session, xen_dr_task_record **result, xen_dr
  * Get a reference to the DR_task instance with the specified UUID.
  */
 extern bool
-xen_dr_task_get_by_uuid(xen_session *session, xen_dr_task *result, char *uuid);
+xen_dr_task_get_by_uuid(xen_session *session, xen_dr_task *result, const char *uuid);
 
 
 /**
@@ -195,14 +195,14 @@ xen_dr_task_get_introduced_srs(xen_session *session, struct xen_sr_set **result,
  * of devices.
  */
 extern bool
-xen_dr_task_create(xen_session *session, xen_dr_task *result, char *type, xen_string_string_map *device_config, struct xen_string_set *whitelist);
+xen_dr_task_create(xen_session *session, xen_dr_task *result, const char *type, xen_string_string_map *device_config, struct xen_string_set *whitelist);
 
 /**
  * Create a disaster recovery task which will query the supplied list
  * of devices.
  */
 extern bool
-xen_dr_task_create_async(xen_session *session, xen_task *result, char *type, xen_string_string_map *device_config, struct xen_string_set *whitelist);
+xen_dr_task_create_async(xen_session *session, xen_task *result, const char *type, xen_string_string_map *device_config, struct xen_string_set *whitelist);
 
 
 /**

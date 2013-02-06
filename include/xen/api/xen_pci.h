@@ -177,7 +177,7 @@ xen_pci_get_record(xen_session *session, xen_pci_record **result, xen_pci pci);
  * Get a reference to the PCI instance with the specified UUID.
  */
 extern bool
-xen_pci_get_by_uuid(xen_session *session, xen_pci *result, char *uuid);
+xen_pci_get_by_uuid(xen_session *session, xen_pci *result, const char *uuid);
 
 
 /**
@@ -248,7 +248,7 @@ xen_pci_set_other_config(xen_session *session, xen_pci pci, xen_string_string_ma
  * PCI.
  */
 extern bool
-xen_pci_add_to_other_config(xen_session *session, xen_pci pci, char *key, char *value);
+xen_pci_add_to_other_config(xen_session *session, xen_pci pci, const char *key, const char *value);
 
 
 /**
@@ -257,7 +257,7 @@ xen_pci_add_to_other_config(xen_session *session, xen_pci pci, char *key, char *
  * do nothing.
  */
 extern bool
-xen_pci_remove_from_other_config(xen_session *session, xen_pci pci, char *key);
+xen_pci_remove_from_other_config(xen_session *session, xen_pci pci, const char *key);
 
 
 /**

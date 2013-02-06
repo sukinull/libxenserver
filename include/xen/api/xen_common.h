@@ -156,19 +156,19 @@ extern xen_version *xen_get_client_side_version();
 
 
 extern bool
-xen_uuid_string_to_bytes(char *uuid, char **bytes);
+xen_uuid_string_to_bytes(const char *uuid, char **bytes);
 
 
 extern bool
-xen_uuid_bytes_to_string(char *bytes, char **uuid);
+xen_uuid_bytes_to_string(const char *bytes, char **uuid);
 
 
 extern void
-xen_uuid_free(char *uuid);
+xen_uuid_free(const char *uuid);
 
 
 extern void
-xen_uuid_bytes_free(char *bytes);
+xen_uuid_bytes_free(const char *bytes);
 
 
 /**

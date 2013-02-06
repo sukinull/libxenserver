@@ -173,7 +173,7 @@ xen_vif_metrics_get_record(xen_session *session, xen_vif_metrics_record **result
  * Get a reference to the VIF_metrics instance with the specified UUID.
  */
 extern bool
-xen_vif_metrics_get_by_uuid(xen_session *session, xen_vif_metrics *result, char *uuid);
+xen_vif_metrics_get_by_uuid(xen_session *session, xen_vif_metrics *result, const char *uuid);
 
 
 /**
@@ -223,7 +223,7 @@ xen_vif_metrics_set_other_config(xen_session *session, xen_vif_metrics vif_metri
  * VIF_metrics.
  */
 extern bool
-xen_vif_metrics_add_to_other_config(xen_session *session, xen_vif_metrics vif_metrics, char *key, char *value);
+xen_vif_metrics_add_to_other_config(xen_session *session, xen_vif_metrics vif_metrics, const char *key, const char *value);
 
 
 /**
@@ -232,7 +232,7 @@ xen_vif_metrics_add_to_other_config(xen_session *session, xen_vif_metrics vif_me
  * Map, then do nothing.
  */
 extern bool
-xen_vif_metrics_remove_from_other_config(xen_session *session, xen_vif_metrics vif_metrics, char *key);
+xen_vif_metrics_remove_from_other_config(xen_session *session, xen_vif_metrics vif_metrics, const char *key);
 
 
 /**

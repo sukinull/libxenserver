@@ -114,7 +114,7 @@ xen_user_get_record(xen_session *session, xen_user_record **result, xen_user use
 
 
 bool
-xen_user_get_by_uuid(xen_session *session, xen_user *result, char *uuid)
+xen_user_get_by_uuid(xen_session *session, xen_user *result, const char *uuid)
 {
     abstract_value param_values[] =
         {
@@ -243,7 +243,7 @@ xen_user_get_other_config(xen_session *session, xen_string_string_map **result, 
 
 
 bool
-xen_user_set_fullname(xen_session *session, xen_user user, char *fullname)
+xen_user_set_fullname(xen_session *session, xen_user user, const char *fullname)
 {
     abstract_value param_values[] =
         {
@@ -275,7 +275,7 @@ xen_user_set_other_config(xen_session *session, xen_user user, xen_string_string
 
 
 bool
-xen_user_add_to_other_config(xen_session *session, xen_user user, char *key, char *value)
+xen_user_add_to_other_config(xen_session *session, xen_user user, const char *key, const char *value)
 {
     abstract_value param_values[] =
         {
@@ -293,7 +293,7 @@ xen_user_add_to_other_config(xen_session *session, xen_user user, char *key, cha
 
 
 bool
-xen_user_remove_from_other_config(xen_session *session, xen_user user, char *key)
+xen_user_remove_from_other_config(xen_session *session, xen_user user, const char *key)
 {
     abstract_value param_values[] =
         {

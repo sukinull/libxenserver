@@ -152,7 +152,7 @@ xen_pci_get_record(xen_session *session, xen_pci_record **result, xen_pci pci)
 
 
 bool
-xen_pci_get_by_uuid(xen_session *session, xen_pci *result, char *uuid)
+xen_pci_get_by_uuid(xen_session *session, xen_pci *result, const char *uuid)
 {
     abstract_value param_values[] =
         {
@@ -304,7 +304,7 @@ xen_pci_set_other_config(xen_session *session, xen_pci pci, xen_string_string_ma
 
 
 bool
-xen_pci_add_to_other_config(xen_session *session, xen_pci pci, char *key, char *value)
+xen_pci_add_to_other_config(xen_session *session, xen_pci pci, const char *key, const char *value)
 {
     abstract_value param_values[] =
         {
@@ -322,7 +322,7 @@ xen_pci_add_to_other_config(xen_session *session, xen_pci pci, char *key, char *
 
 
 bool
-xen_pci_remove_from_other_config(xen_session *session, xen_pci pci, char *key)
+xen_pci_remove_from_other_config(xen_session *session, xen_pci pci, const char *key)
 {
     abstract_value param_values[] =
         {

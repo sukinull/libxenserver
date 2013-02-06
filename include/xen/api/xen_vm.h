@@ -269,7 +269,7 @@ xen_vm_get_record(xen_session *session, xen_vm_record **result, xen_vm vm);
  * Get a reference to the VM instance with the specified UUID.
  */
 extern bool
-xen_vm_get_by_uuid(xen_session *session, xen_vm *result, char *uuid);
+xen_vm_get_by_uuid(xen_session *session, xen_vm *result, const char *uuid);
 
 
 /**
@@ -306,7 +306,7 @@ xen_vm_destroy_async(xen_session *session, xen_task *result, xen_vm vm);
  * Get all the VM instances with the given label.
  */
 extern bool
-xen_vm_get_by_name_label(xen_session *session, struct xen_vm_set **result, char *label);
+xen_vm_get_by_name_label(xen_session *session, struct xen_vm_set **result, const char *label);
 
 
 /**
@@ -831,14 +831,14 @@ xen_vm_get_version(xen_session *session, int64_t *result, xen_vm vm);
  * Set the name/label field of the given VM.
  */
 extern bool
-xen_vm_set_name_label(xen_session *session, xen_vm vm, char *label);
+xen_vm_set_name_label(xen_session *session, xen_vm vm, const char *label);
 
 
 /**
  * Set the name/description field of the given VM.
  */
 extern bool
-xen_vm_set_name_description(xen_session *session, xen_vm vm, char *description);
+xen_vm_set_name_description(xen_session *session, xen_vm vm, const char *description);
 
 
 /**
@@ -874,7 +874,7 @@ xen_vm_set_vcpus_params(xen_session *session, xen_vm vm, xen_string_string_map *
  * VM.
  */
 extern bool
-xen_vm_add_to_vcpus_params(xen_session *session, xen_vm vm, char *key, char *value);
+xen_vm_add_to_vcpus_params(xen_session *session, xen_vm vm, const char *key, const char *value);
 
 
 /**
@@ -883,7 +883,7 @@ xen_vm_add_to_vcpus_params(xen_session *session, xen_vm vm, char *key, char *val
  * nothing.
  */
 extern bool
-xen_vm_remove_from_vcpus_params(xen_session *session, xen_vm vm, char *key);
+xen_vm_remove_from_vcpus_params(xen_session *session, xen_vm vm, const char *key);
 
 
 /**
@@ -911,49 +911,49 @@ xen_vm_set_actions_after_crash(xen_session *session, xen_vm vm, enum xen_on_cras
  * Set the PV/bootloader field of the given VM.
  */
 extern bool
-xen_vm_set_pv_bootloader(xen_session *session, xen_vm vm, char *bootloader);
+xen_vm_set_pv_bootloader(xen_session *session, xen_vm vm, const char *bootloader);
 
 
 /**
  * Set the PV/kernel field of the given VM.
  */
 extern bool
-xen_vm_set_pv_kernel(xen_session *session, xen_vm vm, char *kernel);
+xen_vm_set_pv_kernel(xen_session *session, xen_vm vm, const char *kernel);
 
 
 /**
  * Set the PV/ramdisk field of the given VM.
  */
 extern bool
-xen_vm_set_pv_ramdisk(xen_session *session, xen_vm vm, char *ramdisk);
+xen_vm_set_pv_ramdisk(xen_session *session, xen_vm vm, const char *ramdisk);
 
 
 /**
  * Set the PV/args field of the given VM.
  */
 extern bool
-xen_vm_set_pv_args(xen_session *session, xen_vm vm, char *args);
+xen_vm_set_pv_args(xen_session *session, xen_vm vm, const char *args);
 
 
 /**
  * Set the PV/bootloader_args field of the given VM.
  */
 extern bool
-xen_vm_set_pv_bootloader_args(xen_session *session, xen_vm vm, char *bootloader_args);
+xen_vm_set_pv_bootloader_args(xen_session *session, xen_vm vm, const char *bootloader_args);
 
 
 /**
  * Set the PV/legacy_args field of the given VM.
  */
 extern bool
-xen_vm_set_pv_legacy_args(xen_session *session, xen_vm vm, char *legacy_args);
+xen_vm_set_pv_legacy_args(xen_session *session, xen_vm vm, const char *legacy_args);
 
 
 /**
  * Set the HVM/boot_policy field of the given VM.
  */
 extern bool
-xen_vm_set_hvm_boot_policy(xen_session *session, xen_vm vm, char *boot_policy);
+xen_vm_set_hvm_boot_policy(xen_session *session, xen_vm vm, const char *boot_policy);
 
 
 /**
@@ -968,7 +968,7 @@ xen_vm_set_hvm_boot_params(xen_session *session, xen_vm vm, xen_string_string_ma
  * given VM.
  */
 extern bool
-xen_vm_add_to_hvm_boot_params(xen_session *session, xen_vm vm, char *key, char *value);
+xen_vm_add_to_hvm_boot_params(xen_session *session, xen_vm vm, const char *key, const char *value);
 
 
 /**
@@ -977,7 +977,7 @@ xen_vm_add_to_hvm_boot_params(xen_session *session, xen_vm vm, char *key, char *
  * do nothing.
  */
 extern bool
-xen_vm_remove_from_hvm_boot_params(xen_session *session, xen_vm vm, char *key);
+xen_vm_remove_from_hvm_boot_params(xen_session *session, xen_vm vm, const char *key);
 
 
 /**
@@ -991,7 +991,7 @@ xen_vm_set_platform(xen_session *session, xen_vm vm, xen_string_string_map *plat
  * Add the given key-value pair to the platform field of the given VM.
  */
 extern bool
-xen_vm_add_to_platform(xen_session *session, xen_vm vm, char *key, char *value);
+xen_vm_add_to_platform(xen_session *session, xen_vm vm, const char *key, const char *value);
 
 
 /**
@@ -999,14 +999,14 @@ xen_vm_add_to_platform(xen_session *session, xen_vm vm, char *key, char *value);
  * field of the given VM.  If the key is not in that Map, then do nothing.
  */
 extern bool
-xen_vm_remove_from_platform(xen_session *session, xen_vm vm, char *key);
+xen_vm_remove_from_platform(xen_session *session, xen_vm vm, const char *key);
 
 
 /**
  * Set the PCI_bus field of the given VM.
  */
 extern bool
-xen_vm_set_pci_bus(xen_session *session, xen_vm vm, char *pci_bus);
+xen_vm_set_pci_bus(xen_session *session, xen_vm vm, const char *pci_bus);
 
 
 /**
@@ -1021,7 +1021,7 @@ xen_vm_set_other_config(xen_session *session, xen_vm vm, xen_string_string_map *
  * VM.
  */
 extern bool
-xen_vm_add_to_other_config(xen_session *session, xen_vm vm, char *key, char *value);
+xen_vm_add_to_other_config(xen_session *session, xen_vm vm, const char *key, const char *value);
 
 
 /**
@@ -1030,14 +1030,14 @@ xen_vm_add_to_other_config(xen_session *session, xen_vm vm, char *key, char *val
  * nothing.
  */
 extern bool
-xen_vm_remove_from_other_config(xen_session *session, xen_vm vm, char *key);
+xen_vm_remove_from_other_config(xen_session *session, xen_vm vm, const char *key);
 
 
 /**
  * Set the recommendations field of the given VM.
  */
 extern bool
-xen_vm_set_recommendations(xen_session *session, xen_vm vm, char *recommendations);
+xen_vm_set_recommendations(xen_session *session, xen_vm vm, const char *recommendations);
 
 
 /**
@@ -1052,7 +1052,7 @@ xen_vm_set_xenstore_data(xen_session *session, xen_vm vm, xen_string_string_map 
  * VM.
  */
 extern bool
-xen_vm_add_to_xenstore_data(xen_session *session, xen_vm vm, char *key, char *value);
+xen_vm_add_to_xenstore_data(xen_session *session, xen_vm vm, const char *key, const char *value);
 
 
 /**
@@ -1061,7 +1061,7 @@ xen_vm_add_to_xenstore_data(xen_session *session, xen_vm vm, char *key, char *va
  * do nothing.
  */
 extern bool
-xen_vm_remove_from_xenstore_data(xen_session *session, xen_vm vm, char *key);
+xen_vm_remove_from_xenstore_data(xen_session *session, xen_vm vm, const char *key);
 
 
 /**
@@ -1076,7 +1076,7 @@ xen_vm_set_tags(xen_session *session, xen_vm vm, struct xen_string_set *tags);
  * is already in that Set, then do nothing.
  */
 extern bool
-xen_vm_add_tags(xen_session *session, xen_vm vm, char *value);
+xen_vm_add_tags(xen_session *session, xen_vm vm, const char *value);
 
 
 /**
@@ -1084,7 +1084,7 @@ xen_vm_add_tags(xen_session *session, xen_vm vm, char *value);
  * value is not in that Set, then do nothing.
  */
 extern bool
-xen_vm_remove_tags(xen_session *session, xen_vm vm, char *value);
+xen_vm_remove_tags(xen_session *session, xen_vm vm, const char *value);
 
 
 /**
@@ -1099,7 +1099,7 @@ xen_vm_set_blocked_operations(xen_session *session, xen_vm vm, xen_vm_operations
  * given VM.
  */
 extern bool
-xen_vm_add_to_blocked_operations(xen_session *session, xen_vm vm, enum xen_vm_operations key, char *value);
+xen_vm_add_to_blocked_operations(xen_session *session, xen_vm vm, enum xen_vm_operations key, const char *value);
 
 
 /**
@@ -1124,7 +1124,7 @@ xen_vm_set_suspend_sr(xen_session *session, xen_vm vm, xen_sr suspend_sr);
  * VM's disk images are stored (e.g. Copy on Write).
  */
 extern bool
-xen_vm_snapshot(xen_session *session, xen_vm *result, xen_vm vm, char *new_name);
+xen_vm_snapshot(xen_session *session, xen_vm *result, xen_vm vm, const char *new_name);
 
 /**
  * Snapshots the specified VM, making a new VM. Snapshot automatically
@@ -1132,7 +1132,7 @@ xen_vm_snapshot(xen_session *session, xen_vm *result, xen_vm vm, char *new_name)
  * VM's disk images are stored (e.g. Copy on Write).
  */
 extern bool
-xen_vm_snapshot_async(xen_session *session, xen_task *result, xen_vm vm, char *new_name);
+xen_vm_snapshot_async(xen_session *session, xen_task *result, xen_vm vm, const char *new_name);
 
 
 /**
@@ -1141,7 +1141,7 @@ xen_vm_snapshot_async(xen_session *session, xen_task *result, xen_vm vm, char *n
  * repository in which the VM's disk images are stored (e.g. Copy on Write).
  */
 extern bool
-xen_vm_snapshot_with_quiesce(xen_session *session, xen_vm *result, xen_vm vm, char *new_name);
+xen_vm_snapshot_with_quiesce(xen_session *session, xen_vm *result, xen_vm vm, const char *new_name);
 
 /**
  * Snapshots the specified VM with quiesce, making a new VM. Snapshot
@@ -1149,7 +1149,7 @@ xen_vm_snapshot_with_quiesce(xen_session *session, xen_vm *result, xen_vm vm, ch
  * repository in which the VM's disk images are stored (e.g. Copy on Write).
  */
 extern bool
-xen_vm_snapshot_with_quiesce_async(xen_session *session, xen_task *result, xen_vm vm, char *new_name);
+xen_vm_snapshot_with_quiesce_async(xen_session *session, xen_task *result, xen_vm vm, const char *new_name);
 
 
 /**
@@ -1159,7 +1159,7 @@ xen_vm_snapshot_with_quiesce_async(xen_session *session, xen_task *result, xen_v
  * be called when the VM is in the Halted State.
  */
 extern bool
-xen_vm_clone(xen_session *session, xen_vm *result, xen_vm vm, char *new_name);
+xen_vm_clone(xen_session *session, xen_vm *result, xen_vm vm, const char *new_name);
 
 /**
  * Clones the specified VM, making a new VM. Clone automatically
@@ -1168,7 +1168,7 @@ xen_vm_clone(xen_session *session, xen_vm *result, xen_vm vm, char *new_name);
  * be called when the VM is in the Halted State.
  */
 extern bool
-xen_vm_clone_async(xen_session *session, xen_task *result, xen_vm vm, char *new_name);
+xen_vm_clone_async(xen_session *session, xen_task *result, xen_vm vm, const char *new_name);
 
 
 /**
@@ -1180,7 +1180,7 @@ xen_vm_clone_async(xen_session *session, xen_task *result, xen_vm vm, char *new_
  * State.
  */
 extern bool
-xen_vm_copy(xen_session *session, xen_vm *result, xen_vm vm, char *new_name, xen_sr sr);
+xen_vm_copy(xen_session *session, xen_vm *result, xen_vm vm, const char *new_name, xen_sr sr);
 
 /**
  * Copied the specified VM, making a new VM. Unlike clone, copy does
@@ -1191,7 +1191,7 @@ xen_vm_copy(xen_session *session, xen_vm *result, xen_vm vm, char *new_name, xen
  * State.
  */
 extern bool
-xen_vm_copy_async(xen_session *session, xen_task *result, xen_vm vm, char *new_name, xen_sr sr);
+xen_vm_copy_async(xen_session *session, xen_task *result, xen_vm vm, const char *new_name, xen_sr sr);
 
 
 /**
@@ -1214,7 +1214,7 @@ xen_vm_revert_async(xen_session *session, xen_task *result, xen_vm snapshot);
  * and saves the memory image as well.
  */
 extern bool
-xen_vm_checkpoint(xen_session *session, xen_vm *result, xen_vm vm, char *new_name);
+xen_vm_checkpoint(xen_session *session, xen_vm *result, xen_vm vm, const char *new_name);
 
 /**
  * Checkpoints the specified VM, making a new VM. Checkpoint
@@ -1223,7 +1223,7 @@ xen_vm_checkpoint(xen_session *session, xen_vm *result, xen_vm vm, char *new_nam
  * and saves the memory image as well.
  */
 extern bool
-xen_vm_checkpoint_async(xen_session *session, xen_task *result, xen_vm vm, char *new_name);
+xen_vm_checkpoint_async(xen_session *session, xen_task *result, xen_vm vm, const char *new_name);
 
 
 /**
@@ -1462,21 +1462,21 @@ xen_vm_set_vcpus_number_live_async(xen_session *session, xen_task *result, xen_v
  * value on the running VM.
  */
 extern bool
-xen_vm_add_to_vcpus_params_live(xen_session *session, xen_vm self, char *key, char *value);
+xen_vm_add_to_vcpus_params_live(xen_session *session, xen_vm self, const char *key, const char *value);
 
 /**
  * Add the given key-value pair to VM.VCPUs_params, and apply that
  * value on the running VM.
  */
 extern bool
-xen_vm_add_to_vcpus_params_live_async(xen_session *session, xen_task *result, xen_vm self, char *key, char *value);
+xen_vm_add_to_vcpus_params_live_async(xen_session *session, xen_task *result, xen_vm self, const char *key, const char *value);
 
 
 /**
  * Set the value of the ha_restart_priority field.
  */
 extern bool
-xen_vm_set_ha_restart_priority(xen_session *session, xen_vm self, char *value);
+xen_vm_set_ha_restart_priority(xen_session *session, xen_vm self, const char *value);
 
 
 /**
@@ -1651,7 +1651,7 @@ xen_vm_set_vcpus_at_startup(xen_session *session, xen_vm self, int64_t value);
  * specified VM is in the Running state.
  */
 extern bool
-xen_vm_send_sysrq(xen_session *session, xen_vm vm, char *key);
+xen_vm_send_sysrq(xen_session *session, xen_vm vm, const char *key);
 
 /**
  * Send the given key as a sysrq to this VM.  The key is specified as a
@@ -1659,7 +1659,7 @@ xen_vm_send_sysrq(xen_session *session, xen_vm vm, char *key);
  * specified VM is in the Running state.
  */
 extern bool
-xen_vm_send_sysrq_async(xen_session *session, xen_task *result, xen_vm vm, char *key);
+xen_vm_send_sysrq_async(xen_session *session, xen_task *result, xen_vm vm, const char *key);
 
 
 /**
@@ -1667,14 +1667,14 @@ xen_vm_send_sysrq_async(xen_session *session, xen_task *result, xen_vm vm, char 
  * specified VM is in the Running state.
  */
 extern bool
-xen_vm_send_trigger(xen_session *session, xen_vm vm, char *trigger);
+xen_vm_send_trigger(xen_session *session, xen_vm vm, const char *trigger);
 
 /**
  * Send the named trigger to this VM.  This can only be called when the
  * specified VM is in the Running state.
  */
 extern bool
-xen_vm_send_trigger_async(xen_session *session, xen_task *result, xen_vm vm, char *trigger);
+xen_vm_send_trigger_async(xen_session *session, xen_task *result, xen_vm vm, const char *trigger);
 
 
 /**
@@ -1739,21 +1739,21 @@ xen_vm_get_boot_record(xen_session *session, xen_vm_record **result, xen_vm self
  * Start recording the specified data source.
  */
 extern bool
-xen_vm_record_data_source(xen_session *session, xen_vm self, char *data_source);
+xen_vm_record_data_source(xen_session *session, xen_vm self, const char *data_source);
 
 
 /**
  * Query the latest value of the specified data source.
  */
 extern bool
-xen_vm_query_data_source(xen_session *session, double *result, xen_vm self, char *data_source);
+xen_vm_query_data_source(xen_session *session, double *result, xen_vm self, const char *data_source);
 
 
 /**
  * Forget the recorded statistics related to the specified data source.
  */
 extern bool
-xen_vm_forget_data_source_archives(xen_session *session, xen_vm self, char *data_source);
+xen_vm_forget_data_source_archives(xen_session *session, xen_vm self, const char *data_source);
 
 
 /**
@@ -1835,14 +1835,14 @@ xen_vm_assert_can_boot_here_async(xen_session *session, xen_task *result, xen_vm
  * associated with this VM.
  */
 extern bool
-xen_vm_create_new_blob(xen_session *session, xen_blob *result, xen_vm vm, char *name, char *mime_type, bool pubblic);
+xen_vm_create_new_blob(xen_session *session, xen_blob *result, xen_vm vm, const char *name, const char *mime_type, bool pubblic);
 
 /**
  * Create a placeholder for a named binary blob of data that is
  * associated with this VM.
  */
 extern bool
-xen_vm_create_new_blob_async(xen_session *session, xen_task *result, xen_vm vm, char *name, char *mime_type, bool pubblic);
+xen_vm_create_new_blob_async(xen_session *session, xen_task *result, xen_vm vm, const char *name, const char *mime_type, bool pubblic);
 
 
 /**
@@ -1981,13 +1981,13 @@ xen_vm_recover_async(xen_session *session, xen_task *result, xen_vm self, xen_se
  * Import using a conversion service.
  */
 extern bool
-xen_vm_import_convert(xen_session *session, char *type, char *username, char *password, xen_sr sr, xen_string_string_map *remote_config);
+xen_vm_import_convert(xen_session *session, const char *type, const char *username, const char *password, xen_sr sr, xen_string_string_map *remote_config);
 
 /**
  * Import using a conversion service.
  */
 extern bool
-xen_vm_import_convert_async(xen_session *session, xen_task *result, char *type, char *username, char *password, xen_sr sr, xen_string_string_map *remote_config);
+xen_vm_import_convert_async(xen_session *session, xen_task *result, const char *type, const char *username, const char *password, xen_sr sr, xen_string_string_map *remote_config);
 
 
 /**

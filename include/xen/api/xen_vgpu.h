@@ -177,7 +177,7 @@ xen_vgpu_get_record(xen_session *session, xen_vgpu_record **result, xen_vgpu vgp
  * Get a reference to the VGPU instance with the specified UUID.
  */
 extern bool
-xen_vgpu_get_by_uuid(xen_session *session, xen_vgpu *result, char *uuid);
+xen_vgpu_get_by_uuid(xen_session *session, xen_vgpu *result, const char *uuid);
 
 
 /**
@@ -234,7 +234,7 @@ xen_vgpu_set_other_config(xen_session *session, xen_vgpu vgpu, xen_string_string
  * VGPU.
  */
 extern bool
-xen_vgpu_add_to_other_config(xen_session *session, xen_vgpu vgpu, char *key, char *value);
+xen_vgpu_add_to_other_config(xen_session *session, xen_vgpu vgpu, const char *key, const char *value);
 
 
 /**
@@ -243,20 +243,20 @@ xen_vgpu_add_to_other_config(xen_session *session, xen_vgpu vgpu, char *key, cha
  * do nothing.
  */
 extern bool
-xen_vgpu_remove_from_other_config(xen_session *session, xen_vgpu vgpu, char *key);
+xen_vgpu_remove_from_other_config(xen_session *session, xen_vgpu vgpu, const char *key);
 
 
 /**
  * .
  */
 extern bool
-xen_vgpu_create(xen_session *session, xen_vgpu *result, xen_vm vm, xen_gpu_group gpu_group, char *device, xen_string_string_map *other_config);
+xen_vgpu_create(xen_session *session, xen_vgpu *result, xen_vm vm, xen_gpu_group gpu_group, const char *device, xen_string_string_map *other_config);
 
 /**
  * .
  */
 extern bool
-xen_vgpu_create_async(xen_session *session, xen_task *result, xen_vm vm, xen_gpu_group gpu_group, char *device, xen_string_string_map *other_config);
+xen_vgpu_create_async(xen_session *session, xen_task *result, xen_vm vm, xen_gpu_group gpu_group, const char *device, xen_string_string_map *other_config);
 
 
 /**

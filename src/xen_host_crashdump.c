@@ -138,7 +138,7 @@ xen_host_crashdump_get_record(xen_session *session, xen_host_crashdump_record **
 
 
 bool
-xen_host_crashdump_get_by_uuid(xen_session *session, xen_host_crashdump *result, char *uuid)
+xen_host_crashdump_get_by_uuid(xen_session *session, xen_host_crashdump *result, const char *uuid)
 {
     abstract_value param_values[] =
         {
@@ -237,7 +237,7 @@ xen_host_crashdump_set_other_config(xen_session *session, xen_host_crashdump hos
 
 
 bool
-xen_host_crashdump_add_to_other_config(xen_session *session, xen_host_crashdump host_crashdump, char *key, char *value)
+xen_host_crashdump_add_to_other_config(xen_session *session, xen_host_crashdump host_crashdump, const char *key, const char *value)
 {
     abstract_value param_values[] =
         {
@@ -255,7 +255,7 @@ xen_host_crashdump_add_to_other_config(xen_session *session, xen_host_crashdump 
 
 
 bool
-xen_host_crashdump_remove_from_other_config(xen_session *session, xen_host_crashdump host_crashdump, char *key)
+xen_host_crashdump_remove_from_other_config(xen_session *session, xen_host_crashdump host_crashdump, const char *key)
 {
     abstract_value param_values[] =
         {
@@ -300,7 +300,7 @@ xen_host_crashdump_destroy_async(xen_session *session, xen_task *result, xen_hos
 }
 
 bool
-xen_host_crashdump_upload(xen_session *session, xen_host_crashdump self, char *url, xen_string_string_map *options)
+xen_host_crashdump_upload(xen_session *session, xen_host_crashdump self, const char *url, xen_string_string_map *options)
 {
     abstract_value param_values[] =
         {
@@ -317,7 +317,7 @@ xen_host_crashdump_upload(xen_session *session, xen_host_crashdump self, char *u
 }
 
 bool
-xen_host_crashdump_upload_async(xen_session *session, xen_task *result, xen_host_crashdump self, char *url, xen_string_string_map *options)
+xen_host_crashdump_upload_async(xen_session *session, xen_task *result, xen_host_crashdump self, const char *url, xen_string_string_map *options)
 {
     abstract_value param_values[] =
         {

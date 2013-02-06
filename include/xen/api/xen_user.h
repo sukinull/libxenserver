@@ -172,7 +172,7 @@ xen_user_get_record(xen_session *session, xen_user_record **result, xen_user use
  * Get a reference to the user instance with the specified UUID.
  */
 extern bool
-xen_user_get_by_uuid(xen_session *session, xen_user *result, char *uuid);
+xen_user_get_by_uuid(xen_session *session, xen_user *result, const char *uuid);
 
 
 /**
@@ -233,7 +233,7 @@ xen_user_get_other_config(xen_session *session, xen_string_string_map **result, 
  * Set the fullname field of the given user.
  */
 extern bool
-xen_user_set_fullname(xen_session *session, xen_user user, char *fullname);
+xen_user_set_fullname(xen_session *session, xen_user user, const char *fullname);
 
 
 /**
@@ -248,7 +248,7 @@ xen_user_set_other_config(xen_session *session, xen_user user, xen_string_string
  * user.
  */
 extern bool
-xen_user_add_to_other_config(xen_session *session, xen_user user, char *key, char *value);
+xen_user_add_to_other_config(xen_session *session, xen_user user, const char *key, const char *value);
 
 
 /**
@@ -257,7 +257,7 @@ xen_user_add_to_other_config(xen_session *session, xen_user user, char *key, cha
  * do nothing.
  */
 extern bool
-xen_user_remove_from_other_config(xen_session *session, xen_user user, char *key);
+xen_user_remove_from_other_config(xen_session *session, xen_user user, const char *key);
 
 
 #endif

@@ -208,7 +208,7 @@ xen_vdi_get_record(xen_session *session, xen_vdi_record **result, xen_vdi vdi);
  * Get a reference to the VDI instance with the specified UUID.
  */
 extern bool
-xen_vdi_get_by_uuid(xen_session *session, xen_vdi *result, char *uuid);
+xen_vdi_get_by_uuid(xen_session *session, xen_vdi *result, const char *uuid);
 
 
 /**
@@ -241,7 +241,7 @@ xen_vdi_destroy_async(xen_session *session, xen_task *result, xen_vdi vdi);
  * Get all the VDI instances with the given label.
  */
 extern bool
-xen_vdi_get_by_name_label(xen_session *session, struct xen_vdi_set **result, char *label);
+xen_vdi_get_by_name_label(xen_session *session, struct xen_vdi_set **result, const char *label);
 
 
 /**
@@ -466,7 +466,7 @@ xen_vdi_set_other_config(xen_session *session, xen_vdi vdi, xen_string_string_ma
  * VDI.
  */
 extern bool
-xen_vdi_add_to_other_config(xen_session *session, xen_vdi vdi, char *key, char *value);
+xen_vdi_add_to_other_config(xen_session *session, xen_vdi vdi, const char *key, const char *value);
 
 
 /**
@@ -475,7 +475,7 @@ xen_vdi_add_to_other_config(xen_session *session, xen_vdi vdi, char *key, char *
  * do nothing.
  */
 extern bool
-xen_vdi_remove_from_other_config(xen_session *session, xen_vdi vdi, char *key);
+xen_vdi_remove_from_other_config(xen_session *session, xen_vdi vdi, const char *key);
 
 
 /**
@@ -490,7 +490,7 @@ xen_vdi_set_xenstore_data(xen_session *session, xen_vdi vdi, xen_string_string_m
  * VDI.
  */
 extern bool
-xen_vdi_add_to_xenstore_data(xen_session *session, xen_vdi vdi, char *key, char *value);
+xen_vdi_add_to_xenstore_data(xen_session *session, xen_vdi vdi, const char *key, const char *value);
 
 
 /**
@@ -499,7 +499,7 @@ xen_vdi_add_to_xenstore_data(xen_session *session, xen_vdi vdi, char *key, char 
  * do nothing.
  */
 extern bool
-xen_vdi_remove_from_xenstore_data(xen_session *session, xen_vdi vdi, char *key);
+xen_vdi_remove_from_xenstore_data(xen_session *session, xen_vdi vdi, const char *key);
 
 
 /**
@@ -514,7 +514,7 @@ xen_vdi_set_sm_config(xen_session *session, xen_vdi vdi, xen_string_string_map *
  * VDI.
  */
 extern bool
-xen_vdi_add_to_sm_config(xen_session *session, xen_vdi vdi, char *key, char *value);
+xen_vdi_add_to_sm_config(xen_session *session, xen_vdi vdi, const char *key, const char *value);
 
 
 /**
@@ -522,7 +522,7 @@ xen_vdi_add_to_sm_config(xen_session *session, xen_vdi vdi, char *key, char *val
  * field of the given VDI.  If the key is not in that Map, then do nothing.
  */
 extern bool
-xen_vdi_remove_from_sm_config(xen_session *session, xen_vdi vdi, char *key);
+xen_vdi_remove_from_sm_config(xen_session *session, xen_vdi vdi, const char *key);
 
 
 /**
@@ -537,7 +537,7 @@ xen_vdi_set_tags(xen_session *session, xen_vdi vdi, struct xen_string_set *tags)
  * value is already in that Set, then do nothing.
  */
 extern bool
-xen_vdi_add_tags(xen_session *session, xen_vdi vdi, char *value);
+xen_vdi_add_tags(xen_session *session, xen_vdi vdi, const char *value);
 
 
 /**
@@ -545,7 +545,7 @@ xen_vdi_add_tags(xen_session *session, xen_vdi vdi, char *value);
  * value is not in that Set, then do nothing.
  */
 extern bool
-xen_vdi_remove_tags(xen_session *session, xen_vdi vdi, char *value);
+xen_vdi_remove_tags(xen_session *session, xen_vdi vdi, const char *value);
 
 
 /**
@@ -644,26 +644,26 @@ xen_vdi_resize_online_async(xen_session *session, xen_task *result, xen_vdi vdi,
  * Create a new VDI record in the database only.
  */
 extern bool
-xen_vdi_introduce(xen_session *session, xen_vdi *result, char *uuid, char *name_label, char *name_description, xen_sr sr, enum xen_vdi_type type, bool sharable, bool read_only, xen_string_string_map *other_config, char *location, xen_string_string_map *xenstore_data, xen_string_string_map *sm_config, bool managed, int64_t virtual_size, int64_t physical_utilisation, xen_pool metadata_of_pool, bool is_a_snapshot, time_t snapshot_time, xen_vdi snapshot_of);
+xen_vdi_introduce(xen_session *session, xen_vdi *result, const char *uuid, const char *name_label, const char *name_description, xen_sr sr, enum xen_vdi_type type, bool sharable, bool read_only, xen_string_string_map *other_config, const char *location, xen_string_string_map *xenstore_data, xen_string_string_map *sm_config, bool managed, int64_t virtual_size, int64_t physical_utilisation, xen_pool metadata_of_pool, bool is_a_snapshot, time_t snapshot_time, xen_vdi snapshot_of);
 
 /**
  * Create a new VDI record in the database only.
  */
 extern bool
-xen_vdi_introduce_async(xen_session *session, xen_task *result, char *uuid, char *name_label, char *name_description, xen_sr sr, enum xen_vdi_type type, bool sharable, bool read_only, xen_string_string_map *other_config, char *location, xen_string_string_map *xenstore_data, xen_string_string_map *sm_config, bool managed, int64_t virtual_size, int64_t physical_utilisation, xen_pool metadata_of_pool, bool is_a_snapshot, time_t snapshot_time, xen_vdi snapshot_of);
+xen_vdi_introduce_async(xen_session *session, xen_task *result, const char *uuid, const char *name_label, const char *name_description, xen_sr sr, enum xen_vdi_type type, bool sharable, bool read_only, xen_string_string_map *other_config, const char *location, xen_string_string_map *xenstore_data, xen_string_string_map *sm_config, bool managed, int64_t virtual_size, int64_t physical_utilisation, xen_pool metadata_of_pool, bool is_a_snapshot, time_t snapshot_time, xen_vdi snapshot_of);
 
 
 /**
  * Create a new VDI record in the database only.
  */
 extern bool
-xen_vdi_db_introduce(xen_session *session, xen_vdi *result, char *uuid, char *name_label, char *name_description, xen_sr sr, enum xen_vdi_type type, bool sharable, bool read_only, xen_string_string_map *other_config, char *location, xen_string_string_map *xenstore_data, xen_string_string_map *sm_config, bool managed, int64_t virtual_size, int64_t physical_utilisation, xen_pool metadata_of_pool, bool is_a_snapshot, time_t snapshot_time, xen_vdi snapshot_of);
+xen_vdi_db_introduce(xen_session *session, xen_vdi *result, const char *uuid, const char *name_label, const char *name_description, xen_sr sr, enum xen_vdi_type type, bool sharable, bool read_only, xen_string_string_map *other_config, const char *location, xen_string_string_map *xenstore_data, xen_string_string_map *sm_config, bool managed, int64_t virtual_size, int64_t physical_utilisation, xen_pool metadata_of_pool, bool is_a_snapshot, time_t snapshot_time, xen_vdi snapshot_of);
 
 /**
  * Create a new VDI record in the database only.
  */
 extern bool
-xen_vdi_db_introduce_async(xen_session *session, xen_task *result, char *uuid, char *name_label, char *name_description, xen_sr sr, enum xen_vdi_type type, bool sharable, bool read_only, xen_string_string_map *other_config, char *location, xen_string_string_map *xenstore_data, xen_string_string_map *sm_config, bool managed, int64_t virtual_size, int64_t physical_utilisation, xen_pool metadata_of_pool, bool is_a_snapshot, time_t snapshot_time, xen_vdi snapshot_of);
+xen_vdi_db_introduce_async(xen_session *session, xen_task *result, const char *uuid, const char *name_label, const char *name_description, xen_sr sr, enum xen_vdi_type type, bool sharable, bool read_only, xen_string_string_map *other_config, const char *location, xen_string_string_map *xenstore_data, xen_string_string_map *sm_config, bool managed, int64_t virtual_size, int64_t physical_utilisation, xen_pool metadata_of_pool, bool is_a_snapshot, time_t snapshot_time, xen_vdi snapshot_of);
 
 
 /**
@@ -795,14 +795,14 @@ xen_vdi_set_metadata_of_pool(xen_session *session, xen_vdi self, xen_pool value)
  * is currently attached.
  */
 extern bool
-xen_vdi_set_name_label(xen_session *session, xen_vdi self, char *value);
+xen_vdi_set_name_label(xen_session *session, xen_vdi self, const char *value);
 
 /**
  * Set the name label of the VDI. This can only happen when then its SR
  * is currently attached.
  */
 extern bool
-xen_vdi_set_name_label_async(xen_session *session, xen_task *result, xen_vdi self, char *value);
+xen_vdi_set_name_label_async(xen_session *session, xen_task *result, xen_vdi self, const char *value);
 
 
 /**
@@ -810,14 +810,14 @@ xen_vdi_set_name_label_async(xen_session *session, xen_task *result, xen_vdi sel
  * SR is currently attached.
  */
 extern bool
-xen_vdi_set_name_description(xen_session *session, xen_vdi self, char *value);
+xen_vdi_set_name_description(xen_session *session, xen_vdi self, const char *value);
 
 /**
  * Set the name description of the VDI. This can only happen when its
  * SR is currently attached.
  */
 extern bool
-xen_vdi_set_name_description_async(xen_session *session, xen_task *result, xen_vdi self, char *value);
+xen_vdi_set_name_description_async(xen_session *session, xen_task *result, xen_vdi self, const char *value);
 
 
 /**

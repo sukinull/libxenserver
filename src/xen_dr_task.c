@@ -128,7 +128,7 @@ xen_dr_task_get_record(xen_session *session, xen_dr_task_record **result, xen_dr
 
 
 bool
-xen_dr_task_get_by_uuid(xen_session *session, xen_dr_task *result, char *uuid)
+xen_dr_task_get_by_uuid(xen_session *session, xen_dr_task *result, const char *uuid)
 {
     abstract_value param_values[] =
         {
@@ -162,7 +162,7 @@ xen_dr_task_get_introduced_srs(xen_session *session, struct xen_sr_set **result,
 
 
 bool
-xen_dr_task_create(xen_session *session, xen_dr_task *result, char *type, xen_string_string_map *device_config, struct xen_string_set *whitelist)
+xen_dr_task_create(xen_session *session, xen_dr_task *result, const char *type, xen_string_string_map *device_config, struct xen_string_set *whitelist)
 {
     abstract_value param_values[] =
         {
@@ -182,7 +182,7 @@ xen_dr_task_create(xen_session *session, xen_dr_task *result, char *type, xen_st
 }
 
 bool
-xen_dr_task_create_async(xen_session *session, xen_task *result, char *type, xen_string_string_map *device_config, struct xen_string_set *whitelist)
+xen_dr_task_create_async(xen_session *session, xen_task *result, const char *type, xen_string_string_map *device_config, struct xen_string_set *whitelist)
 {
     abstract_value param_values[] =
         {

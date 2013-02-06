@@ -176,7 +176,7 @@ xen_console_get_record(xen_session *session, xen_console_record **result, xen_co
  * Get a reference to the console instance with the specified UUID.
  */
 extern bool
-xen_console_get_by_uuid(xen_session *session, xen_console *result, char *uuid);
+xen_console_get_by_uuid(xen_session *session, xen_console *result, const char *uuid);
 
 
 /**
@@ -252,7 +252,7 @@ xen_console_set_other_config(xen_session *session, xen_console console, xen_stri
  * console.
  */
 extern bool
-xen_console_add_to_other_config(xen_session *session, xen_console console, char *key, char *value);
+xen_console_add_to_other_config(xen_session *session, xen_console console, const char *key, const char *value);
 
 
 /**
@@ -261,7 +261,7 @@ xen_console_add_to_other_config(xen_session *session, xen_console console, char 
  * then do nothing.
  */
 extern bool
-xen_console_remove_from_other_config(xen_session *session, xen_console console, char *key);
+xen_console_remove_from_other_config(xen_session *session, xen_console console, const char *key);
 
 
 /**

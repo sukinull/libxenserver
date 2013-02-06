@@ -208,7 +208,7 @@ xen_vbd_get_record(xen_session *session, xen_vbd_record **result, xen_vbd vbd)
 
 
 bool
-xen_vbd_get_by_uuid(xen_session *session, xen_vbd *result, char *uuid)
+xen_vbd_get_by_uuid(xen_session *session, xen_vbd *result, const char *uuid)
 {
     abstract_value param_values[] =
         {
@@ -633,7 +633,7 @@ xen_vbd_get_metrics(xen_session *session, xen_vbd_metrics *result, xen_vbd vbd)
 
 
 bool
-xen_vbd_set_userdevice(xen_session *session, xen_vbd vbd, char *userdevice)
+xen_vbd_set_userdevice(xen_session *session, xen_vbd vbd, const char *userdevice)
 {
     abstract_value param_values[] =
         {
@@ -729,7 +729,7 @@ xen_vbd_set_other_config(xen_session *session, xen_vbd vbd, xen_string_string_ma
 
 
 bool
-xen_vbd_add_to_other_config(xen_session *session, xen_vbd vbd, char *key, char *value)
+xen_vbd_add_to_other_config(xen_session *session, xen_vbd vbd, const char *key, const char *value)
 {
     abstract_value param_values[] =
         {
@@ -747,7 +747,7 @@ xen_vbd_add_to_other_config(xen_session *session, xen_vbd vbd, char *key, char *
 
 
 bool
-xen_vbd_remove_from_other_config(xen_session *session, xen_vbd vbd, char *key)
+xen_vbd_remove_from_other_config(xen_session *session, xen_vbd vbd, const char *key)
 {
     abstract_value param_values[] =
         {
@@ -763,7 +763,7 @@ xen_vbd_remove_from_other_config(xen_session *session, xen_vbd vbd, char *key)
 
 
 bool
-xen_vbd_set_qos_algorithm_type(xen_session *session, xen_vbd vbd, char *algorithm_type)
+xen_vbd_set_qos_algorithm_type(xen_session *session, xen_vbd vbd, const char *algorithm_type)
 {
     abstract_value param_values[] =
         {
@@ -795,7 +795,7 @@ xen_vbd_set_qos_algorithm_params(xen_session *session, xen_vbd vbd, xen_string_s
 
 
 bool
-xen_vbd_add_to_qos_algorithm_params(xen_session *session, xen_vbd vbd, char *key, char *value)
+xen_vbd_add_to_qos_algorithm_params(xen_session *session, xen_vbd vbd, const char *key, const char *value)
 {
     abstract_value param_values[] =
         {
@@ -813,7 +813,7 @@ xen_vbd_add_to_qos_algorithm_params(xen_session *session, xen_vbd vbd, char *key
 
 
 bool
-xen_vbd_remove_from_qos_algorithm_params(xen_session *session, xen_vbd vbd, char *key)
+xen_vbd_remove_from_qos_algorithm_params(xen_session *session, xen_vbd vbd, const char *key)
 {
     abstract_value param_values[] =
         {

@@ -175,7 +175,7 @@ xen_subject_get_record(xen_session *session, xen_subject_record **result, xen_su
  * Get a reference to the subject instance with the specified UUID.
  */
 extern bool
-xen_subject_get_by_uuid(xen_session *session, xen_subject *result, char *uuid);
+xen_subject_get_by_uuid(xen_session *session, xen_subject *result, const char *uuid);
 
 
 /**

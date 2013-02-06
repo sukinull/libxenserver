@@ -195,7 +195,7 @@ xen_vmpp_get_record(xen_session *session, xen_vmpp_record **result, xen_vmpp vmp
  * Get a reference to the VMPP instance with the specified UUID.
  */
 extern bool
-xen_vmpp_get_by_uuid(xen_session *session, xen_vmpp *result, char *uuid);
+xen_vmpp_get_by_uuid(xen_session *session, xen_vmpp *result, const char *uuid);
 
 
 /**
@@ -228,7 +228,7 @@ xen_vmpp_destroy_async(xen_session *session, xen_task *result, xen_vmpp vmpp);
  * Get all the VMPP instances with the given label.
  */
 extern bool
-xen_vmpp_get_by_name_label(xen_session *session, struct xen_vmpp_set **result, char *label);
+xen_vmpp_get_by_name_label(xen_session *session, struct xen_vmpp_set **result, const char *label);
 
 
 /**
@@ -375,14 +375,14 @@ xen_vmpp_get_recent_alerts(xen_session *session, struct xen_string_set **result,
  * Set the name/label field of the given VMPP.
  */
 extern bool
-xen_vmpp_set_name_label(xen_session *session, xen_vmpp vmpp, char *label);
+xen_vmpp_set_name_label(xen_session *session, xen_vmpp vmpp, const char *label);
 
 
 /**
  * Set the name/description field of the given VMPP.
  */
 extern bool
-xen_vmpp_set_name_description(xen_session *session, xen_vmpp vmpp, char *description);
+xen_vmpp_set_name_description(xen_session *session, xen_vmpp vmpp, const char *description);
 
 
 /**
@@ -487,56 +487,56 @@ xen_vmpp_set_alarm_config(xen_session *session, xen_vmpp self, xen_string_string
  * .
  */
 extern bool
-xen_vmpp_add_to_backup_schedule(xen_session *session, xen_vmpp self, char *key, char *value);
+xen_vmpp_add_to_backup_schedule(xen_session *session, xen_vmpp self, const char *key, const char *value);
 
 
 /**
  * .
  */
 extern bool
-xen_vmpp_add_to_archive_target_config(xen_session *session, xen_vmpp self, char *key, char *value);
+xen_vmpp_add_to_archive_target_config(xen_session *session, xen_vmpp self, const char *key, const char *value);
 
 
 /**
  * .
  */
 extern bool
-xen_vmpp_add_to_archive_schedule(xen_session *session, xen_vmpp self, char *key, char *value);
+xen_vmpp_add_to_archive_schedule(xen_session *session, xen_vmpp self, const char *key, const char *value);
 
 
 /**
  * .
  */
 extern bool
-xen_vmpp_add_to_alarm_config(xen_session *session, xen_vmpp self, char *key, char *value);
+xen_vmpp_add_to_alarm_config(xen_session *session, xen_vmpp self, const char *key, const char *value);
 
 
 /**
  * .
  */
 extern bool
-xen_vmpp_remove_from_backup_schedule(xen_session *session, xen_vmpp self, char *key);
+xen_vmpp_remove_from_backup_schedule(xen_session *session, xen_vmpp self, const char *key);
 
 
 /**
  * .
  */
 extern bool
-xen_vmpp_remove_from_archive_target_config(xen_session *session, xen_vmpp self, char *key);
+xen_vmpp_remove_from_archive_target_config(xen_session *session, xen_vmpp self, const char *key);
 
 
 /**
  * .
  */
 extern bool
-xen_vmpp_remove_from_archive_schedule(xen_session *session, xen_vmpp self, char *key);
+xen_vmpp_remove_from_archive_schedule(xen_session *session, xen_vmpp self, const char *key);
 
 
 /**
  * .
  */
 extern bool
-xen_vmpp_remove_from_alarm_config(xen_session *session, xen_vmpp self, char *key);
+xen_vmpp_remove_from_alarm_config(xen_session *session, xen_vmpp self, const char *key);
 
 
 /**

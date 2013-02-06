@@ -137,7 +137,7 @@ xen_crashdump_get_record(xen_session *session, xen_crashdump_record **result, xe
 
 
 bool
-xen_crashdump_get_by_uuid(xen_session *session, xen_crashdump *result, char *uuid)
+xen_crashdump_get_by_uuid(xen_session *session, xen_crashdump *result, const char *uuid)
 {
     abstract_value param_values[] =
         {
@@ -221,7 +221,7 @@ xen_crashdump_set_other_config(xen_session *session, xen_crashdump crashdump, xe
 
 
 bool
-xen_crashdump_add_to_other_config(xen_session *session, xen_crashdump crashdump, char *key, char *value)
+xen_crashdump_add_to_other_config(xen_session *session, xen_crashdump crashdump, const char *key, const char *value)
 {
     abstract_value param_values[] =
         {
@@ -239,7 +239,7 @@ xen_crashdump_add_to_other_config(xen_session *session, xen_crashdump crashdump,
 
 
 bool
-xen_crashdump_remove_from_other_config(xen_session *session, xen_crashdump crashdump, char *key)
+xen_crashdump_remove_from_other_config(xen_session *session, xen_crashdump crashdump, const char *key)
 {
     abstract_value param_values[] =
         {

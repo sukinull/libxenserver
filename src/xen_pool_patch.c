@@ -157,7 +157,7 @@ xen_pool_patch_get_record(xen_session *session, xen_pool_patch_record **result, 
 
 
 bool
-xen_pool_patch_get_by_uuid(xen_session *session, xen_pool_patch *result, char *uuid)
+xen_pool_patch_get_by_uuid(xen_session *session, xen_pool_patch *result, const char *uuid)
 {
     abstract_value param_values[] =
         {
@@ -174,7 +174,7 @@ xen_pool_patch_get_by_uuid(xen_session *session, xen_pool_patch *result, char *u
 
 
 bool
-xen_pool_patch_get_by_name_label(xen_session *session, struct xen_pool_patch_set **result, char *label)
+xen_pool_patch_get_by_name_label(xen_session *session, struct xen_pool_patch_set **result, const char *label)
 {
     abstract_value param_values[] =
         {
@@ -341,7 +341,7 @@ xen_pool_patch_set_other_config(xen_session *session, xen_pool_patch pool_patch,
 
 
 bool
-xen_pool_patch_add_to_other_config(xen_session *session, xen_pool_patch pool_patch, char *key, char *value)
+xen_pool_patch_add_to_other_config(xen_session *session, xen_pool_patch pool_patch, const char *key, const char *value)
 {
     abstract_value param_values[] =
         {
@@ -359,7 +359,7 @@ xen_pool_patch_add_to_other_config(xen_session *session, xen_pool_patch pool_pat
 
 
 bool
-xen_pool_patch_remove_from_other_config(xen_session *session, xen_pool_patch pool_patch, char *key)
+xen_pool_patch_remove_from_other_config(xen_session *session, xen_pool_patch pool_patch, const char *key)
 {
     abstract_value param_values[] =
         {

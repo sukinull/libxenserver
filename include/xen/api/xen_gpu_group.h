@@ -178,14 +178,14 @@ xen_gpu_group_get_record(xen_session *session, xen_gpu_group_record **result, xe
  * Get a reference to the GPU_group instance with the specified UUID.
  */
 extern bool
-xen_gpu_group_get_by_uuid(xen_session *session, xen_gpu_group *result, char *uuid);
+xen_gpu_group_get_by_uuid(xen_session *session, xen_gpu_group *result, const char *uuid);
 
 
 /**
  * Get all the GPU_group instances with the given label.
  */
 extern bool
-xen_gpu_group_get_by_name_label(xen_session *session, struct xen_gpu_group_set **result, char *label);
+xen_gpu_group_get_by_name_label(xen_session *session, struct xen_gpu_group_set **result, const char *label);
 
 
 /**
@@ -241,14 +241,14 @@ xen_gpu_group_get_other_config(xen_session *session, xen_string_string_map **res
  * Set the name/label field of the given GPU_group.
  */
 extern bool
-xen_gpu_group_set_name_label(xen_session *session, xen_gpu_group gpu_group, char *label);
+xen_gpu_group_set_name_label(xen_session *session, xen_gpu_group gpu_group, const char *label);
 
 
 /**
  * Set the name/description field of the given GPU_group.
  */
 extern bool
-xen_gpu_group_set_name_description(xen_session *session, xen_gpu_group gpu_group, char *description);
+xen_gpu_group_set_name_description(xen_session *session, xen_gpu_group gpu_group, const char *description);
 
 
 /**
@@ -263,7 +263,7 @@ xen_gpu_group_set_other_config(xen_session *session, xen_gpu_group gpu_group, xe
  * GPU_group.
  */
 extern bool
-xen_gpu_group_add_to_other_config(xen_session *session, xen_gpu_group gpu_group, char *key, char *value);
+xen_gpu_group_add_to_other_config(xen_session *session, xen_gpu_group gpu_group, const char *key, const char *value);
 
 
 /**
@@ -272,7 +272,7 @@ xen_gpu_group_add_to_other_config(xen_session *session, xen_gpu_group gpu_group,
  * then do nothing.
  */
 extern bool
-xen_gpu_group_remove_from_other_config(xen_session *session, xen_gpu_group gpu_group, char *key);
+xen_gpu_group_remove_from_other_config(xen_session *session, xen_gpu_group gpu_group, const char *key);
 
 
 /**

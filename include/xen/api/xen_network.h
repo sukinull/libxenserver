@@ -190,7 +190,7 @@ xen_network_get_record(xen_session *session, xen_network_record **result, xen_ne
  * Get a reference to the network instance with the specified UUID.
  */
 extern bool
-xen_network_get_by_uuid(xen_session *session, xen_network *result, char *uuid);
+xen_network_get_by_uuid(xen_session *session, xen_network *result, const char *uuid);
 
 
 /**
@@ -223,7 +223,7 @@ xen_network_destroy_async(xen_session *session, xen_task *result, xen_network ne
  * Get all the network instances with the given label.
  */
 extern bool
-xen_network_get_by_name_label(xen_session *session, struct xen_network_set **result, char *label);
+xen_network_get_by_name_label(xen_session *session, struct xen_network_set **result, const char *label);
 
 
 /**
@@ -321,14 +321,14 @@ xen_network_get_default_locking_mode(xen_session *session, enum xen_network_defa
  * Set the name/label field of the given network.
  */
 extern bool
-xen_network_set_name_label(xen_session *session, xen_network network, char *label);
+xen_network_set_name_label(xen_session *session, xen_network network, const char *label);
 
 
 /**
  * Set the name/description field of the given network.
  */
 extern bool
-xen_network_set_name_description(xen_session *session, xen_network network, char *description);
+xen_network_set_name_description(xen_session *session, xen_network network, const char *description);
 
 
 /**
@@ -350,7 +350,7 @@ xen_network_set_other_config(xen_session *session, xen_network network, xen_stri
  * network.
  */
 extern bool
-xen_network_add_to_other_config(xen_session *session, xen_network network, char *key, char *value);
+xen_network_add_to_other_config(xen_session *session, xen_network network, const char *key, const char *value);
 
 
 /**
@@ -359,7 +359,7 @@ xen_network_add_to_other_config(xen_session *session, xen_network network, char 
  * then do nothing.
  */
 extern bool
-xen_network_remove_from_other_config(xen_session *session, xen_network network, char *key);
+xen_network_remove_from_other_config(xen_session *session, xen_network network, const char *key);
 
 
 /**
@@ -374,7 +374,7 @@ xen_network_set_tags(xen_session *session, xen_network network, struct xen_strin
  * value is already in that Set, then do nothing.
  */
 extern bool
-xen_network_add_tags(xen_session *session, xen_network network, char *value);
+xen_network_add_tags(xen_session *session, xen_network network, const char *value);
 
 
 /**
@@ -382,7 +382,7 @@ xen_network_add_tags(xen_session *session, xen_network network, char *value);
  * the value is not in that Set, then do nothing.
  */
 extern bool
-xen_network_remove_tags(xen_session *session, xen_network network, char *value);
+xen_network_remove_tags(xen_session *session, xen_network network, const char *value);
 
 
 /**
@@ -390,14 +390,14 @@ xen_network_remove_tags(xen_session *session, xen_network network, char *value);
  * associated with this pool.
  */
 extern bool
-xen_network_create_new_blob(xen_session *session, xen_blob *result, xen_network network, char *name, char *mime_type, bool pubblic);
+xen_network_create_new_blob(xen_session *session, xen_blob *result, xen_network network, const char *name, const char *mime_type, bool pubblic);
 
 /**
  * Create a placeholder for a named binary blob of data that is
  * associated with this pool.
  */
 extern bool
-xen_network_create_new_blob_async(xen_session *session, xen_task *result, xen_network network, char *name, char *mime_type, bool pubblic);
+xen_network_create_new_blob_async(xen_session *session, xen_task *result, xen_network network, const char *name, const char *mime_type, bool pubblic);
 
 
 /**

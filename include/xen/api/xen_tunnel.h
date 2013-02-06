@@ -176,7 +176,7 @@ xen_tunnel_get_record(xen_session *session, xen_tunnel_record **result, xen_tunn
  * Get a reference to the tunnel instance with the specified UUID.
  */
 extern bool
-xen_tunnel_get_by_uuid(xen_session *session, xen_tunnel *result, char *uuid);
+xen_tunnel_get_by_uuid(xen_session *session, xen_tunnel *result, const char *uuid);
 
 
 /**
@@ -226,7 +226,7 @@ xen_tunnel_set_status(xen_session *session, xen_tunnel tunnel, xen_string_string
  * tunnel.
  */
 extern bool
-xen_tunnel_add_to_status(xen_session *session, xen_tunnel tunnel, char *key, char *value);
+xen_tunnel_add_to_status(xen_session *session, xen_tunnel tunnel, const char *key, const char *value);
 
 
 /**
@@ -234,7 +234,7 @@ xen_tunnel_add_to_status(xen_session *session, xen_tunnel tunnel, char *key, cha
  * field of the given tunnel.  If the key is not in that Map, then do nothing.
  */
 extern bool
-xen_tunnel_remove_from_status(xen_session *session, xen_tunnel tunnel, char *key);
+xen_tunnel_remove_from_status(xen_session *session, xen_tunnel tunnel, const char *key);
 
 
 /**
@@ -249,7 +249,7 @@ xen_tunnel_set_other_config(xen_session *session, xen_tunnel tunnel, xen_string_
  * tunnel.
  */
 extern bool
-xen_tunnel_add_to_other_config(xen_session *session, xen_tunnel tunnel, char *key, char *value);
+xen_tunnel_add_to_other_config(xen_session *session, xen_tunnel tunnel, const char *key, const char *value);
 
 
 /**
@@ -258,7 +258,7 @@ xen_tunnel_add_to_other_config(xen_session *session, xen_tunnel tunnel, char *ke
  * then do nothing.
  */
 extern bool
-xen_tunnel_remove_from_other_config(xen_session *session, xen_tunnel tunnel, char *key);
+xen_tunnel_remove_from_other_config(xen_session *session, xen_tunnel tunnel, const char *key);
 
 
 /**

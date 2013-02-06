@@ -230,7 +230,7 @@ xen_pool_get_record(xen_session *session, xen_pool_record **result, xen_pool poo
 
 
 bool
-xen_pool_get_by_uuid(xen_session *session, xen_pool *result, char *uuid)
+xen_pool_get_by_uuid(xen_session *session, xen_pool *result, const char *uuid)
 {
     abstract_value param_values[] =
         {
@@ -681,7 +681,7 @@ xen_pool_get_metadata_vdis(xen_session *session, struct xen_vdi_set **result, xe
 
 
 bool
-xen_pool_set_name_label(xen_session *session, xen_pool pool, char *name_label)
+xen_pool_set_name_label(xen_session *session, xen_pool pool, const char *name_label)
 {
     abstract_value param_values[] =
         {
@@ -697,7 +697,7 @@ xen_pool_set_name_label(xen_session *session, xen_pool pool, char *name_label)
 
 
 bool
-xen_pool_set_name_description(xen_session *session, xen_pool pool, char *name_description)
+xen_pool_set_name_description(xen_session *session, xen_pool pool, const char *name_description)
 {
     abstract_value param_values[] =
         {
@@ -777,7 +777,7 @@ xen_pool_set_other_config(xen_session *session, xen_pool pool, xen_string_string
 
 
 bool
-xen_pool_add_to_other_config(xen_session *session, xen_pool pool, char *key, char *value)
+xen_pool_add_to_other_config(xen_session *session, xen_pool pool, const char *key, const char *value)
 {
     abstract_value param_values[] =
         {
@@ -795,7 +795,7 @@ xen_pool_add_to_other_config(xen_session *session, xen_pool pool, char *key, cha
 
 
 bool
-xen_pool_remove_from_other_config(xen_session *session, xen_pool pool, char *key)
+xen_pool_remove_from_other_config(xen_session *session, xen_pool pool, const char *key)
 {
     abstract_value param_values[] =
         {
@@ -843,7 +843,7 @@ xen_pool_set_tags(xen_session *session, xen_pool pool, struct xen_string_set *ta
 
 
 bool
-xen_pool_add_tags(xen_session *session, xen_pool pool, char *value)
+xen_pool_add_tags(xen_session *session, xen_pool pool, const char *value)
 {
     abstract_value param_values[] =
         {
@@ -859,7 +859,7 @@ xen_pool_add_tags(xen_session *session, xen_pool pool, char *value)
 
 
 bool
-xen_pool_remove_tags(xen_session *session, xen_pool pool, char *value)
+xen_pool_remove_tags(xen_session *session, xen_pool pool, const char *value)
 {
     abstract_value param_values[] =
         {
@@ -891,7 +891,7 @@ xen_pool_set_gui_config(xen_session *session, xen_pool pool, xen_string_string_m
 
 
 bool
-xen_pool_add_to_gui_config(xen_session *session, xen_pool pool, char *key, char *value)
+xen_pool_add_to_gui_config(xen_session *session, xen_pool pool, const char *key, const char *value)
 {
     abstract_value param_values[] =
         {
@@ -909,7 +909,7 @@ xen_pool_add_to_gui_config(xen_session *session, xen_pool pool, char *key, char 
 
 
 bool
-xen_pool_remove_from_gui_config(xen_session *session, xen_pool pool, char *key)
+xen_pool_remove_from_gui_config(xen_session *session, xen_pool pool, const char *key)
 {
     abstract_value param_values[] =
         {
@@ -957,7 +957,7 @@ xen_pool_set_wlb_verify_cert(xen_session *session, xen_pool pool, bool wlb_verif
 
 
 bool
-xen_pool_join(xen_session *session, char *master_address, char *master_username, char *master_password)
+xen_pool_join(xen_session *session, const char *master_address, const char *master_username, const char *master_password)
 {
     abstract_value param_values[] =
         {
@@ -974,7 +974,7 @@ xen_pool_join(xen_session *session, char *master_address, char *master_username,
 }
 
 bool
-xen_pool_join_async(xen_session *session, xen_task *result, char *master_address, char *master_username, char *master_password)
+xen_pool_join_async(xen_session *session, xen_task *result, const char *master_address, const char *master_username, const char *master_password)
 {
     abstract_value param_values[] =
         {
@@ -994,7 +994,7 @@ xen_pool_join_async(xen_session *session, xen_task *result, char *master_address
 }
 
 bool
-xen_pool_join_force(xen_session *session, char *master_address, char *master_username, char *master_password)
+xen_pool_join_force(xen_session *session, const char *master_address, const char *master_username, const char *master_password)
 {
     abstract_value param_values[] =
         {
@@ -1011,7 +1011,7 @@ xen_pool_join_force(xen_session *session, char *master_address, char *master_use
 }
 
 bool
-xen_pool_join_force_async(xen_session *session, xen_task *result, char *master_address, char *master_username, char *master_password)
+xen_pool_join_force_async(xen_session *session, xen_task *result, const char *master_address, const char *master_username, const char *master_password)
 {
     abstract_value param_values[] =
         {
@@ -1069,7 +1069,7 @@ xen_pool_emergency_transition_to_master(xen_session *session)
 
 
 bool
-xen_pool_emergency_reset_master(xen_session *session, char *master_address)
+xen_pool_emergency_reset_master(xen_session *session, const char *master_address)
 {
     abstract_value param_values[] =
         {
@@ -1105,7 +1105,7 @@ xen_pool_recover_slaves_async(xen_session *session, xen_task *result)
 }
 
 bool
-xen_pool_create_vlan(xen_session *session, struct xen_pif_set **result, char *device, xen_network network, int64_t vlan)
+xen_pool_create_vlan(xen_session *session, struct xen_pif_set **result, const char *device, xen_network network, int64_t vlan)
 {
     abstract_value param_values[] =
         {
@@ -1125,7 +1125,7 @@ xen_pool_create_vlan(xen_session *session, struct xen_pif_set **result, char *de
 }
 
 bool
-xen_pool_create_vlan_async(xen_session *session, xen_task *result, char *device, xen_network network, int64_t vlan)
+xen_pool_create_vlan_async(xen_session *session, xen_task *result, const char *device, xen_network network, int64_t vlan)
 {
     abstract_value param_values[] =
         {
@@ -1394,7 +1394,7 @@ xen_pool_set_ha_host_failures_to_tolerate_async(xen_session *session, xen_task *
 }
 
 bool
-xen_pool_create_new_blob(xen_session *session, xen_blob *result, xen_pool pool, char *name, char *mime_type, bool pubblic)
+xen_pool_create_new_blob(xen_session *session, xen_blob *result, xen_pool pool, const char *name, const char *mime_type, bool pubblic)
 {
     abstract_value param_values[] =
         {
@@ -1416,7 +1416,7 @@ xen_pool_create_new_blob(xen_session *session, xen_blob *result, xen_pool pool, 
 }
 
 bool
-xen_pool_create_new_blob_async(xen_session *session, xen_task *result, xen_pool pool, char *name, char *mime_type, bool pubblic)
+xen_pool_create_new_blob_async(xen_session *session, xen_task *result, xen_pool pool, const char *name, const char *mime_type, bool pubblic)
 {
     abstract_value param_values[] =
         {
@@ -1438,7 +1438,7 @@ xen_pool_create_new_blob_async(xen_session *session, xen_task *result, xen_pool 
 }
 
 bool
-xen_pool_enable_external_auth(xen_session *session, xen_pool pool, xen_string_string_map *config, char *service_name, char *auth_type)
+xen_pool_enable_external_auth(xen_session *session, xen_pool pool, xen_string_string_map *config, const char *service_name, const char *auth_type)
 {
     abstract_value param_values[] =
         {
@@ -1488,7 +1488,7 @@ xen_pool_detect_nonhomogeneous_external_auth(xen_session *session, xen_pool pool
 
 
 bool
-xen_pool_initialize_wlb(xen_session *session, char *wlb_url, char *wlb_username, char *wlb_password, char *xenserver_username, char *xenserver_password)
+xen_pool_initialize_wlb(xen_session *session, const char *wlb_url, const char *wlb_username, const char *wlb_password, const char *xenserver_username, const char *xenserver_password)
 {
     abstract_value param_values[] =
         {
@@ -1509,7 +1509,7 @@ xen_pool_initialize_wlb(xen_session *session, char *wlb_url, char *wlb_username,
 }
 
 bool
-xen_pool_initialize_wlb_async(xen_session *session, xen_task *result, char *wlb_url, char *wlb_username, char *wlb_password, char *xenserver_username, char *xenserver_password)
+xen_pool_initialize_wlb_async(xen_session *session, xen_task *result, const char *wlb_url, const char *wlb_username, const char *wlb_password, const char *xenserver_username, const char *xenserver_password)
 {
     abstract_value param_values[] =
         {
@@ -1625,7 +1625,7 @@ xen_pool_retrieve_wlb_recommendations_async(xen_session *session, xen_task *resu
 }
 
 bool
-xen_pool_send_test_post(xen_session *session, char **result, char *host, int64_t port, char *body)
+xen_pool_send_test_post(xen_session *session, char **result, const char *host, int64_t port, const char *body)
 {
     abstract_value param_values[] =
         {
@@ -1645,7 +1645,7 @@ xen_pool_send_test_post(xen_session *session, char **result, char *host, int64_t
 }
 
 bool
-xen_pool_send_test_post_async(xen_session *session, xen_task *result, char *host, int64_t port, char *body)
+xen_pool_send_test_post_async(xen_session *session, xen_task *result, const char *host, int64_t port, const char *body)
 {
     abstract_value param_values[] =
         {
@@ -1665,7 +1665,7 @@ xen_pool_send_test_post_async(xen_session *session, xen_task *result, char *host
 }
 
 bool
-xen_pool_certificate_install(xen_session *session, char *name, char *cert)
+xen_pool_certificate_install(xen_session *session, const char *name, const char *cert)
 {
     abstract_value param_values[] =
         {
@@ -1680,7 +1680,7 @@ xen_pool_certificate_install(xen_session *session, char *name, char *cert)
 }
 
 bool
-xen_pool_certificate_install_async(xen_session *session, xen_task *result, char *name, char *cert)
+xen_pool_certificate_install_async(xen_session *session, xen_task *result, const char *name, const char *cert)
 {
     abstract_value param_values[] =
         {
@@ -1698,7 +1698,7 @@ xen_pool_certificate_install_async(xen_session *session, xen_task *result, char 
 }
 
 bool
-xen_pool_certificate_uninstall(xen_session *session, char *name)
+xen_pool_certificate_uninstall(xen_session *session, const char *name)
 {
     abstract_value param_values[] =
         {
@@ -1711,7 +1711,7 @@ xen_pool_certificate_uninstall(xen_session *session, char *name)
 }
 
 bool
-xen_pool_certificate_uninstall_async(xen_session *session, xen_task *result, char *name)
+xen_pool_certificate_uninstall_async(xen_session *session, xen_task *result, const char *name)
 {
     abstract_value param_values[] =
         {
@@ -1749,7 +1749,7 @@ xen_pool_certificate_list_async(xen_session *session, xen_task *result)
 }
 
 bool
-xen_pool_crl_install(xen_session *session, char *name, char *cert)
+xen_pool_crl_install(xen_session *session, const char *name, const char *cert)
 {
     abstract_value param_values[] =
         {
@@ -1764,7 +1764,7 @@ xen_pool_crl_install(xen_session *session, char *name, char *cert)
 }
 
 bool
-xen_pool_crl_install_async(xen_session *session, xen_task *result, char *name, char *cert)
+xen_pool_crl_install_async(xen_session *session, xen_task *result, const char *name, const char *cert)
 {
     abstract_value param_values[] =
         {
@@ -1782,7 +1782,7 @@ xen_pool_crl_install_async(xen_session *session, xen_task *result, char *name, c
 }
 
 bool
-xen_pool_crl_uninstall(xen_session *session, char *name)
+xen_pool_crl_uninstall(xen_session *session, const char *name)
 {
     abstract_value param_values[] =
         {
@@ -1795,7 +1795,7 @@ xen_pool_crl_uninstall(xen_session *session, char *name)
 }
 
 bool
-xen_pool_crl_uninstall_async(xen_session *session, xen_task *result, char *name)
+xen_pool_crl_uninstall_async(xen_session *session, xen_task *result, const char *name)
 {
     abstract_value param_values[] =
         {
@@ -1900,7 +1900,7 @@ xen_pool_disable_redo_log_async(xen_session *session, xen_task *result)
 }
 
 bool
-xen_pool_set_vswitch_controller(xen_session *session, char *address)
+xen_pool_set_vswitch_controller(xen_session *session, const char *address)
 {
     abstract_value param_values[] =
         {
@@ -1913,7 +1913,7 @@ xen_pool_set_vswitch_controller(xen_session *session, char *address)
 }
 
 bool
-xen_pool_set_vswitch_controller_async(xen_session *session, xen_task *result, char *address)
+xen_pool_set_vswitch_controller_async(xen_session *session, xen_task *result, const char *address)
 {
     abstract_value param_values[] =
         {

@@ -168,7 +168,7 @@ xen_message_record_opt_set_free(xen_message_record_opt_set *set);
  * .
  */
 extern bool
-xen_message_create(xen_session *session, xen_message *result, char *name, int64_t priority, enum xen_cls cls, char *obj_uuid, char *body);
+xen_message_create(xen_session *session, xen_message *result, const char *name, int64_t priority, enum xen_cls cls, const char *obj_uuid, const char *body);
 
 
 /**
@@ -203,7 +203,7 @@ xen_message_get_record(xen_session *session, xen_message_record **result, xen_me
  * .
  */
 extern bool
-xen_message_get_by_uuid(xen_session *session, xen_message *result, char *uuid);
+xen_message_get_by_uuid(xen_session *session, xen_message *result, const char *uuid);
 
 
 /**
@@ -217,7 +217,7 @@ xen_message_get_all_records(xen_session *session, xen_message_xen_message_record
  * .
  */
 extern bool
-xen_message_get_all_records_where(xen_session *session, xen_message_xen_message_record_map **result, char *expr);
+xen_message_get_all_records_where(xen_session *session, xen_message_xen_message_record_map **result, const char *expr);
 
 
 #endif

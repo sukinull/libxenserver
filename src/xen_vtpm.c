@@ -110,7 +110,7 @@ xen_vtpm_get_record(xen_session *session, xen_vtpm_record **result, xen_vtpm vtp
 
 
 bool
-xen_vtpm_get_by_uuid(xen_session *session, xen_vtpm *result, char *uuid)
+xen_vtpm_get_by_uuid(xen_session *session, xen_vtpm *result, const char *uuid)
 {
     abstract_value param_values[] =
         {

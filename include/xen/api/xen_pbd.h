@@ -177,7 +177,7 @@ xen_pbd_get_record(xen_session *session, xen_pbd_record **result, xen_pbd pbd);
  * Get a reference to the PBD instance with the specified UUID.
  */
 extern bool
-xen_pbd_get_by_uuid(xen_session *session, xen_pbd *result, char *uuid);
+xen_pbd_get_by_uuid(xen_session *session, xen_pbd *result, const char *uuid);
 
 
 /**
@@ -260,7 +260,7 @@ xen_pbd_set_other_config(xen_session *session, xen_pbd pbd, xen_string_string_ma
  * PBD.
  */
 extern bool
-xen_pbd_add_to_other_config(xen_session *session, xen_pbd pbd, char *key, char *value);
+xen_pbd_add_to_other_config(xen_session *session, xen_pbd pbd, const char *key, const char *value);
 
 
 /**
@@ -269,7 +269,7 @@ xen_pbd_add_to_other_config(xen_session *session, xen_pbd pbd, char *key, char *
  * do nothing.
  */
 extern bool
-xen_pbd_remove_from_other_config(xen_session *session, xen_pbd pbd, char *key);
+xen_pbd_remove_from_other_config(xen_session *session, xen_pbd pbd, const char *key);
 
 
 /**

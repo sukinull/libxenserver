@@ -418,7 +418,7 @@ xen_vm_get_record(xen_session *session, xen_vm_record **result, xen_vm vm)
 
 
 bool
-xen_vm_get_by_uuid(xen_session *session, xen_vm *result, char *uuid)
+xen_vm_get_by_uuid(xen_session *session, xen_vm *result, const char *uuid)
 {
     abstract_value param_values[] =
         {
@@ -496,7 +496,7 @@ xen_vm_destroy_async(xen_session *session, xen_task *result, xen_vm vm)
 }
 
 bool
-xen_vm_get_by_name_label(xen_session *session, struct xen_vm_set **result, char *label)
+xen_vm_get_by_name_label(xen_session *session, struct xen_vm_set **result, const char *label)
 {
     abstract_value param_values[] =
         {
@@ -1725,7 +1725,7 @@ xen_vm_get_version(xen_session *session, int64_t *result, xen_vm vm)
 
 
 bool
-xen_vm_set_name_label(xen_session *session, xen_vm vm, char *label)
+xen_vm_set_name_label(xen_session *session, xen_vm vm, const char *label)
 {
     abstract_value param_values[] =
         {
@@ -1741,7 +1741,7 @@ xen_vm_set_name_label(xen_session *session, xen_vm vm, char *label)
 
 
 bool
-xen_vm_set_name_description(xen_session *session, xen_vm vm, char *description)
+xen_vm_set_name_description(xen_session *session, xen_vm vm, const char *description)
 {
     abstract_value param_values[] =
         {
@@ -1821,7 +1821,7 @@ xen_vm_set_vcpus_params(xen_session *session, xen_vm vm, xen_string_string_map *
 
 
 bool
-xen_vm_add_to_vcpus_params(xen_session *session, xen_vm vm, char *key, char *value)
+xen_vm_add_to_vcpus_params(xen_session *session, xen_vm vm, const char *key, const char *value)
 {
     abstract_value param_values[] =
         {
@@ -1839,7 +1839,7 @@ xen_vm_add_to_vcpus_params(xen_session *session, xen_vm vm, char *key, char *val
 
 
 bool
-xen_vm_remove_from_vcpus_params(xen_session *session, xen_vm vm, char *key)
+xen_vm_remove_from_vcpus_params(xen_session *session, xen_vm vm, const char *key)
 {
     abstract_value param_values[] =
         {
@@ -1903,7 +1903,7 @@ xen_vm_set_actions_after_crash(xen_session *session, xen_vm vm, enum xen_on_cras
 
 
 bool
-xen_vm_set_pv_bootloader(xen_session *session, xen_vm vm, char *bootloader)
+xen_vm_set_pv_bootloader(xen_session *session, xen_vm vm, const char *bootloader)
 {
     abstract_value param_values[] =
         {
@@ -1919,7 +1919,7 @@ xen_vm_set_pv_bootloader(xen_session *session, xen_vm vm, char *bootloader)
 
 
 bool
-xen_vm_set_pv_kernel(xen_session *session, xen_vm vm, char *kernel)
+xen_vm_set_pv_kernel(xen_session *session, xen_vm vm, const char *kernel)
 {
     abstract_value param_values[] =
         {
@@ -1935,7 +1935,7 @@ xen_vm_set_pv_kernel(xen_session *session, xen_vm vm, char *kernel)
 
 
 bool
-xen_vm_set_pv_ramdisk(xen_session *session, xen_vm vm, char *ramdisk)
+xen_vm_set_pv_ramdisk(xen_session *session, xen_vm vm, const char *ramdisk)
 {
     abstract_value param_values[] =
         {
@@ -1951,7 +1951,7 @@ xen_vm_set_pv_ramdisk(xen_session *session, xen_vm vm, char *ramdisk)
 
 
 bool
-xen_vm_set_pv_args(xen_session *session, xen_vm vm, char *args)
+xen_vm_set_pv_args(xen_session *session, xen_vm vm, const char *args)
 {
     abstract_value param_values[] =
         {
@@ -1967,7 +1967,7 @@ xen_vm_set_pv_args(xen_session *session, xen_vm vm, char *args)
 
 
 bool
-xen_vm_set_pv_bootloader_args(xen_session *session, xen_vm vm, char *bootloader_args)
+xen_vm_set_pv_bootloader_args(xen_session *session, xen_vm vm, const char *bootloader_args)
 {
     abstract_value param_values[] =
         {
@@ -1983,7 +1983,7 @@ xen_vm_set_pv_bootloader_args(xen_session *session, xen_vm vm, char *bootloader_
 
 
 bool
-xen_vm_set_pv_legacy_args(xen_session *session, xen_vm vm, char *legacy_args)
+xen_vm_set_pv_legacy_args(xen_session *session, xen_vm vm, const char *legacy_args)
 {
     abstract_value param_values[] =
         {
@@ -1999,7 +1999,7 @@ xen_vm_set_pv_legacy_args(xen_session *session, xen_vm vm, char *legacy_args)
 
 
 bool
-xen_vm_set_hvm_boot_policy(xen_session *session, xen_vm vm, char *boot_policy)
+xen_vm_set_hvm_boot_policy(xen_session *session, xen_vm vm, const char *boot_policy)
 {
     abstract_value param_values[] =
         {
@@ -2031,7 +2031,7 @@ xen_vm_set_hvm_boot_params(xen_session *session, xen_vm vm, xen_string_string_ma
 
 
 bool
-xen_vm_add_to_hvm_boot_params(xen_session *session, xen_vm vm, char *key, char *value)
+xen_vm_add_to_hvm_boot_params(xen_session *session, xen_vm vm, const char *key, const char *value)
 {
     abstract_value param_values[] =
         {
@@ -2049,7 +2049,7 @@ xen_vm_add_to_hvm_boot_params(xen_session *session, xen_vm vm, char *key, char *
 
 
 bool
-xen_vm_remove_from_hvm_boot_params(xen_session *session, xen_vm vm, char *key)
+xen_vm_remove_from_hvm_boot_params(xen_session *session, xen_vm vm, const char *key)
 {
     abstract_value param_values[] =
         {
@@ -2081,7 +2081,7 @@ xen_vm_set_platform(xen_session *session, xen_vm vm, xen_string_string_map *plat
 
 
 bool
-xen_vm_add_to_platform(xen_session *session, xen_vm vm, char *key, char *value)
+xen_vm_add_to_platform(xen_session *session, xen_vm vm, const char *key, const char *value)
 {
     abstract_value param_values[] =
         {
@@ -2099,7 +2099,7 @@ xen_vm_add_to_platform(xen_session *session, xen_vm vm, char *key, char *value)
 
 
 bool
-xen_vm_remove_from_platform(xen_session *session, xen_vm vm, char *key)
+xen_vm_remove_from_platform(xen_session *session, xen_vm vm, const char *key)
 {
     abstract_value param_values[] =
         {
@@ -2115,7 +2115,7 @@ xen_vm_remove_from_platform(xen_session *session, xen_vm vm, char *key)
 
 
 bool
-xen_vm_set_pci_bus(xen_session *session, xen_vm vm, char *pci_bus)
+xen_vm_set_pci_bus(xen_session *session, xen_vm vm, const char *pci_bus)
 {
     abstract_value param_values[] =
         {
@@ -2147,7 +2147,7 @@ xen_vm_set_other_config(xen_session *session, xen_vm vm, xen_string_string_map *
 
 
 bool
-xen_vm_add_to_other_config(xen_session *session, xen_vm vm, char *key, char *value)
+xen_vm_add_to_other_config(xen_session *session, xen_vm vm, const char *key, const char *value)
 {
     abstract_value param_values[] =
         {
@@ -2165,7 +2165,7 @@ xen_vm_add_to_other_config(xen_session *session, xen_vm vm, char *key, char *val
 
 
 bool
-xen_vm_remove_from_other_config(xen_session *session, xen_vm vm, char *key)
+xen_vm_remove_from_other_config(xen_session *session, xen_vm vm, const char *key)
 {
     abstract_value param_values[] =
         {
@@ -2181,7 +2181,7 @@ xen_vm_remove_from_other_config(xen_session *session, xen_vm vm, char *key)
 
 
 bool
-xen_vm_set_recommendations(xen_session *session, xen_vm vm, char *recommendations)
+xen_vm_set_recommendations(xen_session *session, xen_vm vm, const char *recommendations)
 {
     abstract_value param_values[] =
         {
@@ -2213,7 +2213,7 @@ xen_vm_set_xenstore_data(xen_session *session, xen_vm vm, xen_string_string_map 
 
 
 bool
-xen_vm_add_to_xenstore_data(xen_session *session, xen_vm vm, char *key, char *value)
+xen_vm_add_to_xenstore_data(xen_session *session, xen_vm vm, const char *key, const char *value)
 {
     abstract_value param_values[] =
         {
@@ -2231,7 +2231,7 @@ xen_vm_add_to_xenstore_data(xen_session *session, xen_vm vm, char *key, char *va
 
 
 bool
-xen_vm_remove_from_xenstore_data(xen_session *session, xen_vm vm, char *key)
+xen_vm_remove_from_xenstore_data(xen_session *session, xen_vm vm, const char *key)
 {
     abstract_value param_values[] =
         {
@@ -2263,7 +2263,7 @@ xen_vm_set_tags(xen_session *session, xen_vm vm, struct xen_string_set *tags)
 
 
 bool
-xen_vm_add_tags(xen_session *session, xen_vm vm, char *value)
+xen_vm_add_tags(xen_session *session, xen_vm vm, const char *value)
 {
     abstract_value param_values[] =
         {
@@ -2279,7 +2279,7 @@ xen_vm_add_tags(xen_session *session, xen_vm vm, char *value)
 
 
 bool
-xen_vm_remove_tags(xen_session *session, xen_vm vm, char *value)
+xen_vm_remove_tags(xen_session *session, xen_vm vm, const char *value)
 {
     abstract_value param_values[] =
         {
@@ -2311,7 +2311,7 @@ xen_vm_set_blocked_operations(xen_session *session, xen_vm vm, xen_vm_operations
 
 
 bool
-xen_vm_add_to_blocked_operations(xen_session *session, xen_vm vm, enum xen_vm_operations key, char *value)
+xen_vm_add_to_blocked_operations(xen_session *session, xen_vm vm, enum xen_vm_operations key, const char *value)
 {
     abstract_value param_values[] =
         {
@@ -2361,7 +2361,7 @@ xen_vm_set_suspend_sr(xen_session *session, xen_vm vm, xen_sr suspend_sr)
 
 
 bool
-xen_vm_snapshot(xen_session *session, xen_vm *result, xen_vm vm, char *new_name)
+xen_vm_snapshot(xen_session *session, xen_vm *result, xen_vm vm, const char *new_name)
 {
     abstract_value param_values[] =
         {
@@ -2379,7 +2379,7 @@ xen_vm_snapshot(xen_session *session, xen_vm *result, xen_vm vm, char *new_name)
 }
 
 bool
-xen_vm_snapshot_async(xen_session *session, xen_task *result, xen_vm vm, char *new_name)
+xen_vm_snapshot_async(xen_session *session, xen_task *result, xen_vm vm, const char *new_name)
 {
     abstract_value param_values[] =
         {
@@ -2397,7 +2397,7 @@ xen_vm_snapshot_async(xen_session *session, xen_task *result, xen_vm vm, char *n
 }
 
 bool
-xen_vm_snapshot_with_quiesce(xen_session *session, xen_vm *result, xen_vm vm, char *new_name)
+xen_vm_snapshot_with_quiesce(xen_session *session, xen_vm *result, xen_vm vm, const char *new_name)
 {
     abstract_value param_values[] =
         {
@@ -2415,7 +2415,7 @@ xen_vm_snapshot_with_quiesce(xen_session *session, xen_vm *result, xen_vm vm, ch
 }
 
 bool
-xen_vm_snapshot_with_quiesce_async(xen_session *session, xen_task *result, xen_vm vm, char *new_name)
+xen_vm_snapshot_with_quiesce_async(xen_session *session, xen_task *result, xen_vm vm, const char *new_name)
 {
     abstract_value param_values[] =
         {
@@ -2433,7 +2433,7 @@ xen_vm_snapshot_with_quiesce_async(xen_session *session, xen_task *result, xen_v
 }
 
 bool
-xen_vm_clone(xen_session *session, xen_vm *result, xen_vm vm, char *new_name)
+xen_vm_clone(xen_session *session, xen_vm *result, xen_vm vm, const char *new_name)
 {
     abstract_value param_values[] =
         {
@@ -2451,7 +2451,7 @@ xen_vm_clone(xen_session *session, xen_vm *result, xen_vm vm, char *new_name)
 }
 
 bool
-xen_vm_clone_async(xen_session *session, xen_task *result, xen_vm vm, char *new_name)
+xen_vm_clone_async(xen_session *session, xen_task *result, xen_vm vm, const char *new_name)
 {
     abstract_value param_values[] =
         {
@@ -2469,7 +2469,7 @@ xen_vm_clone_async(xen_session *session, xen_task *result, xen_vm vm, char *new_
 }
 
 bool
-xen_vm_copy(xen_session *session, xen_vm *result, xen_vm vm, char *new_name, xen_sr sr)
+xen_vm_copy(xen_session *session, xen_vm *result, xen_vm vm, const char *new_name, xen_sr sr)
 {
     abstract_value param_values[] =
         {
@@ -2489,7 +2489,7 @@ xen_vm_copy(xen_session *session, xen_vm *result, xen_vm vm, char *new_name, xen
 }
 
 bool
-xen_vm_copy_async(xen_session *session, xen_task *result, xen_vm vm, char *new_name, xen_sr sr)
+xen_vm_copy_async(xen_session *session, xen_task *result, xen_vm vm, const char *new_name, xen_sr sr)
 {
     abstract_value param_values[] =
         {
@@ -2538,7 +2538,7 @@ xen_vm_revert_async(xen_session *session, xen_task *result, xen_vm snapshot)
 }
 
 bool
-xen_vm_checkpoint(xen_session *session, xen_vm *result, xen_vm vm, char *new_name)
+xen_vm_checkpoint(xen_session *session, xen_vm *result, xen_vm vm, const char *new_name)
 {
     abstract_value param_values[] =
         {
@@ -2556,7 +2556,7 @@ xen_vm_checkpoint(xen_session *session, xen_vm *result, xen_vm vm, char *new_nam
 }
 
 bool
-xen_vm_checkpoint_async(xen_session *session, xen_task *result, xen_vm vm, char *new_name)
+xen_vm_checkpoint_async(xen_session *session, xen_task *result, xen_vm vm, const char *new_name)
 {
     abstract_value param_values[] =
         {
@@ -3061,7 +3061,7 @@ xen_vm_set_vcpus_number_live_async(xen_session *session, xen_task *result, xen_v
 }
 
 bool
-xen_vm_add_to_vcpus_params_live(xen_session *session, xen_vm self, char *key, char *value)
+xen_vm_add_to_vcpus_params_live(xen_session *session, xen_vm self, const char *key, const char *value)
 {
     abstract_value param_values[] =
         {
@@ -3078,7 +3078,7 @@ xen_vm_add_to_vcpus_params_live(xen_session *session, xen_vm self, char *key, ch
 }
 
 bool
-xen_vm_add_to_vcpus_params_live_async(xen_session *session, xen_task *result, xen_vm self, char *key, char *value)
+xen_vm_add_to_vcpus_params_live_async(xen_session *session, xen_task *result, xen_vm self, const char *key, const char *value)
 {
     abstract_value param_values[] =
         {
@@ -3098,7 +3098,7 @@ xen_vm_add_to_vcpus_params_live_async(xen_session *session, xen_task *result, xe
 }
 
 bool
-xen_vm_set_ha_restart_priority(xen_session *session, xen_vm self, char *value)
+xen_vm_set_ha_restart_priority(xen_session *session, xen_vm self, const char *value)
 {
     abstract_value param_values[] =
         {
@@ -3518,7 +3518,7 @@ xen_vm_set_vcpus_at_startup(xen_session *session, xen_vm self, int64_t value)
 
 
 bool
-xen_vm_send_sysrq(xen_session *session, xen_vm vm, char *key)
+xen_vm_send_sysrq(xen_session *session, xen_vm vm, const char *key)
 {
     abstract_value param_values[] =
         {
@@ -3533,7 +3533,7 @@ xen_vm_send_sysrq(xen_session *session, xen_vm vm, char *key)
 }
 
 bool
-xen_vm_send_sysrq_async(xen_session *session, xen_task *result, xen_vm vm, char *key)
+xen_vm_send_sysrq_async(xen_session *session, xen_task *result, xen_vm vm, const char *key)
 {
     abstract_value param_values[] =
         {
@@ -3551,7 +3551,7 @@ xen_vm_send_sysrq_async(xen_session *session, xen_task *result, xen_vm vm, char 
 }
 
 bool
-xen_vm_send_trigger(xen_session *session, xen_vm vm, char *trigger)
+xen_vm_send_trigger(xen_session *session, xen_vm vm, const char *trigger)
 {
     abstract_value param_values[] =
         {
@@ -3566,7 +3566,7 @@ xen_vm_send_trigger(xen_session *session, xen_vm vm, char *trigger)
 }
 
 bool
-xen_vm_send_trigger_async(xen_session *session, xen_task *result, xen_vm vm, char *trigger)
+xen_vm_send_trigger_async(xen_session *session, xen_task *result, xen_vm vm, const char *trigger)
 {
     abstract_value param_values[] =
         {
@@ -3744,7 +3744,7 @@ xen_vm_get_boot_record(xen_session *session, xen_vm_record **result, xen_vm self
 
 
 bool
-xen_vm_record_data_source(xen_session *session, xen_vm self, char *data_source)
+xen_vm_record_data_source(xen_session *session, xen_vm self, const char *data_source)
 {
     abstract_value param_values[] =
         {
@@ -3760,7 +3760,7 @@ xen_vm_record_data_source(xen_session *session, xen_vm self, char *data_source)
 
 
 bool
-xen_vm_query_data_source(xen_session *session, double *result, xen_vm self, char *data_source)
+xen_vm_query_data_source(xen_session *session, double *result, xen_vm self, const char *data_source)
 {
     abstract_value param_values[] =
         {
@@ -3778,7 +3778,7 @@ xen_vm_query_data_source(xen_session *session, double *result, xen_vm self, char
 
 
 bool
-xen_vm_forget_data_source_archives(xen_session *session, xen_vm self, char *data_source)
+xen_vm_forget_data_source_archives(xen_session *session, xen_vm self, const char *data_source)
 {
     abstract_value param_values[] =
         {
@@ -3955,7 +3955,7 @@ xen_vm_assert_can_boot_here_async(xen_session *session, xen_task *result, xen_vm
 }
 
 bool
-xen_vm_create_new_blob(xen_session *session, xen_blob *result, xen_vm vm, char *name, char *mime_type, bool pubblic)
+xen_vm_create_new_blob(xen_session *session, xen_blob *result, xen_vm vm, const char *name, const char *mime_type, bool pubblic)
 {
     abstract_value param_values[] =
         {
@@ -3977,7 +3977,7 @@ xen_vm_create_new_blob(xen_session *session, xen_blob *result, xen_vm vm, char *
 }
 
 bool
-xen_vm_create_new_blob_async(xen_session *session, xen_task *result, xen_vm vm, char *name, char *mime_type, bool pubblic)
+xen_vm_create_new_blob_async(xen_session *session, xen_task *result, xen_vm vm, const char *name, const char *mime_type, bool pubblic)
 {
     abstract_value param_values[] =
         {
@@ -4311,7 +4311,7 @@ xen_vm_recover_async(xen_session *session, xen_task *result, xen_vm self, xen_se
 }
 
 bool
-xen_vm_import_convert(xen_session *session, char *type, char *username, char *password, xen_sr sr, xen_string_string_map *remote_config)
+xen_vm_import_convert(xen_session *session, const char *type, const char *username, const char *password, xen_sr sr, xen_string_string_map *remote_config)
 {
     abstract_value param_values[] =
         {
@@ -4332,7 +4332,7 @@ xen_vm_import_convert(xen_session *session, char *type, char *username, char *pa
 }
 
 bool
-xen_vm_import_convert_async(xen_session *session, xen_task *result, char *type, char *username, char *password, xen_sr sr, xen_string_string_map *remote_config)
+xen_vm_import_convert_async(xen_session *session, xen_task *result, const char *type, const char *username, const char *password, xen_sr sr, xen_string_string_map *remote_config)
 {
     abstract_value param_values[] =
         {

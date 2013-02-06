@@ -165,7 +165,7 @@ xen_pif_metrics_get_record(xen_session *session, xen_pif_metrics_record **result
 
 
 bool
-xen_pif_metrics_get_by_uuid(xen_session *session, xen_pif_metrics *result, char *uuid)
+xen_pif_metrics_get_by_uuid(xen_session *session, xen_pif_metrics *result, const char *uuid)
 {
     abstract_value param_values[] =
         {
@@ -396,7 +396,7 @@ xen_pif_metrics_set_other_config(xen_session *session, xen_pif_metrics pif_metri
 
 
 bool
-xen_pif_metrics_add_to_other_config(xen_session *session, xen_pif_metrics pif_metrics, char *key, char *value)
+xen_pif_metrics_add_to_other_config(xen_session *session, xen_pif_metrics pif_metrics, const char *key, const char *value)
 {
     abstract_value param_values[] =
         {
@@ -414,7 +414,7 @@ xen_pif_metrics_add_to_other_config(xen_session *session, xen_pif_metrics pif_me
 
 
 bool
-xen_pif_metrics_remove_from_other_config(xen_session *session, xen_pif_metrics pif_metrics, char *key)
+xen_pif_metrics_remove_from_other_config(xen_session *session, xen_pif_metrics pif_metrics, const char *key)
 {
     abstract_value param_values[] =
         {

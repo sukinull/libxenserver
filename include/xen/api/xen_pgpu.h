@@ -176,7 +176,7 @@ xen_pgpu_get_record(xen_session *session, xen_pgpu_record **result, xen_pgpu pgp
  * Get a reference to the PGPU instance with the specified UUID.
  */
 extern bool
-xen_pgpu_get_by_uuid(xen_session *session, xen_pgpu *result, char *uuid);
+xen_pgpu_get_by_uuid(xen_session *session, xen_pgpu *result, const char *uuid);
 
 
 /**
@@ -226,7 +226,7 @@ xen_pgpu_set_other_config(xen_session *session, xen_pgpu pgpu, xen_string_string
  * PGPU.
  */
 extern bool
-xen_pgpu_add_to_other_config(xen_session *session, xen_pgpu pgpu, char *key, char *value);
+xen_pgpu_add_to_other_config(xen_session *session, xen_pgpu pgpu, const char *key, const char *value);
 
 
 /**
@@ -235,7 +235,7 @@ xen_pgpu_add_to_other_config(xen_session *session, xen_pgpu pgpu, char *key, cha
  * do nothing.
  */
 extern bool
-xen_pgpu_remove_from_other_config(xen_session *session, xen_pgpu pgpu, char *key);
+xen_pgpu_remove_from_other_config(xen_session *session, xen_pgpu pgpu, const char *key);
 
 
 /**

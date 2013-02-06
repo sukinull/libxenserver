@@ -208,7 +208,7 @@ xen_pool_get_record(xen_session *session, xen_pool_record **result, xen_pool poo
  * Get a reference to the pool instance with the specified UUID.
  */
 extern bool
-xen_pool_get_by_uuid(xen_session *session, xen_pool *result, char *uuid);
+xen_pool_get_by_uuid(xen_session *session, xen_pool *result, const char *uuid);
 
 
 /**
@@ -404,14 +404,14 @@ xen_pool_get_metadata_vdis(xen_session *session, struct xen_vdi_set **result, xe
  * Set the name_label field of the given pool.
  */
 extern bool
-xen_pool_set_name_label(xen_session *session, xen_pool pool, char *name_label);
+xen_pool_set_name_label(xen_session *session, xen_pool pool, const char *name_label);
 
 
 /**
  * Set the name_description field of the given pool.
  */
 extern bool
-xen_pool_set_name_description(xen_session *session, xen_pool pool, char *name_description);
+xen_pool_set_name_description(xen_session *session, xen_pool pool, const char *name_description);
 
 
 /**
@@ -447,7 +447,7 @@ xen_pool_set_other_config(xen_session *session, xen_pool pool, xen_string_string
  * pool.
  */
 extern bool
-xen_pool_add_to_other_config(xen_session *session, xen_pool pool, char *key, char *value);
+xen_pool_add_to_other_config(xen_session *session, xen_pool pool, const char *key, const char *value);
 
 
 /**
@@ -456,7 +456,7 @@ xen_pool_add_to_other_config(xen_session *session, xen_pool pool, char *key, cha
  * do nothing.
  */
 extern bool
-xen_pool_remove_from_other_config(xen_session *session, xen_pool pool, char *key);
+xen_pool_remove_from_other_config(xen_session *session, xen_pool pool, const char *key);
 
 
 /**
@@ -478,7 +478,7 @@ xen_pool_set_tags(xen_session *session, xen_pool pool, struct xen_string_set *ta
  * value is already in that Set, then do nothing.
  */
 extern bool
-xen_pool_add_tags(xen_session *session, xen_pool pool, char *value);
+xen_pool_add_tags(xen_session *session, xen_pool pool, const char *value);
 
 
 /**
@@ -486,7 +486,7 @@ xen_pool_add_tags(xen_session *session, xen_pool pool, char *value);
  * the value is not in that Set, then do nothing.
  */
 extern bool
-xen_pool_remove_tags(xen_session *session, xen_pool pool, char *value);
+xen_pool_remove_tags(xen_session *session, xen_pool pool, const char *value);
 
 
 /**
@@ -501,7 +501,7 @@ xen_pool_set_gui_config(xen_session *session, xen_pool pool, xen_string_string_m
  * pool.
  */
 extern bool
-xen_pool_add_to_gui_config(xen_session *session, xen_pool pool, char *key, char *value);
+xen_pool_add_to_gui_config(xen_session *session, xen_pool pool, const char *key, const char *value);
 
 
 /**
@@ -509,7 +509,7 @@ xen_pool_add_to_gui_config(xen_session *session, xen_pool pool, char *key, char 
  * field of the given pool.  If the key is not in that Map, then do nothing.
  */
 extern bool
-xen_pool_remove_from_gui_config(xen_session *session, xen_pool pool, char *key);
+xen_pool_remove_from_gui_config(xen_session *session, xen_pool pool, const char *key);
 
 
 /**
@@ -530,26 +530,26 @@ xen_pool_set_wlb_verify_cert(xen_session *session, xen_pool pool, bool wlb_verif
  * Instruct host to join a new pool.
  */
 extern bool
-xen_pool_join(xen_session *session, char *master_address, char *master_username, char *master_password);
+xen_pool_join(xen_session *session, const char *master_address, const char *master_username, const char *master_password);
 
 /**
  * Instruct host to join a new pool.
  */
 extern bool
-xen_pool_join_async(xen_session *session, xen_task *result, char *master_address, char *master_username, char *master_password);
+xen_pool_join_async(xen_session *session, xen_task *result, const char *master_address, const char *master_username, const char *master_password);
 
 
 /**
  * Instruct host to join a new pool.
  */
 extern bool
-xen_pool_join_force(xen_session *session, char *master_address, char *master_username, char *master_password);
+xen_pool_join_force(xen_session *session, const char *master_address, const char *master_username, const char *master_password);
 
 /**
  * Instruct host to join a new pool.
  */
 extern bool
-xen_pool_join_force_async(xen_session *session, xen_task *result, char *master_address, char *master_username, char *master_password);
+xen_pool_join_force_async(xen_session *session, xen_task *result, const char *master_address, const char *master_username, const char *master_password);
 
 
 /**
@@ -577,7 +577,7 @@ xen_pool_emergency_transition_to_master(xen_session *session);
  * Instruct a slave already in a pool that the master has changed.
  */
 extern bool
-xen_pool_emergency_reset_master(xen_session *session, char *master_address);
+xen_pool_emergency_reset_master(xen_session *session, const char *master_address);
 
 
 /**
@@ -601,7 +601,7 @@ xen_pool_recover_slaves_async(xen_session *session, xen_task *result);
  * instead.
  */
 extern bool
-xen_pool_create_vlan(xen_session *session, struct xen_pif_set **result, char *device, xen_network network, int64_t vlan);
+xen_pool_create_vlan(xen_session *session, struct xen_pif_set **result, const char *device, xen_network network, int64_t vlan);
 
 /**
  * Create PIFs, mapping a network to the same physical interface/VLAN
@@ -609,7 +609,7 @@ xen_pool_create_vlan(xen_session *session, struct xen_pif_set **result, char *de
  * instead.
  */
 extern bool
-xen_pool_create_vlan_async(xen_session *session, xen_task *result, char *device, xen_network network, int64_t vlan);
+xen_pool_create_vlan_async(xen_session *session, xen_task *result, const char *device, xen_network network, int64_t vlan);
 
 
 /**
@@ -739,14 +739,14 @@ xen_pool_set_ha_host_failures_to_tolerate_async(xen_session *session, xen_task *
  * associated with this pool.
  */
 extern bool
-xen_pool_create_new_blob(xen_session *session, xen_blob *result, xen_pool pool, char *name, char *mime_type, bool pubblic);
+xen_pool_create_new_blob(xen_session *session, xen_blob *result, xen_pool pool, const char *name, const char *mime_type, bool pubblic);
 
 /**
  * Create a placeholder for a named binary blob of data that is
  * associated with this pool.
  */
 extern bool
-xen_pool_create_new_blob_async(xen_session *session, xen_task *result, xen_pool pool, char *name, char *mime_type, bool pubblic);
+xen_pool_create_new_blob_async(xen_session *session, xen_task *result, xen_pool pool, const char *name, const char *mime_type, bool pubblic);
 
 
 /**
@@ -754,7 +754,7 @@ xen_pool_create_new_blob_async(xen_session *session, xen_task *result, xen_pool 
  * pool.
  */
 extern bool
-xen_pool_enable_external_auth(xen_session *session, xen_pool pool, xen_string_string_map *config, char *service_name, char *auth_type);
+xen_pool_enable_external_auth(xen_session *session, xen_pool pool, xen_string_string_map *config, const char *service_name, const char *auth_type);
 
 
 /**
@@ -779,14 +779,14 @@ xen_pool_detect_nonhomogeneous_external_auth(xen_session *session, xen_pool pool
  * specified wlb server.
  */
 extern bool
-xen_pool_initialize_wlb(xen_session *session, char *wlb_url, char *wlb_username, char *wlb_password, char *xenserver_username, char *xenserver_password);
+xen_pool_initialize_wlb(xen_session *session, const char *wlb_url, const char *wlb_username, const char *wlb_password, const char *xenserver_username, const char *xenserver_password);
 
 /**
  * Initializes workload balancing monitoring on this pool with the
  * specified wlb server.
  */
 extern bool
-xen_pool_initialize_wlb_async(xen_session *session, xen_task *result, char *wlb_url, char *wlb_username, char *wlb_password, char *xenserver_username, char *xenserver_password);
+xen_pool_initialize_wlb_async(xen_session *session, xen_task *result, const char *wlb_url, const char *wlb_username, const char *wlb_password, const char *xenserver_username, const char *xenserver_password);
 
 
 /**
@@ -852,40 +852,40 @@ xen_pool_retrieve_wlb_recommendations_async(xen_session *session, xen_task *resu
  * print the response.  This is used for debugging the SSL layer.
  */
 extern bool
-xen_pool_send_test_post(xen_session *session, char **result, char *host, int64_t port, char *body);
+xen_pool_send_test_post(xen_session *session, char **result, const char *host, int64_t port, const char *body);
 
 /**
  * Send the given body to the given host and port, using HTTPS, and
  * print the response.  This is used for debugging the SSL layer.
  */
 extern bool
-xen_pool_send_test_post_async(xen_session *session, xen_task *result, char *host, int64_t port, char *body);
+xen_pool_send_test_post_async(xen_session *session, xen_task *result, const char *host, int64_t port, const char *body);
 
 
 /**
  * Install an SSL certificate pool-wide.
  */
 extern bool
-xen_pool_certificate_install(xen_session *session, char *name, char *cert);
+xen_pool_certificate_install(xen_session *session, const char *name, const char *cert);
 
 /**
  * Install an SSL certificate pool-wide.
  */
 extern bool
-xen_pool_certificate_install_async(xen_session *session, xen_task *result, char *name, char *cert);
+xen_pool_certificate_install_async(xen_session *session, xen_task *result, const char *name, const char *cert);
 
 
 /**
  * Remove an SSL certificate.
  */
 extern bool
-xen_pool_certificate_uninstall(xen_session *session, char *name);
+xen_pool_certificate_uninstall(xen_session *session, const char *name);
 
 /**
  * Remove an SSL certificate.
  */
 extern bool
-xen_pool_certificate_uninstall_async(xen_session *session, xen_task *result, char *name);
+xen_pool_certificate_uninstall_async(xen_session *session, xen_task *result, const char *name);
 
 
 /**
@@ -905,26 +905,26 @@ xen_pool_certificate_list_async(xen_session *session, xen_task *result);
  * Install an SSL certificate revocation list, pool-wide.
  */
 extern bool
-xen_pool_crl_install(xen_session *session, char *name, char *cert);
+xen_pool_crl_install(xen_session *session, const char *name, const char *cert);
 
 /**
  * Install an SSL certificate revocation list, pool-wide.
  */
 extern bool
-xen_pool_crl_install_async(xen_session *session, xen_task *result, char *name, char *cert);
+xen_pool_crl_install_async(xen_session *session, xen_task *result, const char *name, const char *cert);
 
 
 /**
  * Remove an SSL certificate revocation list.
  */
 extern bool
-xen_pool_crl_uninstall(xen_session *session, char *name);
+xen_pool_crl_uninstall(xen_session *session, const char *name);
 
 /**
  * Remove an SSL certificate revocation list.
  */
 extern bool
-xen_pool_crl_uninstall_async(xen_session *session, xen_task *result, char *name);
+xen_pool_crl_uninstall_async(xen_session *session, xen_task *result, const char *name);
 
 
 /**
@@ -985,13 +985,13 @@ xen_pool_disable_redo_log_async(xen_session *session, xen_task *result);
  * Set the IP address of the vswitch controller.
  */
 extern bool
-xen_pool_set_vswitch_controller(xen_session *session, char *address);
+xen_pool_set_vswitch_controller(xen_session *session, const char *address);
 
 /**
  * Set the IP address of the vswitch controller.
  */
 extern bool
-xen_pool_set_vswitch_controller_async(xen_session *session, xen_task *result, char *address);
+xen_pool_set_vswitch_controller_async(xen_session *session, xen_task *result, const char *address);
 
 
 /**

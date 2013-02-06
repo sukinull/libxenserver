@@ -233,14 +233,14 @@ xen_host_get_record(xen_session *session, xen_host_record **result, xen_host hos
  * Get a reference to the host instance with the specified UUID.
  */
 extern bool
-xen_host_get_by_uuid(xen_session *session, xen_host *result, char *uuid);
+xen_host_get_by_uuid(xen_session *session, xen_host *result, const char *uuid);
 
 
 /**
  * Get all the host instances with the given label.
  */
 extern bool
-xen_host_get_by_name_label(xen_session *session, struct xen_host_set **result, char *label);
+xen_host_get_by_name_label(xen_session *session, struct xen_host_set **result, const char *label);
 
 
 /**
@@ -576,14 +576,14 @@ xen_host_get_pgpus(xen_session *session, struct xen_pgpu_set **result, xen_host 
  * Set the name/label field of the given host.
  */
 extern bool
-xen_host_set_name_label(xen_session *session, xen_host host, char *label);
+xen_host_set_name_label(xen_session *session, xen_host host, const char *label);
 
 
 /**
  * Set the name/description field of the given host.
  */
 extern bool
-xen_host_set_name_description(xen_session *session, xen_host host, char *description);
+xen_host_set_name_description(xen_session *session, xen_host host, const char *description);
 
 
 /**
@@ -598,7 +598,7 @@ xen_host_set_other_config(xen_session *session, xen_host host, xen_string_string
  * host.
  */
 extern bool
-xen_host_add_to_other_config(xen_session *session, xen_host host, char *key, char *value);
+xen_host_add_to_other_config(xen_session *session, xen_host host, const char *key, const char *value);
 
 
 /**
@@ -607,7 +607,7 @@ xen_host_add_to_other_config(xen_session *session, xen_host host, char *key, cha
  * do nothing.
  */
 extern bool
-xen_host_remove_from_other_config(xen_session *session, xen_host host, char *key);
+xen_host_remove_from_other_config(xen_session *session, xen_host host, const char *key);
 
 
 /**
@@ -621,7 +621,7 @@ xen_host_set_logging(xen_session *session, xen_host host, xen_string_string_map 
  * Add the given key-value pair to the logging field of the given host.
  */
 extern bool
-xen_host_add_to_logging(xen_session *session, xen_host host, char *key, char *value);
+xen_host_add_to_logging(xen_session *session, xen_host host, const char *key, const char *value);
 
 
 /**
@@ -629,7 +629,7 @@ xen_host_add_to_logging(xen_session *session, xen_host host, char *key, char *va
  * field of the given host.  If the key is not in that Map, then do nothing.
  */
 extern bool
-xen_host_remove_from_logging(xen_session *session, xen_host host, char *key);
+xen_host_remove_from_logging(xen_session *session, xen_host host, const char *key);
 
 
 /**
@@ -650,14 +650,14 @@ xen_host_set_crash_dump_sr(xen_session *session, xen_host host, xen_sr crash_dum
  * Set the hostname field of the given host.
  */
 extern bool
-xen_host_set_hostname(xen_session *session, xen_host host, char *hostname);
+xen_host_set_hostname(xen_session *session, xen_host host, const char *hostname);
 
 
 /**
  * Set the address field of the given host.
  */
 extern bool
-xen_host_set_address(xen_session *session, xen_host host, char *address);
+xen_host_set_address(xen_session *session, xen_host host, const char *address);
 
 
 /**
@@ -672,7 +672,7 @@ xen_host_set_tags(xen_session *session, xen_host host, struct xen_string_set *ta
  * value is already in that Set, then do nothing.
  */
 extern bool
-xen_host_add_tags(xen_session *session, xen_host host, char *value);
+xen_host_add_tags(xen_session *session, xen_host host, const char *value);
 
 
 /**
@@ -680,7 +680,7 @@ xen_host_add_tags(xen_session *session, xen_host host, char *value);
  * the value is not in that Set, then do nothing.
  */
 extern bool
-xen_host_remove_tags(xen_session *session, xen_host host, char *value);
+xen_host_remove_tags(xen_session *session, xen_host host, const char *value);
 
 
 /**
@@ -695,7 +695,7 @@ xen_host_set_license_server(xen_session *session, xen_host host, xen_string_stri
  * given host.
  */
 extern bool
-xen_host_add_to_license_server(xen_session *session, xen_host host, char *key, char *value);
+xen_host_add_to_license_server(xen_session *session, xen_host host, const char *key, const char *value);
 
 
 /**
@@ -704,7 +704,7 @@ xen_host_add_to_license_server(xen_session *session, xen_host host, char *key, c
  * then do nothing.
  */
 extern bool
-xen_host_remove_from_license_server(xen_session *session, xen_host host, char *key);
+xen_host_remove_from_license_server(xen_session *session, xen_host host, const char *key);
 
 
 /**
@@ -808,26 +808,26 @@ xen_host_get_log_async(xen_session *session, xen_task *result, xen_host host);
  * Inject the given string as debugging keys into Xen.
  */
 extern bool
-xen_host_send_debug_keys(xen_session *session, xen_host host, char *keys);
+xen_host_send_debug_keys(xen_session *session, xen_host host, const char *keys);
 
 /**
  * Inject the given string as debugging keys into Xen.
  */
 extern bool
-xen_host_send_debug_keys_async(xen_session *session, xen_task *result, xen_host host, char *keys);
+xen_host_send_debug_keys_async(xen_session *session, xen_task *result, xen_host host, const char *keys);
 
 
 /**
  * Run xen-bugtool --yestoall and upload the output to Citrix support.
  */
 extern bool
-xen_host_bugreport_upload(xen_session *session, xen_host host, char *url, xen_string_string_map *options);
+xen_host_bugreport_upload(xen_session *session, xen_host host, const char *url, xen_string_string_map *options);
 
 /**
  * Run xen-bugtool --yestoall and upload the output to Citrix support.
  */
 extern bool
-xen_host_bugreport_upload_async(xen_session *session, xen_task *result, xen_host host, char *url, xen_string_string_map *options);
+xen_host_bugreport_upload_async(xen_session *session, xen_task *result, xen_host host, const char *url, xen_string_string_map *options);
 
 
 /**
@@ -841,13 +841,13 @@ xen_host_list_methods(xen_session *session, struct xen_string_set **result);
  * Apply a new license to a host.
  */
 extern bool
-xen_host_license_apply(xen_session *session, xen_host host, char *contents);
+xen_host_license_apply(xen_session *session, xen_host host, const char *contents);
 
 /**
  * Apply a new license to a host.
  */
 extern bool
-xen_host_license_apply_async(xen_session *session, xen_task *result, xen_host host, char *contents);
+xen_host_license_apply_async(xen_session *session, xen_task *result, xen_host host, const char *contents);
 
 
 /**
@@ -888,21 +888,21 @@ xen_host_emergency_ha_disable(xen_session *session);
  * Start recording the specified data source.
  */
 extern bool
-xen_host_record_data_source(xen_session *session, xen_host host, char *data_source);
+xen_host_record_data_source(xen_session *session, xen_host host, const char *data_source);
 
 
 /**
  * Query the latest value of the specified data source.
  */
 extern bool
-xen_host_query_data_source(xen_session *session, double *result, xen_host host, char *data_source);
+xen_host_query_data_source(xen_session *session, double *result, xen_host host, const char *data_source);
 
 
 /**
  * Forget the recorded statistics related to the specified data source.
  */
 extern bool
-xen_host_forget_data_source_archives(xen_session *session, xen_host host, char *data_source);
+xen_host_forget_data_source_archives(xen_session *session, xen_host host, const char *data_source);
 
 
 /**
@@ -993,7 +993,7 @@ xen_host_management_reconfigure_async(xen_session *session, xen_task *result, xe
  * is broken.
  */
 extern bool
-xen_host_local_management_reconfigure(xen_session *session, char *interface);
+xen_host_local_management_reconfigure(xen_session *session, const char *interface);
 
 
 /**
@@ -1057,7 +1057,7 @@ xen_host_shutdown_agent(xen_session *session);
  * lower-level system hostname are changed immediately.
  */
 extern bool
-xen_host_set_hostname_live(xen_session *session, xen_host host, char *hostname);
+xen_host_set_hostname_live(xen_session *session, xen_host host, const char *hostname);
 
 
 /**
@@ -1106,27 +1106,27 @@ xen_host_backup_rrds(xen_session *session, xen_host host, double delay);
  * associated with this host.
  */
 extern bool
-xen_host_create_new_blob(xen_session *session, xen_blob *result, xen_host host, char *name, char *mime_type, bool pubblic);
+xen_host_create_new_blob(xen_session *session, xen_blob *result, xen_host host, const char *name, const char *mime_type, bool pubblic);
 
 /**
  * Create a placeholder for a named binary blob of data that is
  * associated with this host.
  */
 extern bool
-xen_host_create_new_blob_async(xen_session *session, xen_task *result, xen_host host, char *name, char *mime_type, bool pubblic);
+xen_host_create_new_blob_async(xen_session *session, xen_task *result, xen_host host, const char *name, const char *mime_type, bool pubblic);
 
 
 /**
  * Call a XenAPI plugin on this host.
  */
 extern bool
-xen_host_call_plugin(xen_session *session, char **result, xen_host host, char *plugin, char *fn, xen_string_string_map *args);
+xen_host_call_plugin(xen_session *session, char **result, xen_host host, const char *plugin, const char *fn, xen_string_string_map *args);
 
 /**
  * Call a XenAPI plugin on this host.
  */
 extern bool
-xen_host_call_plugin_async(xen_session *session, xen_task *result, xen_host host, char *plugin, char *fn, xen_string_string_map *args);
+xen_host_call_plugin_async(xen_session *session, xen_task *result, xen_host host, const char *plugin, const char *fn, xen_string_string_map *args);
 
 
 /**
@@ -1148,7 +1148,7 @@ xen_host_get_server_localtime(xen_session *session, time_t *result, xen_host hos
  * This call enables external authentication on a host.
  */
 extern bool
-xen_host_enable_external_auth(xen_session *session, xen_host host, xen_string_string_map *config, char *service_name, char *auth_type);
+xen_host_enable_external_auth(xen_session *session, xen_host host, xen_string_string_map *config, const char *service_name, const char *auth_type);
 
 
 /**
@@ -1194,7 +1194,7 @@ xen_host_get_server_certificate_async(xen_session *session, xen_task *result, xe
  * appropriate license.
  */
 extern bool
-xen_host_apply_edition(xen_session *session, xen_host host, char *edition);
+xen_host_apply_edition(xen_session *session, xen_host host, const char *edition);
 
 
 /**
@@ -1214,13 +1214,13 @@ xen_host_refresh_pack_info_async(xen_session *session, xen_task *result, xen_hos
  * Set the power-on-mode, host, user and password .
  */
 extern bool
-xen_host_set_power_on_mode(xen_session *session, xen_host self, char *power_on_mode, xen_string_string_map *power_on_config);
+xen_host_set_power_on_mode(xen_session *session, xen_host self, const char *power_on_mode, xen_string_string_map *power_on_config);
 
 /**
  * Set the power-on-mode, host, user and password .
  */
 extern bool
-xen_host_set_power_on_mode_async(xen_session *session, xen_task *result, xen_host self, char *power_on_mode, xen_string_string_map *power_on_config);
+xen_host_set_power_on_mode_async(xen_session *session, xen_task *result, xen_host self, const char *power_on_mode, xen_string_string_map *power_on_config);
 
 
 /**
@@ -1228,7 +1228,7 @@ xen_host_set_power_on_mode_async(xen_session *session, xen_task *result, xen_hos
  * features string is valid.
  */
 extern bool
-xen_host_set_cpu_features(xen_session *session, xen_host host, char *features);
+xen_host_set_cpu_features(xen_session *session, xen_host host, const char *features);
 
 
 /**

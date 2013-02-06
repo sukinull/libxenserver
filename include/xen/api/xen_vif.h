@@ -197,7 +197,7 @@ xen_vif_get_record(xen_session *session, xen_vif_record **result, xen_vif vif);
  * Get a reference to the VIF instance with the specified UUID.
  */
 extern bool
-xen_vif_get_by_uuid(xen_session *session, xen_vif *result, char *uuid);
+xen_vif_get_by_uuid(xen_session *session, xen_vif *result, const char *uuid);
 
 
 /**
@@ -385,7 +385,7 @@ xen_vif_set_other_config(xen_session *session, xen_vif vif, xen_string_string_ma
  * VIF.
  */
 extern bool
-xen_vif_add_to_other_config(xen_session *session, xen_vif vif, char *key, char *value);
+xen_vif_add_to_other_config(xen_session *session, xen_vif vif, const char *key, const char *value);
 
 
 /**
@@ -394,14 +394,14 @@ xen_vif_add_to_other_config(xen_session *session, xen_vif vif, char *key, char *
  * do nothing.
  */
 extern bool
-xen_vif_remove_from_other_config(xen_session *session, xen_vif vif, char *key);
+xen_vif_remove_from_other_config(xen_session *session, xen_vif vif, const char *key);
 
 
 /**
  * Set the qos/algorithm_type field of the given VIF.
  */
 extern bool
-xen_vif_set_qos_algorithm_type(xen_session *session, xen_vif vif, char *algorithm_type);
+xen_vif_set_qos_algorithm_type(xen_session *session, xen_vif vif, const char *algorithm_type);
 
 
 /**
@@ -416,7 +416,7 @@ xen_vif_set_qos_algorithm_params(xen_session *session, xen_vif vif, xen_string_s
  * the given VIF.
  */
 extern bool
-xen_vif_add_to_qos_algorithm_params(xen_session *session, xen_vif vif, char *key, char *value);
+xen_vif_add_to_qos_algorithm_params(xen_session *session, xen_vif vif, const char *key, const char *value);
 
 
 /**
@@ -425,7 +425,7 @@ xen_vif_add_to_qos_algorithm_params(xen_session *session, xen_vif vif, char *key
  * Map, then do nothing.
  */
 extern bool
-xen_vif_remove_from_qos_algorithm_params(xen_session *session, xen_vif vif, char *key);
+xen_vif_remove_from_qos_algorithm_params(xen_session *session, xen_vif vif, const char *key);
 
 
 /**
@@ -503,26 +503,26 @@ xen_vif_set_ipv4_allowed_async(xen_session *session, xen_task *result, xen_vif s
  * Associates an IPv4 address with this VIF.
  */
 extern bool
-xen_vif_add_ipv4_allowed(xen_session *session, xen_vif self, char *value);
+xen_vif_add_ipv4_allowed(xen_session *session, xen_vif self, const char *value);
 
 /**
  * Associates an IPv4 address with this VIF.
  */
 extern bool
-xen_vif_add_ipv4_allowed_async(xen_session *session, xen_task *result, xen_vif self, char *value);
+xen_vif_add_ipv4_allowed_async(xen_session *session, xen_task *result, xen_vif self, const char *value);
 
 
 /**
  * Removes an IPv4 address from this VIF.
  */
 extern bool
-xen_vif_remove_ipv4_allowed(xen_session *session, xen_vif self, char *value);
+xen_vif_remove_ipv4_allowed(xen_session *session, xen_vif self, const char *value);
 
 /**
  * Removes an IPv4 address from this VIF.
  */
 extern bool
-xen_vif_remove_ipv4_allowed_async(xen_session *session, xen_task *result, xen_vif self, char *value);
+xen_vif_remove_ipv4_allowed_async(xen_session *session, xen_task *result, xen_vif self, const char *value);
 
 
 /**
@@ -544,26 +544,26 @@ xen_vif_set_ipv6_allowed_async(xen_session *session, xen_task *result, xen_vif s
  * Associates an IPv6 address with this VIF.
  */
 extern bool
-xen_vif_add_ipv6_allowed(xen_session *session, xen_vif self, char *value);
+xen_vif_add_ipv6_allowed(xen_session *session, xen_vif self, const char *value);
 
 /**
  * Associates an IPv6 address with this VIF.
  */
 extern bool
-xen_vif_add_ipv6_allowed_async(xen_session *session, xen_task *result, xen_vif self, char *value);
+xen_vif_add_ipv6_allowed_async(xen_session *session, xen_task *result, xen_vif self, const char *value);
 
 
 /**
  * Removes an IPv6 address from this VIF.
  */
 extern bool
-xen_vif_remove_ipv6_allowed(xen_session *session, xen_vif self, char *value);
+xen_vif_remove_ipv6_allowed(xen_session *session, xen_vif self, const char *value);
 
 /**
  * Removes an IPv6 address from this VIF.
  */
 extern bool
-xen_vif_remove_ipv6_allowed_async(xen_session *session, xen_task *result, xen_vif self, char *value);
+xen_vif_remove_ipv6_allowed_async(xen_session *session, xen_task *result, xen_vif self, const char *value);
 
 
 /**

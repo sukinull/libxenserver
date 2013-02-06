@@ -130,7 +130,7 @@ xen_event_next(xen_session *session, struct xen_event_record_set **result);
  * Blocking call which returns a (possibly empty) batch of events.
  */
 extern bool
-xen_event_from(xen_session *session, struct xen_event_record_set **result, struct xen_string_set *classes, char *token, double timeout);
+xen_event_from(xen_session *session, struct xen_event_record_set **result, struct xen_string_set *classes, const char *token, double timeout);
 
 
 /**
@@ -145,7 +145,7 @@ xen_event_get_current_id(xen_session *session, int64_t *result);
  * corresponding ID.
  */
 extern bool
-xen_event_inject(xen_session *session, char **result, char *XEN_CLAZZ, char *ref);
+xen_event_inject(xen_session *session, char **result, const char *XEN_CLAZZ, const char *ref);
 
 
 #endif

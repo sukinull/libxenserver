@@ -142,7 +142,7 @@ xen_pgpu_get_record(xen_session *session, xen_pgpu_record **result, xen_pgpu pgp
 
 
 bool
-xen_pgpu_get_by_uuid(xen_session *session, xen_pgpu *result, char *uuid)
+xen_pgpu_get_by_uuid(xen_session *session, xen_pgpu *result, const char *uuid)
 {
     abstract_value param_values[] =
         {
@@ -243,7 +243,7 @@ xen_pgpu_set_other_config(xen_session *session, xen_pgpu pgpu, xen_string_string
 
 
 bool
-xen_pgpu_add_to_other_config(xen_session *session, xen_pgpu pgpu, char *key, char *value)
+xen_pgpu_add_to_other_config(xen_session *session, xen_pgpu pgpu, const char *key, const char *value)
 {
     abstract_value param_values[] =
         {
@@ -261,7 +261,7 @@ xen_pgpu_add_to_other_config(xen_session *session, xen_pgpu pgpu, char *key, cha
 
 
 bool
-xen_pgpu_remove_from_other_config(xen_session *session, xen_pgpu pgpu, char *key)
+xen_pgpu_remove_from_other_config(xen_session *session, xen_pgpu pgpu, const char *key)
 {
     abstract_value param_values[] =
         {

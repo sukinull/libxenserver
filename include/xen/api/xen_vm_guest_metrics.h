@@ -181,7 +181,7 @@ xen_vm_guest_metrics_get_record(xen_session *session, xen_vm_guest_metrics_recor
  * UUID.
  */
 extern bool
-xen_vm_guest_metrics_get_by_uuid(xen_session *session, xen_vm_guest_metrics *result, char *uuid);
+xen_vm_guest_metrics_get_by_uuid(xen_session *session, xen_vm_guest_metrics *result, const char *uuid);
 
 
 /**
@@ -273,7 +273,7 @@ xen_vm_guest_metrics_set_other_config(xen_session *session, xen_vm_guest_metrics
  * VM_guest_metrics.
  */
 extern bool
-xen_vm_guest_metrics_add_to_other_config(xen_session *session, xen_vm_guest_metrics vm_guest_metrics, char *key, char *value);
+xen_vm_guest_metrics_add_to_other_config(xen_session *session, xen_vm_guest_metrics vm_guest_metrics, const char *key, const char *value);
 
 
 /**
@@ -282,7 +282,7 @@ xen_vm_guest_metrics_add_to_other_config(xen_session *session, xen_vm_guest_metr
  * that Map, then do nothing.
  */
 extern bool
-xen_vm_guest_metrics_remove_from_other_config(xen_session *session, xen_vm_guest_metrics vm_guest_metrics, char *key);
+xen_vm_guest_metrics_remove_from_other_config(xen_session *session, xen_vm_guest_metrics vm_guest_metrics, const char *key);
 
 
 /**

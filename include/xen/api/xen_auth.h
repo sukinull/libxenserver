@@ -163,7 +163,7 @@ xen_auth_record_opt_set_free(xen_auth_record_opt_set *set);
  * subject_identifier as a string from the human-readable subject_name.
  */
 extern bool
-xen_auth_get_subject_identifier(xen_session *session, char **result, char *subject_name);
+xen_auth_get_subject_identifier(xen_session *session, char **result, const char *subject_name);
 
 
 /**
@@ -172,7 +172,7 @@ xen_auth_get_subject_identifier(xen_session *session, char **result, char *subje
  * subject_identifier.
  */
 extern bool
-xen_auth_get_subject_information_from_identifier(xen_session *session, xen_string_string_map **result, char *subject_identifier);
+xen_auth_get_subject_information_from_identifier(xen_session *session, xen_string_string_map **result, const char *subject_identifier);
 
 
 /**
@@ -181,7 +181,7 @@ xen_auth_get_subject_information_from_identifier(xen_session *session, xen_strin
  * of.
  */
 extern bool
-xen_auth_get_group_membership(xen_session *session, struct xen_string_set **result, char *subject_identifier);
+xen_auth_get_group_membership(xen_session *session, struct xen_string_set **result, const char *subject_identifier);
 
 
 #endif
