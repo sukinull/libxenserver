@@ -38,7 +38,7 @@
 
 typedef struct xen_string_string_set_map_contents
 {
-  char *key;
+  const char *key;
   struct xen_string_set *val;
 } xen_string_string_set_map_contents;
 

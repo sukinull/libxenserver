@@ -40,7 +40,7 @@
 typedef struct xen_vm_operations_string_map_contents
 {
   enum xen_vm_operations key;
-  char *val;
+  const char *val;
 } xen_vm_operations_string_map_contents;
 
 

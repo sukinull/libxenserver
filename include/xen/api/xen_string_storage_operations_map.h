@@ -39,7 +39,7 @@
 
 typedef struct xen_string_storage_operations_map_contents
 {
-  char *key;
+  const char *key;
   enum xen_storage_operations val;
 } xen_string_storage_operations_map_contents;
 

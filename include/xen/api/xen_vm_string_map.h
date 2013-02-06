@@ -39,7 +39,7 @@
 typedef struct xen_vm_string_map_contents
 {
   xen_vm key;
-  char *val;
+  const char *val;
 } xen_vm_string_map_contents;
 
 

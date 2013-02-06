@@ -38,8 +38,8 @@
 
 typedef struct xen_string_string_map_contents
 {
-  char *key;
-  char *val;
+  const char *key;
+  const char *val;
 } xen_string_string_map_contents;
 
 

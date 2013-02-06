@@ -38,7 +38,7 @@
 
 typedef struct xen_string_blob_map_contents
 {
-  char *key;
+  const char *key;
   struct xen_blob_record_opt *val;
 } xen_string_blob_map_contents;
 

@@ -39,7 +39,7 @@
 
 typedef struct xen_string_vif_operations_map_contents
 {
-  char *key;
+  const char *key;
   enum xen_vif_operations val;
 } xen_string_vif_operations_map_contents;
 

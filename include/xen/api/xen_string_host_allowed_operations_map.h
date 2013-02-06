@@ -39,7 +39,7 @@
 
 typedef struct xen_string_host_allowed_operations_map_contents
 {
-  char *key;
+  const char *key;
   enum xen_host_allowed_operations val;
 } xen_string_host_allowed_operations_map_contents;
 
