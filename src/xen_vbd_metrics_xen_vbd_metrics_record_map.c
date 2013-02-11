@@ -57,7 +57,7 @@ xen_vbd_metrics_xen_vbd_metrics_record_map_free(xen_vbd_metrics_xen_vbd_metrics_
     size_t n = map->size;
     for (size_t i = 0; i < n; i++)
     {
-        xen_vbd_metrics_record_opt_free(map->contents[i].key);
+        xen_vbd_metrics_free(map->contents[i].key);
         xen_vbd_metrics_record_free(map->contents[i].val);
     }
 

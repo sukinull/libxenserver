@@ -57,7 +57,7 @@ xen_console_xen_console_record_map_free(xen_console_xen_console_record_map *map)
     size_t n = map->size;
     for (size_t i = 0; i < n; i++)
     {
-        xen_console_record_opt_free(map->contents[i].key);
+    	xen_console_free(map->contents[i].key);
         xen_console_record_free(map->contents[i].val);
     }
 

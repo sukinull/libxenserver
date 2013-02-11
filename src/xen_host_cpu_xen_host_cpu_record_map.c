@@ -57,7 +57,7 @@ xen_host_cpu_xen_host_cpu_record_map_free(xen_host_cpu_xen_host_cpu_record_map *
     size_t n = map->size;
     for (size_t i = 0; i < n; i++)
     {
-        xen_host_cpu_record_opt_free(map->contents[i].key);
+        xen_host_cpu_free(map->contents[i].key);
         xen_host_cpu_record_free(map->contents[i].val);
     }
 

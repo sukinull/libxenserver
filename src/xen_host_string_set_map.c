@@ -58,7 +58,7 @@ xen_host_string_set_map_free(xen_host_string_set_map *map)
     size_t n = map->size;
     for (size_t i = 0; i < n; i++)
     {
-        xen_host_record_opt_free(map->contents[i].key);
+        xen_host_free(map->contents[i].key);
         xen_string_set_free(map->contents[i].val);
     }
 
