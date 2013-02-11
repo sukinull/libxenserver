@@ -57,7 +57,7 @@ xen_task_xen_task_record_map_free(xen_task_xen_task_record_map *map)
     size_t n = map->size;
     for (size_t i = 0; i < n; i++)
     {
-        xen_task_record_opt_free(map->contents[i].key);
+        xen_task_free(map->contents[i].key);
         xen_task_record_free(map->contents[i].val);
     }
 

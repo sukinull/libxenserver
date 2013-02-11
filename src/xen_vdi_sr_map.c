@@ -58,7 +58,7 @@ xen_vdi_sr_map_free(xen_vdi_sr_map *map)
     size_t n = map->size;
     for (size_t i = 0; i < n; i++)
     {
-        xen_vdi_record_opt_free(map->contents[i].key);
+        xen_vdi_free(map->contents[i].key);
         xen_sr_record_opt_free(map->contents[i].val);
     }
 

@@ -57,7 +57,7 @@ xen_pool_patch_xen_pool_patch_record_map_free(xen_pool_patch_xen_pool_patch_reco
     size_t n = map->size;
     for (size_t i = 0; i < n; i++)
     {
-        xen_pool_patch_record_opt_free(map->contents[i].key);
+        xen_pool_patch_free(map->contents[i].key);
         xen_pool_patch_record_free(map->contents[i].val);
     }
 
