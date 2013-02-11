@@ -61,7 +61,7 @@ LIBXENAPI_OBJS = $(patsubst %.c, %.o, $(wildcard src/*.c))
 
 TEST_PROGRAMS = test/test_vm_ops test/test_event_handling \
                 test/test_failures \
-		test/test_records
+		test/test_records test/test_all_records
 
 TARBALL_DEST = libxenserver-$(MAJOR).$(MINOR)
 
