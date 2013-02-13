@@ -179,13 +179,13 @@ xen_user_get_by_uuid(xen_session *session, xen_user *result, const char *uuid);
  * Create a new user instance, and return its handle.
  */
 extern bool
-xen_user_create(xen_session *session, xen_user *result, xen_user_record *record);
+xen_user_create(xen_session *session, xen_user *result, const xen_user_record *record);
 
 /**
  * Create a new user instance, and return its handle.
  */
 extern bool
-xen_user_create_async(xen_session *session, xen_task *result, xen_user_record *record);
+xen_user_create_async(xen_session *session, xen_task *result, const xen_user_record *record);
 
 
 /**

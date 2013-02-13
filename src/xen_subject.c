@@ -153,7 +153,7 @@ xen_subject_get_by_uuid(xen_session *session, xen_subject *result, const char *u
 
 
 bool
-xen_subject_create(xen_session *session, xen_subject *result, xen_subject_record *record)
+xen_subject_create(xen_session *session, xen_subject *result, const xen_subject_record *record)
 {
     abstract_value param_values[] =
         {
@@ -169,7 +169,7 @@ xen_subject_create(xen_session *session, xen_subject *result, xen_subject_record
 }
 
 bool
-xen_subject_create_async(xen_session *session, xen_task *result, xen_subject_record *record)
+xen_subject_create_async(xen_session *session, xen_task *result, const xen_subject_record *record)
 {
     abstract_value param_values[] =
         {

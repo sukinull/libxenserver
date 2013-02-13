@@ -127,7 +127,7 @@ xen_vtpm_get_by_uuid(xen_session *session, xen_vtpm *result, const char *uuid)
 
 
 bool
-xen_vtpm_create(xen_session *session, xen_vtpm *result, xen_vtpm_record *record)
+xen_vtpm_create(xen_session *session, xen_vtpm *result, const xen_vtpm_record *record)
 {
     abstract_value param_values[] =
         {
@@ -143,7 +143,7 @@ xen_vtpm_create(xen_session *session, xen_vtpm *result, xen_vtpm_record *record)
 }
 
 bool
-xen_vtpm_create_async(xen_session *session, xen_task *result, xen_vtpm_record *record)
+xen_vtpm_create_async(xen_session *session, xen_task *result, const xen_vtpm_record *record)
 {
     abstract_value param_values[] =
         {

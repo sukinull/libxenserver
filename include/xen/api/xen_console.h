@@ -183,13 +183,13 @@ xen_console_get_by_uuid(xen_session *session, xen_console *result, const char *u
  * Create a new console instance, and return its handle.
  */
 extern bool
-xen_console_create(xen_session *session, xen_console *result, xen_console_record *record);
+xen_console_create(xen_session *session, xen_console *result, const xen_console_record *record);
 
 /**
  * Create a new console instance, and return its handle.
  */
 extern bool
-xen_console_create_async(xen_session *session, xen_task *result, xen_console_record *record);
+xen_console_create_async(xen_session *session, xen_task *result, const xen_console_record *record);
 
 
 /**

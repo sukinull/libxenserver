@@ -276,13 +276,13 @@ xen_vm_get_by_uuid(xen_session *session, xen_vm *result, const char *uuid);
  * Create a new VM instance, and return its handle.
  */
 extern bool
-xen_vm_create(xen_session *session, xen_vm *result, xen_vm_record *record);
+xen_vm_create(xen_session *session, xen_vm *result, const xen_vm_record *record);
 
 /**
  * Create a new VM instance, and return its handle.
  */
 extern bool
-xen_vm_create_async(xen_session *session, xen_task *result, xen_vm_record *record);
+xen_vm_create_async(xen_session *session, xen_task *result, const xen_vm_record *record);
 
 
 /**

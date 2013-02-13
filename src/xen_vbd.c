@@ -225,7 +225,7 @@ xen_vbd_get_by_uuid(xen_session *session, xen_vbd *result, const char *uuid)
 
 
 bool
-xen_vbd_create(xen_session *session, xen_vbd *result, xen_vbd_record *record)
+xen_vbd_create(xen_session *session, xen_vbd *result, const xen_vbd_record *record)
 {
     abstract_value param_values[] =
         {
@@ -241,7 +241,7 @@ xen_vbd_create(xen_session *session, xen_vbd *result, xen_vbd_record *record)
 }
 
 bool
-xen_vbd_create_async(xen_session *session, xen_task *result, xen_vbd_record *record)
+xen_vbd_create_async(xen_session *session, xen_task *result, const xen_vbd_record *record)
 {
     abstract_value param_values[] =
         {

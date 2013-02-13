@@ -210,7 +210,7 @@ xen_vmpp_get_by_uuid(xen_session *session, xen_vmpp *result, const char *uuid)
 
 
 bool
-xen_vmpp_create(xen_session *session, xen_vmpp *result, xen_vmpp_record *record)
+xen_vmpp_create(xen_session *session, xen_vmpp *result, const xen_vmpp_record *record)
 {
     abstract_value param_values[] =
         {
@@ -226,7 +226,7 @@ xen_vmpp_create(xen_session *session, xen_vmpp *result, xen_vmpp_record *record)
 }
 
 bool
-xen_vmpp_create_async(xen_session *session, xen_task *result, xen_vmpp_record *record)
+xen_vmpp_create_async(xen_session *session, xen_task *result, const xen_vmpp_record *record)
 {
     abstract_value param_values[] =
         {

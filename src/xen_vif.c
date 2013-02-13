@@ -223,7 +223,7 @@ xen_vif_get_by_uuid(xen_session *session, xen_vif *result, const char *uuid)
 
 
 bool
-xen_vif_create(xen_session *session, xen_vif *result, xen_vif_record *record)
+xen_vif_create(xen_session *session, xen_vif *result, const xen_vif_record *record)
 {
     abstract_value param_values[] =
         {
@@ -239,7 +239,7 @@ xen_vif_create(xen_session *session, xen_vif *result, xen_vif_record *record)
 }
 
 bool
-xen_vif_create_async(xen_session *session, xen_task *result, xen_vif_record *record)
+xen_vif_create_async(xen_session *session, xen_task *result, const xen_vif_record *record)
 {
     abstract_value param_values[] =
         {

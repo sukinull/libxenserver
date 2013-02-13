@@ -179,13 +179,13 @@ xen_secret_get_by_uuid(xen_session *session, xen_secret *result, const char *uui
  * Create a new secret instance, and return its handle.
  */
 extern bool
-xen_secret_create(xen_session *session, xen_secret *result, xen_secret_record *record);
+xen_secret_create(xen_session *session, xen_secret *result, const xen_secret_record *record);
 
 /**
  * Create a new secret instance, and return its handle.
  */
 extern bool
-xen_secret_create_async(xen_session *session, xen_task *result, xen_secret_record *record);
+xen_secret_create_async(xen_session *session, xen_task *result, const xen_secret_record *record);
 
 
 /**

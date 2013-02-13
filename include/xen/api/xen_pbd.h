@@ -184,13 +184,13 @@ xen_pbd_get_by_uuid(xen_session *session, xen_pbd *result, const char *uuid);
  * Create a new PBD instance, and return its handle.
  */
 extern bool
-xen_pbd_create(xen_session *session, xen_pbd *result, xen_pbd_record *record);
+xen_pbd_create(xen_session *session, xen_pbd *result, const xen_pbd_record *record);
 
 /**
  * Create a new PBD instance, and return its handle.
  */
 extern bool
-xen_pbd_create_async(xen_session *session, xen_task *result, xen_pbd_record *record);
+xen_pbd_create_async(xen_session *session, xen_task *result, const xen_pbd_record *record);
 
 
 /**

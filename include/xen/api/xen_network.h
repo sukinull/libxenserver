@@ -197,13 +197,13 @@ xen_network_get_by_uuid(xen_session *session, xen_network *result, const char *u
  * Create a new network instance, and return its handle.
  */
 extern bool
-xen_network_create(xen_session *session, xen_network *result, xen_network_record *record);
+xen_network_create(xen_session *session, xen_network *result, const xen_network_record *record);
 
 /**
  * Create a new network instance, and return its handle.
  */
 extern bool
-xen_network_create_async(xen_session *session, xen_task *result, xen_network_record *record);
+xen_network_create_async(xen_session *session, xen_task *result, const xen_network_record *record);
 
 
 /**

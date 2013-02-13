@@ -202,13 +202,13 @@ xen_vmpp_get_by_uuid(xen_session *session, xen_vmpp *result, const char *uuid);
  * Create a new VMPP instance, and return its handle.
  */
 extern bool
-xen_vmpp_create(xen_session *session, xen_vmpp *result, xen_vmpp_record *record);
+xen_vmpp_create(xen_session *session, xen_vmpp *result, const xen_vmpp_record *record);
 
 /**
  * Create a new VMPP instance, and return its handle.
  */
 extern bool
-xen_vmpp_create_async(xen_session *session, xen_task *result, xen_vmpp_record *record);
+xen_vmpp_create_async(xen_session *session, xen_task *result, const xen_vmpp_record *record);
 
 
 /**

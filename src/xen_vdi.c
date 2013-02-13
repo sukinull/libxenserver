@@ -253,7 +253,7 @@ xen_vdi_get_by_uuid(xen_session *session, xen_vdi *result, const char *uuid)
 
 
 bool
-xen_vdi_create(xen_session *session, xen_vdi *result, xen_vdi_record *record)
+xen_vdi_create(xen_session *session, xen_vdi *result, const xen_vdi_record *record)
 {
     abstract_value param_values[] =
         {
@@ -269,7 +269,7 @@ xen_vdi_create(xen_session *session, xen_vdi *result, xen_vdi_record *record)
 }
 
 bool
-xen_vdi_create_async(xen_session *session, xen_task *result, xen_vdi_record *record)
+xen_vdi_create_async(xen_session *session, xen_task *result, const xen_vdi_record *record)
 {
     abstract_value param_values[] =
         {
